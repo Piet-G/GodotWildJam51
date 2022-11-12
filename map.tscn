@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
+
+[node name="Map" type="Node2D"]
+
+[node name="Farm" parent="." instance=ExtResource( 1 )]
+position = Vector2( 872, 508 )
+
+[node name="Farm2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 475, 382 )
+
+[node name="Farm3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 827, 167 )
+
+[node name="Farm4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 248, 210 )
