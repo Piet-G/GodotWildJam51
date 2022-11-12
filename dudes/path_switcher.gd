@@ -12,8 +12,10 @@ func is_path_active(index):
 
 func togle_path_active(index):
 	if(index in current_active):
-		if(len(current_active) > 1):
-			current_active.erase(index)
+		if(len(current_active) == 1):
+			current_active.append((index + 1) % 2)
+		current_active.erase(index)
+		
 	else:
 		current_active.append(index)
 	

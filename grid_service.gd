@@ -5,6 +5,7 @@ var grid_origin = Vector2(0, 0)
 
 var grid_map = {}
 var enemy_info = {}
+var illegal_spaces = {}
 
 func to_grid_position(pos: Vector2)-> Vector2:
 	return ((pos - grid_origin)/ tile_size).floor()
@@ -13,7 +14,7 @@ func to_global_position(pos: Vector2) -> Vector2:
 	return pos * tile_size + grid_origin
 
 func is_grid_position_occupied(pos: Vector2) -> bool:
-	return grid_map.has(pos)
+	return grid_map.has(pos) or illegal_spaces.has(pos)
 
 func snap_to_grid_position(pos: Vector2) -> Vector2:
 	return to_global_position(to_grid_position(pos))
@@ -24,6 +25,9 @@ func add_to_grid(tower: Node2D, grid_position: Vector2) -> void:
 	
 	if(tower.has_method("added_to_grid")):
 		tower.added_to_grid()
+
+func add_illegal_space(pos):
+	illegal_spaces[pos] = true
 
 func get_positions_available_to_enemy():
 	var array = []

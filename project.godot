@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://dudes/path_switcher.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "SpaceOccupier",
 "language": "GDScript",
 "path": "res://towers/space_occupier/space_occupier.gd"
