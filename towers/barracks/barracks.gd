@@ -16,8 +16,17 @@ func _ready():
 		if(distance < closest_distance):
 			closest_distance = distance
 			closest_path = path_node
+			
+	if(is_enemy):
+		$HBoxContainer.visible = false
 
 func _on_WarButton_pressed():
+	launch_war()
+
+func can_launch_war():
+	return to_war_count <= 0 or count > 0
+	
+func launch_war():
 	to_war_count = count
 	count = 0
 	$WarTimer.start()
@@ -26,7 +35,7 @@ func _on_WarButton_pressed():
 
 func _process(delta):
 	progress.value = $Timer.time_left / $Timer.wait_time
-	$HBoxContainer/VBoxContainer/WarButton.disabled = to_war_count > 0 or count <= 0
+	$HBoxContainer/VBoxContainer/WarButton.disabled = not can_launch_war()
 
 var count = 0
 func _on_Timer_timeout():

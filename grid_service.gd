@@ -37,6 +37,14 @@ func get_weights_total(weight_name):
 	
 	return total
 
+func get_buildings_of_type(type, is_enemy):
+	var buildings = []
+	for pos in grid_map.keys():
+		if(grid_map[pos].type == type):
+			buildings.append(grid_map[pos])
+	
+	return buildings
+
 func get_position_with_weight(weight_name, value):
 	var total = 0
 	for pos in get_positions_available_to_enemy():

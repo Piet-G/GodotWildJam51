@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://towers/space_occupier/space_occupier.gd"
 }, {
+"base": "Node2D",
+"class": "Tower",
+"language": "GDScript",
+"path": "res://towers/tower.gd"
+}, {
 "base": "Resource",
 "class": "TowerInfo",
 "language": "GDScript",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "DudePath": "",
 "PathSwitcher": "",
 "SpaceOccupier": "",
+"Tower": "",
 "TowerInfo": ""
 }
 
