@@ -4,6 +4,7 @@ var tile_size = Vector2(40, 40)
 var grid_origin = Vector2(0, 0)
 
 var grid_map = {}
+var enemy_info = {}
 
 func to_grid_position(pos: Vector2)-> Vector2:
 	return ((pos - grid_origin)/ tile_size).floor()
@@ -21,6 +22,29 @@ func add_to_grid(tower: Node2D, grid_position: Vector2) -> void:
 	grid_map[grid_position] = tower
 	tower.global_position = to_global_position(grid_position)
 
+func get_positions_available_to_enemy():
+	var array = []
+	for pos in enemy_info.keys():
+		if(not is_grid_position_occupied(pos)):
+			array.append(pos)
+	
+	return array
+
+func get_weights_total(weight_name):
+	var total = 0
+	for pos in get_positions_available_to_enemy():
+		total += enemy_info[pos][weight_name]
+	
+	return total
+
+func get_position_with_weight(weight_name, value):
+	var total = 0
+	for pos in get_positions_available_to_enemy():
+		total += enemy_info[pos][weight_name]
+		if(total >= value):
+			return pos
+	
+	return get_positions_available_to_enemy()[0]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

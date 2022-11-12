@@ -22,11 +22,17 @@ func get_gold(is_enemy):
 		return gold
 
 func add_food(amount: int, is_enemy):
-	food += amount
+	if(is_enemy):
+		enemy_food += amount
+	else:
+		food += amount
 	
-	emit_signal("food_added", amount)
+		emit_signal("food_added", amount)
 
 func remove_food(amount: int, is_enemy):
+	if(is_enemy):
+		enemy_food -= amount
+		return
 	food -= amount
 	
 	emit_signal("food_removed", amount)
