@@ -51,6 +51,9 @@ autostart = true
 [node name="WarTimer" type="Timer" parent="." index="3"]
 wait_time = 0.3
 
+[node name="DudeSpawnLocation" type="Node2D" parent="." index="4"]
+position = Vector2( 29, 24 )
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/WarButton" to="." method="_on_WarButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="WarTimer" to="." method="_on_WarTimer_timeout"]

@@ -26,10 +26,9 @@ func _on_WarButton_pressed():
 	launch_war()
 
 func can_launch_war():
-	return to_war_count <= 0 or count > 0
+	return len(dudes) <= 0 or count > 0
 	
 func launch_war():
-	to_war_count = count
 	count = 0
 	$WarTimer.start()
 	
@@ -39,23 +38,29 @@ func _process(delta):
 	progress.value = $Timer.time_left / $Timer.wait_time
 	$HBoxContainer/VBoxContainer/WarButton.disabled = not can_launch_war()
 
+var dudes = []
 var count = 0
 func _on_Timer_timeout():
 	count += 1
+	var dude = preload("res://dudes/dude.tscn").instance()
+	dude.position = Vector2(randf(), randf()) * 10
+	dude.is_enemy = is_enemy
+	dudes.append(dude)
+	$DudeSpawnLocation.add_child(dude)
 	_count_updated()
 	
 func _count_updated():
 	count_label.text = str(count)
 
 func _on_WarTimer_timeout():
-	to_war_count -= 1
-	
-	var dude = preload("res://dudes/dude.tscn").instance()
+	var dude = dudes.pop_front()
+	if(not is_instance_valid(dude)):
+		return
+	$DudeSpawnLocation.remove_child(dude)
+	closest_path.add_child(dude)
 	var local_pos = closest_path.to_local(global_position)
 	dude.offset = closest_path.curve.get_closest_offset(local_pos)
-	dude.is_enemy = is_enemy
-	closest_path.add_child(dude)
 	
-	if(to_war_count <= 0):
+	if(len(dudes) <= 0):
 		$WarTimer.stop()
 	
