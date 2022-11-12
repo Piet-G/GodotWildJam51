@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/Map_Summer.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://dudes/dude_path.gd" type="Script" id=4]
 [ext_resource path="res://dudes/path_switcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dudes/path_switch_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -88,3 +89,6 @@ rotation = 1.57369
 [node name="BlueMiddlePathSwitcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 470, 150 )
 next_paths = [ NodePath("../BlueLeftPath2") ]
+
+[node name="Barracks" parent="." instance=ExtResource( 7 )]
+position = Vector2( 330, 170 )

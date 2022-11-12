@@ -3,6 +3,9 @@ extends Path2D
 
 export(NodePath) var next_switcher
 
+func _init():
+	add_to_group("path")
+
 func get_next_switcher():
 	return get_node(next_switcher)
 
