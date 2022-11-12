@@ -30,6 +30,10 @@ ResourceManager="*res://resource_manager.gd"
 Ui="*res://UI.tscn"
 TowerInfoService="*res://tower_info_service.tscn"
 
+[display]
+
+window/size/width=800
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
