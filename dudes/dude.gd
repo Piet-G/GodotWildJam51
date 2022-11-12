@@ -8,6 +8,7 @@ export(SpriteFrames) var regular_sprites
 export(SpriteFrames) var enemy_sprites
 var targeted = false
 var old_pos
+var right = true
 
 func _ready():
 	old_pos = global_position
@@ -43,9 +44,11 @@ func _physics_process(delta):
 		next_path.add_child(self)
 	
 	var direction = global_position - old_pos
-	if direction.x < -0.1 :
+	if direction.x < -0.1 && right:
 		$AnimatedSprite.scale.x = -1
-	else:
+		right = false
+	if direction.x > 0.1 && !right:
 		$AnimatedSprite.scale.x = 1
+		right = true
 	
 	old_pos = global_position
