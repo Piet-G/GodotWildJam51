@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://dudes/path_switcher.gd"
 }, {
+"base": "Node",
+"class": "SpaceOccupier",
+"language": "GDScript",
+"path": "res://towers/space_occupier/space_occupier.gd"
+}, {
 "base": "Resource",
 "class": "TowerInfo",
 "language": "GDScript",
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "DudePath": "",
 "PathSwitcher": "",
+"SpaceOccupier": "",
 "TowerInfo": ""
 }
 
