@@ -1,7 +1,7 @@
 extends Node
 
-var tile_size = Vector2(30, 30)
-var grid_origin = Vector2(10, 10)
+var tile_size = Vector2(40, 40)
+var grid_origin = Vector2(0, 0)
 
 var grid_map = {}
 

@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 name = "Farm"
 food_cost = 10
 gold_cost = 0
-icon = "res://icon.png"
+icon = "res://assets/towers/farm/Farm.png"
 scene = "res://towers/farm/farm.tscn"
