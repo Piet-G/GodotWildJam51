@@ -72,7 +72,7 @@ _data = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400, 299.606 )
 frames = SubResource( 13 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="Farm" parent="." instance=ExtResource( 1 )]
