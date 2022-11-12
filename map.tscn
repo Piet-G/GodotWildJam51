@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/MapAnim_0005.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/map/MapAnim_0002.png" type="Texture" id=11]
 [ext_resource path="res://assets/map/MapAnim_0004.png" type="Texture" id=12]
 [ext_resource path="res://assets/map/MapAnim_0006.png" type="Texture" id=13]
+[ext_resource path="res://AnimatedSprite.gd" type="Script" id=14]
+[ext_resource path="res://towers/space_occupier/SpaceOccupier.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -70,13 +72,9 @@ _data = {
 [node name="Map" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 400, 299.606 )
+position = Vector2( 400, 300 )
 frames = SubResource( 13 )
-frame = 5
-playing = true
-
-[node name="Farm" parent="." instance=ExtResource( 1 )]
-position = Vector2( 872, 508 )
+script = ExtResource( 14 )
 
 [node name="Farm2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 360 )
@@ -91,7 +89,7 @@ script = ExtResource( 4 )
 next_switcher = NodePath("../BlueRightPathSwitcher")
 
 [node name="Dude" parent="BlueRightPath1" instance=ExtResource( 3 )]
-position = Vector2( 115.54, 547.622 )
+position = Vector2( 119.419, 547.596 )
 
 [node name="RedLeftPath1" type="Path2D" parent="."]
 self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
@@ -111,7 +109,7 @@ script = ExtResource( 4 )
 is_enemy = true
 
 [node name="Dude" parent="RedRightPath1" instance=ExtResource( 3 )]
-position = Vector2( 330, 470 )
+position = Vector2( 330.192, 473.649 )
 
 [node name="BlueRightPath2" type="Path2D" parent="."]
 position = Vector2( 222.832, -87.551 )
@@ -462,3 +460,391 @@ is_enemy = true
 [node name="Farm8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 570, 10 )
 is_enemy = true
+
+[node name="SpaceOccupiers" type="Node2D" parent="."]
+
+[node name="SpaceOccupier" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 120 )
+
+[node name="SpaceOccupier28" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 120, 120 )
+
+[node name="SpaceOccupier29" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 120 )
+
+[node name="SpaceOccupier30" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 80 )
+
+[node name="SpaceOccupier31" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 40 )
+
+[node name="SpaceOccupier32" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 40 )
+
+[node name="SpaceOccupier33" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 0, 40 )
+
+[node name="SpaceOccupier34" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+
+[node name="SpaceOccupier35" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 80 )
+
+[node name="SpaceOccupier36" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 120 )
+
+[node name="SpaceOccupier37" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 160 )
+
+[node name="SpaceOccupier38" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 200 )
+
+[node name="SpaceOccupier39" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 240 )
+
+[node name="SpaceOccupier40" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 240 )
+
+[node name="SpaceOccupier41" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 120, 240 )
+
+[node name="SpaceOccupier42" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 240 )
+
+[node name="SpaceOccupier43" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 280 )
+
+[node name="SpaceOccupier45" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 320 )
+
+[node name="SpaceOccupier46" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 360 )
+
+[node name="SpaceOccupier47" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 360 )
+
+[node name="SpaceOccupier48" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 120, 360 )
+
+[node name="SpaceOccupier49" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 360 )
+
+[node name="SpaceOccupier50" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 360 )
+
+[node name="SpaceOccupier51" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 400 )
+
+[node name="SpaceOccupier52" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 440 )
+
+[node name="SpaceOccupier53" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 480 )
+
+[node name="SpaceOccupier54" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 120, 520 )
+
+[node name="SpaceOccupier58" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 520 )
+
+[node name="SpaceOccupier55" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 520 )
+
+[node name="SpaceOccupier56" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 520 )
+
+[node name="SpaceOccupier57" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 480 )
+
+[node name="SpaceOccupier59" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 440 )
+
+[node name="SpaceOccupier60" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 80, 480 )
+
+[node name="SpaceOccupier61" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 40, 520 )
+
+[node name="SpaceOccupier62" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 0, 520 )
+
+[node name="SpaceOccupier63" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 0, 480 )
+
+[node name="SpaceOccupier64" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 240, 440 )
+
+[node name="SpaceOccupier65" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 280, 440 )
+
+[node name="SpaceOccupier66" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 440 )
+
+[node name="SpaceOccupier71" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 440 )
+
+[node name="SpaceOccupier72" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 480 )
+
+[node name="SpaceOccupier73" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 520 )
+
+[node name="SpaceOccupier74" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 520 )
+
+[node name="SpaceOccupier75" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 520 )
+
+[node name="SpaceOccupier76" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 480, 520 )
+
+[node name="SpaceOccupier77" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 480, 480 )
+
+[node name="SpaceOccupier78" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 520, 480 )
+
+[node name="SpaceOccupier79" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 480 )
+
+[node name="SpaceOccupier80" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 480 )
+
+[node name="SpaceOccupier81" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 640, 480 )
+
+[node name="SpaceOccupier67" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 400 )
+
+[node name="SpaceOccupier68" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 360 )
+
+[node name="SpaceOccupier69" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 320 )
+
+[node name="SpaceOccupier70" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 320 )
+
+[node name="SpaceOccupier44" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 240 )
+
+[node name="SpaceOccupier2" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 160 )
+
+[node name="SpaceOccupier3" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 200 )
+
+[node name="SpaceOccupier4" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 200 )
+
+[node name="SpaceOccupier5" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 240, 200 )
+
+[node name="SpaceOccupier6" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 240, 240 )
+
+[node name="SpaceOccupier7" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 280, 240 )
+
+[node name="SpaceOccupier8" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 240 )
+
+[node name="SpaceOccupier9" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 240 )
+
+[node name="SpaceOccupier10" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 280 )
+
+[node name="SpaceOccupier11" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 280 )
+
+[node name="SpaceOccupier12" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 320 )
+
+[node name="SpaceOccupier13" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 320 )
+
+[node name="SpaceOccupier14" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 480, 320 )
+
+[node name="SpaceOccupier15" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 520, 320 )
+
+[node name="SpaceOccupier16" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 520, 360 )
+
+[node name="SpaceOccupier17" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 360 )
+
+[node name="SpaceOccupier18" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 360 )
+
+[node name="SpaceOccupier19" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 400 )
+
+[node name="SpaceOccupier20" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 440 )
+
+[node name="SpaceOccupier21" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 640, 440 )
+
+[node name="SpaceOccupier22" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 440 )
+
+[node name="SpaceOccupier23" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 480 )
+
+[node name="SpaceOccupier82" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 480 )
+
+[node name="SpaceOccupier83" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 440 )
+
+[node name="SpaceOccupier84" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 400 )
+
+[node name="SpaceOccupier85" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 360 )
+
+[node name="SpaceOccupier86" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 320 )
+
+[node name="SpaceOccupier87" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 320 )
+
+[node name="SpaceOccupier88" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 640, 320 )
+
+[node name="SpaceOccupier89" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 320 )
+
+[node name="SpaceOccupier90" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 320 )
+
+[node name="SpaceOccupier91" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 280 )
+
+[node name="SpaceOccupier92" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 240 )
+
+[node name="SpaceOccupier93" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 200 )
+
+[node name="SpaceOccupier94" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 200 )
+
+[node name="SpaceOccupier95" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 640, 200 )
+
+[node name="SpaceOccupier96" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 200 )
+
+[node name="SpaceOccupier97" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 200 )
+
+[node name="SpaceOccupier98" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 160 )
+
+[node name="SpaceOccupier99" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 120 )
+
+[node name="SpaceOccupier100" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 80 )
+
+[node name="SpaceOccupier101" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 760, 40 )
+
+[node name="SpaceOccupier102" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 40 )
+
+[node name="SpaceOccupier103" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 40 )
+
+[node name="SpaceOccupier104" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 0 )
+
+[node name="SpaceOccupier105" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 0 )
+
+[node name="SpaceOccupier106" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 760, 0 )
+
+[node name="SpaceOccupier107" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 640, 40 )
+
+[node name="SpaceOccupier108" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 600, 40 )
+
+[node name="SpaceOccupier109" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 40 )
+
+[node name="SpaceOccupier110" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 80 )
+
+[node name="SpaceOccupier111" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 560, 120 )
+
+[node name="SpaceOccupier112" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 520, 120 )
+
+[node name="SpaceOccupier113" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 480, 120 )
+
+[node name="SpaceOccupier114" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 120 )
+
+[node name="SpaceOccupier115" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 160 )
+
+[node name="SpaceOccupier116" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 200 )
+
+[node name="SpaceOccupier117" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 440, 240 )
+
+[node name="SpaceOccupier118" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 240 )
+
+[node name="SpaceOccupier119" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 120 )
+
+[node name="SpaceOccupier120" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 80 )
+
+[node name="SpaceOccupier121" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 400, 40 )
+
+[node name="SpaceOccupier122" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 360, 40 )
+
+[node name="SpaceOccupier123" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 320, 40 )
+
+[node name="SpaceOccupier124" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 280, 40 )
+
+[node name="SpaceOccupier125" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 280, 80 )
+
+[node name="SpaceOccupier126" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 240, 80 )
+
+[node name="SpaceOccupier127" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 200, 80 )
+
+[node name="SpaceOccupier128" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 160, 80 )
+
+[node name="SpaceOccupier129" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 120, 80 )
+
+[node name="SpaceOccupier24" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 680, 520 )
+
+[node name="SpaceOccupier25" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 720, 520 )
+
+[node name="SpaceOccupier26" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 760, 520 )
+
+[node name="SpaceOccupier27" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+position = Vector2( 760, 560 )
