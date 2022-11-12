@@ -21,6 +21,9 @@ func snap_to_grid_position(pos: Vector2) -> Vector2:
 func add_to_grid(tower: Node2D, grid_position: Vector2) -> void:
 	grid_map[grid_position] = tower
 	tower.global_position = to_global_position(grid_position)
+	
+	if(tower.has_method("added_to_grid")):
+		tower.added_to_grid()
 
 func get_positions_available_to_enemy():
 	var array = []

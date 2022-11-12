@@ -8,17 +8,19 @@ var closest_path: Path2D
 var closest_distance = 100000000000000
 
 func _ready():
-	for path in get_tree().get_nodes_in_group("path"):
-		var path_node: Path2D = path
-		var local_pos = path_node.to_local(global_position)
-		var distance = path_node.curve.get_closest_point(local_pos).distance_to(local_pos)
-		
-		if(distance < closest_distance):
-			closest_distance = distance
-			closest_path = path_node
-			
 	if(is_enemy):
 		$HBoxContainer.visible = false
+
+func added_to_grid():
+	for path in get_tree().get_nodes_in_group("path"):
+		if(path.is_enemy == is_enemy):
+			var path_node: Path2D = path
+			var local_pos = path_node.to_local(global_position)
+			var distance = path_node.curve.get_closest_point(local_pos).distance_to(local_pos)
+			
+			if(distance < closest_distance):
+				closest_distance = distance
+				closest_path = path_node
 
 func _on_WarButton_pressed():
 	launch_war()
@@ -51,6 +53,7 @@ func _on_WarTimer_timeout():
 	var dude = preload("res://dudes/dude.tscn").instance()
 	var local_pos = closest_path.to_local(global_position)
 	dude.offset = closest_path.curve.get_closest_offset(local_pos)
+	dude.is_enemy = is_enemy
 	closest_path.add_child(dude)
 	
 	if(to_war_count <= 0):

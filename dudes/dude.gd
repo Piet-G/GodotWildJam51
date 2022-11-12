@@ -2,6 +2,7 @@ extends PathFollow2D
 
 export var health = 1
 export var movement_speed = 30
+export var is_enemy = false
 var targeted = false
 var old_pos
 

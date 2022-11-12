@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/Map_Summer.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://dudes/path_switcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dudes/path_switch_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=7]
-[ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://enemy/EnemyAI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://towers/enemy_info.tscn" type="PackedScene" id=10]
 
@@ -16,9 +15,19 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 120, 550, 0, 0, 0, 0, 230, 550, 0, 0, 0, 0, 230, 470, 0, 0, 0, 0, 340, 470 )
 }
 
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 340, 470, 0, 0, 0, 0, 210, 470, 0, 0, 0, 0, 210, 550, 0, 0, 0, 0, 120, 550 )
+}
+
 [sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 120, 550, 0, 0, 0, 0, 150, 550, 0, 0, 0, 0, 150, 630, 0, 0, 0, 0, 290, 630, 0, 0, 0, 0, 290, 590, 0, 0, 0, 0, 530, 590, 0, 0, 0, 0, 530, 410, 0, 0, 0, 0, 410, 410, 0, 0, 0, 0, 410, 310, 0, 0, 0, 0, 530, 310, 0, 0, 0, 0, 530, 200 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 510, 220, 0, 0, 0, 0, 510, 310, 0, 0, 0, 0, 390, 310, 0, 0, 0, 0, 390, 450, 0, 0, 0, 0, 510, 450, 0, 0, 0, 0, 510, 590, 0, 0, 0, 0, 270, 590, 0, 0, 0, 0, 270, 630, 0, 0, 0, 0, 170, 630, 0, 0, 0, 0, 170, 550, 0, 0, 0, 0, 120, 550 )
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -26,9 +35,19 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 120, 550, 0, 0, 0, 0, 120, 430, 0, 0, 0, 0, 170, 430, 0, 0, 0, 0, 200, 350, 0, 0, 0, 0, 250, 350, 0, 0, 0, 0, 250, 230 )
 }
 
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 120, 550, 0, 0, 0, 0, 130, 518, 0, 0, 0, 0, 130, 432.667, 0, 0, 0, 0, 160, 432.667, 0, 0, 0, 0, 190, 336.667, 0, 0, 0, 0, 230, 336.667, 0, 0, 0, 0, 230, 208.667 )
+}
+
 [sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 120, 550, 0, 0, 0, 0, 240, 550, 0, 0, 0, 0, 240, 470, 0, 0, 0, 0, 330, 470 )
+}
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 100, 550, 0, 0, 0, 0, 220, 550, 0, 0, 0, 0, 220, 470, 0, 0, 0, 0, 330, 470 )
 }
 
 [node name="Map" type="Node2D"]
@@ -37,14 +56,8 @@ _data = {
 position = Vector2( 400, 299.606 )
 texture = ExtResource( 2 )
 
-[node name="Farm" parent="." instance=ExtResource( 1 )]
-position = Vector2( 872, 508 )
-
 [node name="Farm2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 360 )
-
-[node name="Farm3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 827, 167 )
 
 [node name="Farm4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, 480 )
@@ -57,6 +70,17 @@ next_switcher = NodePath("../BlueRightPathSwitcher")
 [node name="Dude" parent="BlueRightPath1" instance=ExtResource( 3 )]
 position = Vector2( 120, 550 )
 
+[node name="RedRightPath1" type="Path2D" parent="."]
+self_modulate = Color( 1, 0.501961, 0.603922, 0.701961 )
+position = Vector2( 0, -20 )
+curve = SubResource( 9 )
+script = ExtResource( 4 )
+next_switcher = NodePath("../BlueRightPathSwitcher")
+is_enemy = true
+
+[node name="Dude" parent="RedRightPath1" instance=ExtResource( 3 )]
+position = Vector2( 120, 550 )
+
 [node name="BlueRightPath2" type="Path2D" parent="."]
 position = Vector2( 220, -80 )
 curve = SubResource( 2 )
@@ -65,16 +89,44 @@ script = ExtResource( 4 )
 [node name="Dude" parent="BlueRightPath2" instance=ExtResource( 3 )]
 position = Vector2( 120, 550 )
 
+[node name="RedRightPath2" type="Path2D" parent="."]
+self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
+position = Vector2( 220, -100 )
+curve = SubResource( 6 )
+script = ExtResource( 4 )
+next_switcher = NodePath("../RedRightSwitcher")
+is_enemy = true
+
+[node name="Dude" parent="RedRightPath2" instance=ExtResource( 3 )]
+position = Vector2( 510, 220 )
+is_enemy = true
+
 [node name="BlueMiddlePath" type="Path2D" parent="."]
 position = Vector2( 220, -80 )
 curve = SubResource( 3 )
 script = ExtResource( 4 )
 next_switcher = NodePath("../BlueMiddlePathSwitcher")
 
+[node name="RedMiddlePath" type="Path2D" parent="."]
+self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
+position = Vector2( 220, -65.625 )
+scale = Vector2( 1, 0.9375 )
+curve = SubResource( 7 )
+script = ExtResource( 4 )
+next_switcher = NodePath("../BlueMiddlePathSwitcher")
+is_enemy = true
+
 [node name="BlueLeftPath2" type="Path2D" parent="."]
 position = Vector2( 350, -400 )
 curve = SubResource( 4 )
 script = ExtResource( 4 )
+
+[node name="RedLeftPath2" type="Path2D" parent="."]
+self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
+position = Vector2( 350, -420 )
+curve = SubResource( 8 )
+script = ExtResource( 4 )
+is_enemy = true
 
 [node name="BlueRightPathSwitcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 340, 470 )
@@ -89,15 +141,16 @@ active_path = 1
 position = Vector2( 50, -10 )
 rotation = 1.57369
 
+[node name="RedRightSwitcher" parent="." instance=ExtResource( 5 )]
+position = Vector2( 340, 470 )
+next_paths = [ NodePath("../RedRightPath1") ]
+
 [node name="BlueMiddlePathSwitcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 470, 150 )
 next_paths = [ NodePath("../BlueLeftPath2") ]
 
 [node name="Barracks" parent="." instance=ExtResource( 7 )]
 position = Vector2( 320, 160 )
-
-[node name="archery_tower" parent="." instance=ExtResource( 8 )]
-position = Vector2( 600, 160 )
 
 [node name="EnemyAI" parent="." instance=ExtResource( 9 )]
 
