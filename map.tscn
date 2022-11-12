@@ -72,7 +72,7 @@ _data = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400, 299.606 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Farm" parent="." instance=ExtResource( 1 )]
@@ -165,12 +165,12 @@ current_active = [ 0, 1 ]
 next_paths = [ NodePath("../BlueRightPath2"), NodePath("../BlueMiddlePath") ]
 
 [node name="PathSwitchButton" parent="BlueRightPathSwitcher" instance=ExtResource( 6 )]
-position = Vector2( 0, -70 )
+position = Vector2( 0, -40 )
+rotation = -1.5708
 active_path = 1
 
 [node name="PathSwitchButton2" parent="BlueRightPathSwitcher" instance=ExtResource( 6 )]
-position = Vector2( 50, -10 )
-rotation = 1.57369
+position = Vector2( 30, -10 )
 
 [node name="RedRightSwitcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 340, 470 )
