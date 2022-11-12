@@ -91,7 +91,7 @@ script = ExtResource( 4 )
 next_switcher = NodePath("../BlueRightPathSwitcher")
 
 [node name="Dude" parent="BlueRightPath1" instance=ExtResource( 3 )]
-position = Vector2( 115.54, 547.622 )
+position = Vector2( 119.419, 547.596 )
 
 [node name="RedLeftPath1" type="Path2D" parent="."]
 self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
@@ -111,7 +111,7 @@ script = ExtResource( 4 )
 is_enemy = true
 
 [node name="Dude" parent="RedRightPath1" instance=ExtResource( 3 )]
-position = Vector2( 330, 470 )
+position = Vector2( 330.192, 473.649 )
 
 [node name="BlueRightPath2" type="Path2D" parent="."]
 position = Vector2( 222.832, -87.551 )
