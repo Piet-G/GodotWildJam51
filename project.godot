@@ -29,6 +29,7 @@ config/icon="res://icon.png"
 ResourceManager="*res://resource_manager.gd"
 Ui="*res://UI.tscn"
 TowerInfoService="*res://tower_info_service.tscn"
+GridService="*res://grid_service.gd"
 
 [display]
 

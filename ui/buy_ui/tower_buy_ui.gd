@@ -18,8 +18,10 @@ func _on_buy_tower_clicked(info: TowerInfo) -> void:
 
 func _process(delta):
 	if(tower_ghost):
-		tower_ghost.global_position = get_viewport().get_mouse_position()
+		tower_ghost.global_position = GridService.snap_to_grid_position(get_viewport().get_mouse_position())
 		
-		if(Input.is_action_just_pressed("place_tower")):
+		var grid_position = GridService.to_grid_position(tower_ghost.global_position)
+		if(Input.is_action_just_pressed("place_tower") and not GridService.is_grid_position_occupied(grid_position)):
+			GridService.add_to_grid(tower_ghost,grid_position)
 			tower_ghost = null
 			ResourceManager.remove_food(clicked_info.food_cost)
