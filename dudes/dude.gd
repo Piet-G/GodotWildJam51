@@ -3,11 +3,19 @@ extends PathFollow2D
 export var health = 1
 export var movement_speed = 30
 export var is_enemy = false
+
+export(SpriteFrames) var regular_sprites
+export(SpriteFrames) var enemy_sprites
 var targeted = false
 var old_pos
 
 func _ready():
 	old_pos = global_position
+	
+	if(not is_enemy):
+		$AnimatedSprite.frames = regular_sprites
+	else:
+		$AnimatedSprite.frames = enemy_sprites
 
 func damage(amount):
 	health -= amount

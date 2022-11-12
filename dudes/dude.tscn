@@ -1,18 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/units/Pikeman/walk_0001.png" type="Texture" id=1]
+[ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
-[ext_resource path="res://assets/units/Pikeman/walk_0002.png" type="Texture" id=3]
-[ext_resource path="res://assets/units/Pikeman/walk_0003.png" type="Texture" id=4]
-[ext_resource path="res://assets/units/Pikeman/walk_0004.png" type="Texture" id=5]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 4.0
-} ]
+[ext_resource path="res://dudes/enemy_sprite_frames.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -20,10 +10,11 @@ animations = [ {
 rotate = false
 loop = false
 script = ExtResource( 2 )
+regular_sprites = ExtResource( 1 )
+enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-frame = 2
+frames = ExtResource( 1 )
 playing = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]

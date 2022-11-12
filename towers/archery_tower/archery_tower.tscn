@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://towers/tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/archery_tower.gd" type="Script" id=2]
 [ext_resource path="res://assets/towers/tower/Tower.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/tower/Tower_enemy.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 115.039
 
 [node name="ArcheryTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+regular_texture = ExtResource( 3 )
+enemy_texture = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
