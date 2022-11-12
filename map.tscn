@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/Map_Summer.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://dudes/path_switcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dudes/path_switch_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=7]
+[ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -92,3 +93,6 @@ next_paths = [ NodePath("../BlueLeftPath2") ]
 
 [node name="Barracks" parent="." instance=ExtResource( 7 )]
 position = Vector2( 330, 170 )
+
+[node name="archery_tower" parent="." instance=ExtResource( 8 )]
+position = Vector2( 570, 160 )
