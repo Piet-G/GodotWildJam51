@@ -1,20 +1,10 @@
 extends Node
 
-signal food_added(amount)
-signal food_removed(amount)
+var tile_size = Vector2(30, 30)
+var grid_origin = Vector2(0, 0)
 
-var food = 0
-var gold = 0
-func add_food(amount: int):
-	food += amount
-	
-	emit_signal("food_added", amount)
-
-func remove_food(amount: int):
-	food -= amount
-	
-	emit_signal("food_removed", amount)
-	
+func snap_to_grid_position(pos: Vector2) -> Vector2:
+	return (pos / tile_size).floor() * tile_size
 
 # Declare member variables here. Examples:
 # var a = 2

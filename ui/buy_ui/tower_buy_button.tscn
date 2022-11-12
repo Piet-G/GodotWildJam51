@@ -6,6 +6,7 @@
 [node name="TowerBuyButton" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
+disabled = true
 texture_normal = ExtResource( 2 )
 script = ExtResource( 1 )
 
