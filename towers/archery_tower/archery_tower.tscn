@@ -14,11 +14,15 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 
 [node name="Range" type="Area2D" parent="." index="1"]
+position = Vector2( 16, 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 1 )
 
 [node name="ShootTimer" type="Timer" parent="." index="2"]
 autostart = true
+
+[node name="ArrowPosition" type="Position2D" parent="." index="3"]
+position = Vector2( 16, 11 )
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

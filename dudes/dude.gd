@@ -14,6 +14,9 @@ func damage(amount):
 	if(health <= 0):
 		queue_free()
 
+func is_active():
+	return true
+
 func _physics_process(delta):
 	offset += movement_speed * delta
 	
