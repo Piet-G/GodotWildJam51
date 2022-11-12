@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "TowerInfo",
+"language": "GDScript",
+"path": "res://towers/tower_info.gd"
+} ]
+_global_script_class_icons={
+"TowerInfo": ""
+}
+
 [application]
 
 config/name="GodotWildJam51"
@@ -18,6 +28,7 @@ config/icon="res://icon.png"
 
 ResourceManager="*res://resource_manager.gd"
 Ui="*res://UI.tscn"
+TowerInfoService="*res://tower_info_service.tscn"
 
 [gui]
 
