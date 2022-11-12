@@ -24,4 +24,4 @@ func _process(delta):
 		if(Input.is_action_just_pressed("place_tower") and not GridService.is_grid_position_occupied(grid_position)):
 			GridService.add_to_grid(tower_ghost,grid_position)
 			tower_ghost = null
-			ResourceManager.remove_food(clicked_info.food_cost)
+			ResourceManager.remove_food(clicked_info.food_cost, false)

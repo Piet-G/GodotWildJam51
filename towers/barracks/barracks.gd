@@ -26,7 +26,7 @@ func _on_WarButton_pressed():
 
 func _process(delta):
 	progress.value = $Timer.time_left / $Timer.wait_time
-	$HBoxContainer/VBoxContainer/WarButton.disabled = to_war_count != 0
+	$HBoxContainer/VBoxContainer/WarButton.disabled = to_war_count > 0 or count <= 0
 
 var count = 0
 func _on_Timer_timeout():

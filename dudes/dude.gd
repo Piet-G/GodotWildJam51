@@ -1,10 +1,17 @@
 extends PathFollow2D
 
+export var health = 1
 export var movement_speed = 30
+var targeted = false
 var old_pos
 
 func _ready():
 	old_pos = global_position
+
+func damage(amount):
+	health -= amount
+	if(health <= 0):
+		queue_free()
 
 func _physics_process(delta):
 	offset += movement_speed * delta

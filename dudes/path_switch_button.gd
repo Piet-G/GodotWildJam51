@@ -11,3 +11,4 @@ func _process(delta):
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("select_path")):
 		get_parent().togle_path_active(active_path)
+		queue_free()

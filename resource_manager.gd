@@ -5,12 +5,28 @@ signal food_removed(amount)
 
 var food = 0
 var gold = 0
-func add_food(amount: int):
+
+var enemy_food = 0
+var enemy_gold = 0
+
+func get_food(is_enemy):
+	if(is_enemy):
+		return enemy_food
+	else:
+		return gold
+	
+func get_gold(is_enemy):
+	if(is_enemy):
+		return enemy_gold
+	else:
+		return gold
+
+func add_food(amount: int, is_enemy):
 	food += amount
 	
 	emit_signal("food_added", amount)
 
-func remove_food(amount: int):
+func remove_food(amount: int, is_enemy):
 	food -= amount
 	
 	emit_signal("food_removed", amount)
