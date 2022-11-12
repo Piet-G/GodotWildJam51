@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Path2D",
+"class": "DudePath",
+"language": "GDScript",
+"path": "res://dudes/dude_path.gd"
+}, {
+"base": "Node2D",
+"class": "PathSwitcher",
+"language": "GDScript",
+"path": "res://dudes/path_switcher.gd"
+}, {
 "base": "Resource",
 "class": "TowerInfo",
 "language": "GDScript",
 "path": "res://towers/tower_info.gd"
 } ]
 _global_script_class_icons={
+"DudePath": "",
+"PathSwitcher": "",
 "TowerInfo": ""
 }
 
@@ -42,6 +54,11 @@ common/drop_mouse_on_gui_input_disabled=true
 [input]
 
 place_tower={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+select_path={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]

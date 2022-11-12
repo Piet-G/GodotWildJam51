@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://dudes/path_switch_button.gd" type="Script" id=2]
+
+[node name="PathSwitchButton" type="Sprite"]
+scale = Vector2( 0.1, 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -100, -40, 100, -40, 100, 40, -100, 40 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
