@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shopscreen_panel.png-26fd62b4d10e706028b6567c8b2690df.stex"
+path="res://.import/shop_screen_button.png-e450595af5a60d4667c25f99736c5f6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/shopscreen_panel.png"
-dest_files=[ "res://.import/shopscreen_panel.png-26fd62b4d10e706028b6567c8b2690df.stex" ]
+source_file="res://assets/UI/shop_screen_button.png"
+dest_files=[ "res://.import/shop_screen_button.png-e450595af5a60d4667c25f99736c5f6a.stex" ]
 
 [params]
 
