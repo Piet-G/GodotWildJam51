@@ -1,7 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/buy_ui/tower_buy_ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "slide_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("TowerBuyUI:rect_position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -70.0, 0.0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "slide_in"
+
+[sub_resource type="AnimationNodeTimeScale" id=4]
+
+[sub_resource type="AnimationNodeBlendTree" id=3]
+graph_offset = Vector2( -327.36, 80.535 )
+nodes/Animation/node = SubResource( 2 )
+nodes/Animation/position = Vector2( -80, 130 )
+nodes/TimeScale/node = SubResource( 4 )
+nodes/TimeScale/position = Vector2( 90, 100 )
+nodes/output/position = Vector2( 240, 100 )
+node_connections = [ "TimeScale", 0, "Animation", "output", 0, "TimeScale" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -10,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 mouse_default_cursor_shape = 13
+script = ExtResource( 3 )
 
 [node name="TopBar" type="HBoxContainer" parent="UI"]
 anchor_left = 0.5
@@ -33,4 +65,22 @@ margin_right = 43.0
 margin_bottom = 16.0
 
 [node name="TowerBuyUI" parent="UI" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -133.5
+margin_top = -70.0
+margin_right = 133.5
+margin_bottom = 13.0
 mouse_default_cursor_shape = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/slide_in = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="UI"]
+tree_root = SubResource( 3 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/TimeScale/scale = 0.0
+
+[connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]

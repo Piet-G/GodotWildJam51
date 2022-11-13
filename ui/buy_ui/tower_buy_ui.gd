@@ -1,20 +1,22 @@
-extends GridContainer
+extends NinePatchRect
 
 var tower_ghost
 var clicked_info: TowerInfo
+
+signal open_toggled()
 
 func _ready():
 	for info in TowerInfoService.tower_info_list:
 		var tower_buy_button = preload("res://ui/buy_ui/tower_buy_button.tscn").instance()
 		
-		add_child(tower_buy_button)
+		$TowerBuyUI.add_child(tower_buy_button)
 		tower_buy_button.set_tower_info(info)
 		tower_buy_button.connect("pressed", self, "_on_buy_tower_clicked", [info])
 
 func _on_buy_tower_clicked(info: TowerInfo) -> void:
 	tower_ghost = load(info.scene).instance()
 	clicked_info = info
-	add_child(tower_ghost)
+	$TowerBuyUI.add_child(tower_ghost)
 
 func _process(delta):
 	if(tower_ghost):
@@ -25,3 +27,7 @@ func _process(delta):
 			GridService.add_to_grid(tower_ghost,grid_position)
 			tower_ghost = null
 			ResourceManager.remove_food(clicked_info.food_cost, false)
+
+
+func _on_ToggleButton_pressed():
+	emit_signal("open_toggled")
