@@ -15,7 +15,7 @@ enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]
