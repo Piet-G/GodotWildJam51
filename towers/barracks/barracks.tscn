@@ -27,6 +27,7 @@ script = ExtResource( 3 )
 type = 0
 regular_texture = ExtResource( 4 )
 enemy_texture = ExtResource( 5 )
+unit_scene = "res://dudes/dude.tscn"
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
