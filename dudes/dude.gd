@@ -3,6 +3,7 @@ extends PathFollow2D
 export var health = 1
 export var movement_speed = 30
 export var is_enemy = false
+export var castle_damage = 1
 
 export(SpriteFrames) var regular_sprites
 export(SpriteFrames) var enemy_sprites
@@ -33,6 +34,9 @@ func _physics_process(delta):
 		var dude_path: DudePath = get_parent()
 		
 		if(dude_path.is_final()):
+			
+			CastleService.damage(castle_damage, not is_enemy)
+			print(CastleService.get_hp_ratio(is_enemy))
 			free()
 			return
 			
