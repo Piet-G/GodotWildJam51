@@ -1,16 +1,13 @@
 extends "res://towers/tower.gd"
 
-onready var progress = $HBoxContainer/TextureProgress
-onready var count_label = $HBoxContainer/VBoxContainer/CountLabel
+export(String, FILE, "*.tscn") var unit_scene
 
 var to_war_count = 0
 var closest_path: Path2D
 var closest_distance = 100000000000000
 
-func _ready():
-	pass
-
 func added_to_grid():
+	.added_to_grid()
 	for path in get_tree().get_nodes_in_group("path"):
 		if(path.is_enemy == is_enemy):
 			var path_node: Path2D = path
@@ -37,7 +34,7 @@ var dudes = []
 var count = 0
 func _on_Timer_timeout():
 	count += 1
-	var dude = preload("res://dudes/dude.tscn").instance()
+	var dude = load(unit_scene).instance()
 	dude.position = Vector2(randf(), randf()) * 10
 	dude.is_enemy = is_enemy
 	dudes.append(dude)

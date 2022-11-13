@@ -18,6 +18,9 @@ func _ready():
 		$AnimatedSprite.frames = regular_sprites
 	else:
 		$AnimatedSprite.frames = enemy_sprites
+	
+func get_health():
+	return health
 
 func damage(amount):
 	health -= amount
