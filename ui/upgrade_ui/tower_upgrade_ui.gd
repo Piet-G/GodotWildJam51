@@ -1,12 +1,6 @@
-class_name TowerInfo
-extends Resource
+extends Control
 
-export var name = "Tower"
-export var food_cost = 1
-export var gold_cost = 1
-export(String, FILE, "*.png") var icon = "res://icon.png"
-export(String, FILE, "*.tscn") var scene
-export(Array, Resource) var next_upgrades = []
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

@@ -20,6 +20,7 @@ func _on_buy_tower_clicked(info: TowerInfo) -> void:
 	tower_ghost = load(info.scene).instance()
 	clicked_info = info
 	get_tree().current_scene.add_child(tower_ghost)
+	Ui.placing_building = true
 
 func _process(delta):
 	if(tower_ghost):
@@ -29,6 +30,7 @@ func _process(delta):
 		if(Input.is_action_just_pressed("place_tower") and not GridService.is_grid_position_occupied_for_player(grid_position)):
 			GridService.add_to_grid(tower_ghost,grid_position)
 			tower_ghost = null
+			Ui.placing_building = false
 			ResourceManager.remove_food(clicked_info.food_cost, false)
 
 

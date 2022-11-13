@@ -6,10 +6,8 @@ var to_war_count = 0
 var closest_path: Path2D
 var closest_distance = 100000000000000
 
-func _ready():
-	pass
-
 func added_to_grid():
+	.added_to_grid()
 	for path in get_tree().get_nodes_in_group("path"):
 		if(path.is_enemy == is_enemy):
 			var path_node: Path2D = path

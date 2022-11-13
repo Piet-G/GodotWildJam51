@@ -40,12 +40,17 @@ var in_war = false
 var to_war_barracks = []
 
 func _on_barracks_clicked(barracks):
-	print("Clicked")
+	if(barracks in to_war_barracks):
+		barracks.set_selected(false)
+		return
+	barracks.set_selected(true)
 	to_war_barracks.append(barracks)
 
 func stop_war_mode():
 	$VBoxContainer/CancelWar.visible = false
 	in_war = false
+	for barrack in to_war_barracks:
+		barrack.set_selected(false)
 	to_war_barracks = []
 	get_tree().paused = false
 	for tower in get_tree().get_nodes_in_group("tower"):
