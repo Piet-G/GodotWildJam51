@@ -8,7 +8,8 @@
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 13
 
 [node name="TopBar" type="HBoxContainer" parent="UI"]
 anchor_left = 0.5
@@ -32,3 +33,4 @@ margin_right = 43.0
 margin_bottom = 16.0
 
 [node name="TowerBuyUI" parent="UI" instance=ExtResource( 2 )]
+mouse_default_cursor_shape = 2
