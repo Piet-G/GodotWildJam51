@@ -3,6 +3,8 @@ extends TextureButton
 var tower_info: TowerInfo
 
 func _process(delta):
+	if(not tower_info):
+		return
 	disabled = not (ResourceManager.food >= tower_info.food_cost and ResourceManager.gold >= tower_info.gold_cost)
 	material.set_shader_param("grayscale", disabled)
 	
