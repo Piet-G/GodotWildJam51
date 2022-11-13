@@ -43,6 +43,7 @@ script = ExtResource( 3 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="Button" type="Button" parent="Control"]
 margin_left = 10.0
@@ -62,7 +63,12 @@ margin_bottom = 20.0
 [node name="TowerBuyButton" parent="Control/TextureRect" instance=ExtResource( 4 )]
 material = SubResource( 4 )
 
-[node name="Upgrade1" parent="Control" instance=ExtResource( 2 )]
+[node name="Upgrades" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Upgrade1" parent="Control/Upgrades" instance=ExtResource( 2 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 100.0
@@ -70,10 +76,10 @@ margin_top = -70.0
 margin_right = 140.0
 margin_bottom = -30.0
 
-[node name="TowerBuyButton" parent="Control/Upgrade1" instance=ExtResource( 4 )]
+[node name="TowerBuyButton" parent="Control/Upgrades/Upgrade1" instance=ExtResource( 4 )]
 material = SubResource( 3 )
 
-[node name="Upgrade2" parent="Control" instance=ExtResource( 2 )]
+[node name="Upgrade2" parent="Control/Upgrades" instance=ExtResource( 2 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 100.0
@@ -81,10 +87,10 @@ margin_top = -20.0
 margin_right = 140.0
 margin_bottom = 20.0
 
-[node name="TowerBuyButton" parent="Control/Upgrade2" instance=ExtResource( 4 )]
+[node name="TowerBuyButton" parent="Control/Upgrades/Upgrade2" instance=ExtResource( 4 )]
 material = SubResource( 3 )
 
-[node name="Upgrade3" parent="Control" instance=ExtResource( 2 )]
+[node name="Upgrade3" parent="Control/Upgrades" instance=ExtResource( 2 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 100.0
@@ -92,7 +98,7 @@ margin_top = 30.0
 margin_right = 140.0
 margin_bottom = 70.0
 
-[node name="TowerBuyButton" parent="Control/Upgrade3" instance=ExtResource( 4 )]
+[node name="TowerBuyButton" parent="Control/Upgrades/Upgrade3" instance=ExtResource( 4 )]
 material = SubResource( 3 )
 margin_right = 43.8
 margin_bottom = 38.72

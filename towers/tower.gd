@@ -27,6 +27,7 @@ func _ready():
 
 func added_to_grid():
 	active = true
+	print(name)
 	
 	$Area2D.connect("input_event", self, "_on_Area2D_input_event" )
 
@@ -41,3 +42,10 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("place_tower") and not is_enemy and active):
 		emit_signal("clicked")
 		Ui.upgrade_clicked(self)
+
+func upgrade_to(tower_info: TowerInfo):
+	print("Spawning", tower_info.name)
+	var new_tower = load(tower_info.scene).instance()
+	get_tree().current_scene.add_child(new_tower)
+	GridService.add_to_grid(new_tower, GridService.to_grid_position(global_position + Vector2(1,1)))
+	queue_free()

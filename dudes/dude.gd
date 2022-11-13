@@ -39,7 +39,6 @@ func _physics_process(delta):
 		if(dude_path.is_final()):
 			
 			CastleService.damage(castle_damage, not is_enemy)
-			print(CastleService.get_hp_ratio(is_enemy))
 			free()
 			return
 			

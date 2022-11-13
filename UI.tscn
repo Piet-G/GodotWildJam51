@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI.gd" type="Script" id=3]
 [ext_resource path="res://UI_layer.gd" type="Script" id=4]
+[ext_resource path="res://ui/game_over/game_over.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/win_screen/win_screen.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide_in"
@@ -101,6 +103,12 @@ margin_top = 24.0
 margin_right = 83.0
 margin_bottom = 44.0
 text = "Cancel War"
+
+[node name="WinScreen" parent="UI" instance=ExtResource( 6 )]
+visible = false
+
+[node name="GameOver" parent="UI" instance=ExtResource( 5 )]
+visible = false
 
 [connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
 [connection signal="pressed" from="UI/VBoxContainer/ToWarButton" to="UI" method="_on_ToWarButton_pressed"]

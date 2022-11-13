@@ -15,8 +15,8 @@ func set_tower_info(info: TowerInfo):
 var popup
 func _on_TowerBuyButton_mouse_entered():
 	popup = preload("res://ui/tower_info_popup.tscn").instance()
-	popup.rect_position += Vector2(100, 0)
-	add_child(popup)
+	Ui.get_node("UI").add_child(popup)
+	popup.rect_position = rect_global_position + Vector2(100, 0)
 	popup.popup_for_tower(tower_info)
 
 func _on_TowerBuyButton_mouse_exited():

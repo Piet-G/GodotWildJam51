@@ -1,11 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tower_info_service.gd" type="Script" id=1]
 [ext_resource path="res://towers/farm/farm_info.tres" type="Resource" id=2]
 [ext_resource path="res://towers/archery_tower/archery_tower_info.tres" type="Resource" id=3]
 [ext_resource path="res://towers/barracks/barracks_info.tres" type="Resource" id=4]
-[ext_resource path="res://towers/barracks/RogueCamp/RogueCampInfo.tres" type="Resource" id=5]
 
 [node name="TowerInfoService" type="Node"]
 script = ExtResource( 1 )
-tower_info_list = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]
+tower_info_list = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ]

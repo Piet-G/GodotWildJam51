@@ -18,3 +18,10 @@ func get_hp_ratio(is_enemy):
 
 func damage(damage_amount, is_enemy):
 	hp[is_enemy] -= damage_amount
+	
+	if(hp[is_enemy] <= 0):
+		if(is_enemy):
+			Ui.win()
+		else:
+			Ui.lose()
+			

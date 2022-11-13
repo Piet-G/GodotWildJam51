@@ -19,7 +19,7 @@ func can_launch_war():
 
 func launch_war():
 	for barrack in GridService.get_buildings_of_type(Tower.Type.barracks, true):
-		if(barrack.count > 3 and barrack.can_launch_war()):
+		if(barrack.count > 3 and barrack.can_launch_war() and barrack.is_enemy):
 			barrack.launch_war()
 func get_building_count():
 	return float(farm_count + tower_count + barrack_count)
@@ -27,6 +27,9 @@ func get_building_count():
 func _on_TickTimer_timeout():
 	if(can_launch_war()):
 		launch_war()
+		return
+	
+	if(get_building_count() > 23):
 		return
 	
 	if(farm_count / get_building_count() <= wanted_farm_to_other_ratio):
