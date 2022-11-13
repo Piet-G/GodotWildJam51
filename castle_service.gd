@@ -17,5 +17,4 @@ func get_hp_ratio(is_enemy):
 	return hp[is_enemy] / float(get_max_hp(is_enemy))
 
 func damage(damage_amount, is_enemy):
-	print(hp[is_enemy], damage_amount)
 	hp[is_enemy] -= damage_amount

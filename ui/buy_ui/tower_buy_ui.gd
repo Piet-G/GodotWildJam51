@@ -16,7 +16,7 @@ func _ready():
 func _on_buy_tower_clicked(info: TowerInfo) -> void:
 	tower_ghost = load(info.scene).instance()
 	clicked_info = info
-	$TowerBuyUI.add_child(tower_ghost)
+	get_tree().current_scene.add_child(tower_ghost)
 
 func _process(delta):
 	if(tower_ghost):
