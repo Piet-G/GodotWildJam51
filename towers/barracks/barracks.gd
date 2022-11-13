@@ -8,8 +8,7 @@ var closest_path: Path2D
 var closest_distance = 100000000000000
 
 func _ready():
-	if(is_enemy):
-		$HBoxContainer.visible = false
+	pass
 
 func added_to_grid():
 	for path in get_tree().get_nodes_in_group("path"):
@@ -33,11 +32,7 @@ func launch_war():
 	$WarTimer.start()
 	
 	_count_updated()
-
-func _process(delta):
-	progress.value = $Timer.time_left / $Timer.wait_time
-	$HBoxContainer/VBoxContainer/WarButton.disabled = not can_launch_war()
-
+	
 var dudes = []
 var count = 0
 func _on_Timer_timeout():
@@ -49,8 +44,10 @@ func _on_Timer_timeout():
 	$DudeSpawnLocation.add_child(dude)
 	_count_updated()
 	
+func get_dude_count():
+	return len(dudes)
 func _count_updated():
-	count_label.text = str(count)
+	return
 
 func _on_WarTimer_timeout():
 	var dude = dudes.pop_front()

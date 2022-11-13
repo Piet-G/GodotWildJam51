@@ -16,6 +16,9 @@ func to_global_position(pos: Vector2) -> Vector2:
 func is_grid_position_occupied(pos: Vector2) -> bool:
 	return grid_map.has(pos) or illegal_spaces.has(pos)
 
+func is_grid_position_occupied_for_player(pos: Vector2) -> bool:
+	return grid_map.has(pos) or illegal_spaces.has(pos) or enemy_info.has(pos)
+
 func snap_to_grid_position(pos: Vector2) -> Vector2:
 	return to_global_position(to_grid_position(pos))
 

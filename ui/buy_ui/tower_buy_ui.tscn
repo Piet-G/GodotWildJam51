@@ -2,8 +2,8 @@
 
 [ext_resource path="res://ui/buy_ui/tower_buy_ui.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=2]
-[ext_resource path="res://assets/UI/shopscreen_panel.png" type="Texture" id=3]
-[ext_resource path="res://assets/Projectiles/arrow_projectile.png" type="Texture" id=4]
+[ext_resource path="res://ui/buy_ui/tower_buy_panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/UI/shop_screen_button.png" type="Texture" id=4]
 
 [sub_resource type="Theme" id=1]
 
@@ -31,19 +31,18 @@ margin_bottom = -17.0
 mouse_default_cursor_shape = 3
 columns = 5
 
-[node name="TextureRect" type="TextureRect" parent="TowerBuyUI"]
-margin_right = 56.0
-margin_bottom = 48.0
-texture = ExtResource( 3 )
+[node name="TextureRect" parent="TowerBuyUI" instance=ExtResource( 3 )]
 
 [node name="ToggleButton" type="TextureButton" parent="."]
+show_behind_parent = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -6.5
 margin_top = -14.0
-margin_right = 5.5
+margin_right = 28.5
+margin_bottom = 28.0
 texture_normal = ExtResource( 4 )
 
 [connection signal="pressed" from="ToggleButton" to="." method="_on_ToggleButton_pressed"]
