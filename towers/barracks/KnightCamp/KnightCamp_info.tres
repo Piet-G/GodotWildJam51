@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Farm"
+name = "Knight Camp"
 food_cost = 10
 gold_cost = 0
-icon = "res://assets/towers/farm/farm_simple.png"
-scene = "res://towers/farm/farm.tscn"
+icon = "res://assets/towers/barracks/Roman_camp.png"
+scene = "res://towers/barracks/KnightCamp/Knight_camp.tscn"
 next_upgrades = [  ]
