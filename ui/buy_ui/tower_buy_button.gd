@@ -11,6 +11,7 @@ func _process(delta):
 func set_tower_info(info: TowerInfo):
 	self.tower_info = info
 	texture_normal = load(info.icon)
+	rect_position += info.icon_offset
 
 var popup
 func _on_TowerBuyButton_mouse_entered():

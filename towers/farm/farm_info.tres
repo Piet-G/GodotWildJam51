@@ -11,3 +11,4 @@ icon = "res://assets/towers/farm/farm_simple.png"
 scene = "res://towers/farm/farm.tscn"
 next_upgrades = [  ]
 flavour_text = "This is flavour text, edit me"
+icon_offset = Vector2( 0, 0 )
