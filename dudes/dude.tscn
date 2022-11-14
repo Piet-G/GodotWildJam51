@@ -6,7 +6,7 @@
 
 [sub_resource type="CircleShape2D" id=2]
 
-[node name="Dude" type="PathFollow2D"]
+[node name="Dude" type="PathFollow2D" groups=["dude", "zindexed"]]
 rotate = false
 loop = false
 script = ExtResource( 2 )
@@ -15,7 +15,6 @@ enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]

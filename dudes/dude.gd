@@ -29,6 +29,9 @@ func damage(amount):
 
 func is_active():
 	return true
+	
+func get_z_position():
+	return global_position.y - 20
 
 func _physics_process(delta):
 	offset += movement_speed * delta

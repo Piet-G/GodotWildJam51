@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="Tower" type="Node2D" groups=["tower"]]
+[node name="Tower" type="Node2D" groups=["tower", "zindexed"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -55,6 +55,7 @@ Ui="*res://UI.tscn"
 TowerInfoService="*res://tower_info_service.tscn"
 GridService="*res://grid_service.gd"
 CastleService="*res://castle_service.gd"
+LayerService="*res://layer_service.gd"
 
 [display]
 
