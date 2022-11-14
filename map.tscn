@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/MapAnim_0005.png" type="Texture" id=2]
@@ -26,19 +26,24 @@ animations = [ {
 "speed": 8.0
 } ]
 
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 119.419, 547.596, 0, 0, 0, 0, 120, 450, 0, 0, 0, 0, 280, 450, 0, 0, 0, 0, 280, 330, 0, 0, 0, 0, 110, 330, 0, 0, 0, 0, 109.893, 181.073, 0, 0, 0, 0, 150, 180, 0, 0, 0, 0, 360, 180, 0, 0, 0, 0, 360, 140, 0, 0, 0, 0, 480, 140, 0, 0, 0, 0, 480, 220, 0, 0, 0, 0, 530, 230 )
+}
+
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 119.419, 547.596, 0, 0, 0, 0, 227.637, 546.705, 0, 0, 0, 0, 230, 470, 0, 0, 0, 0, 340, 470 )
+"points": PoolVector2Array( 0, 0, 0, 0, 119.419, 547.596, 0, 0, 0, 0, 194.673, 546.33, 0, 0, 0, 0, 227.637, 546.705, 0, 0, 0, 0, 230, 470, 0, 0, 0, 0, 340, 470 )
 }
 
 [sub_resource type="Curve2D" id=12]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 450, 130, 0, 0, 0, 0, 410, 130, 0, 0, 0, 0, 410, 70, 0, 0, 0, 0, 310, 70, 0, 0, 0, 0, 309, 108, 0, 0, 0, 0, 120.75, 106, 0, 0, 0, 0, 109.75, 97.25, 0, 0, 0, 0, 102.75, 96.25, 0, 0, 0, 0, 93.5, 97.25, 0, 0, 0, 0, 85, 104.5, 0, 0, 0, 0, 70, 110, 0, 0, 0, 0, 70, 250, 0, 0, 0, 0, 230, 250, 0, 0, 0, 0, 230, 390, 0, 0, 0, 0, 70, 390, 0, 0, 0, 0, 70, 480 )
+"points": PoolVector2Array( 0, 0, 0, 0, 447.168, 137.551, 0, 0, 0, 0, 407.168, 137.551, 0, 0, 0, 0, 410, 70, 0, 0, 0, 0, 310, 70, 0, 0, 0, 0, 309, 108, 0, 0, 0, 0, 120.75, 106, 0, 0, 0, 0, 109.75, 97.25, 0, 0, 0, 0, 102.75, 96.25, 0, 0, 0, 0, 93.5, 97.25, 0, 0, 0, 0, 85, 104.5, 0, 0, 0, 0, 70, 110, 0, 0, 0, 0, 70, 270, 0, 0, 0, 0, 230, 270, 0, 0, 0, 0, 230, 390, 0, 0, 0, 0, 70, 390, 0, 0, 0, 0, 70, 480 )
 }
 
 [sub_resource type="Curve2D" id=9]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 330.192, 473.649, 0, 0, 0, 0, 215.15, 474.838, 0, 0, 0, 0, 212.177, 552.434, 0, 0, 0, 0, 119.121, 552.731 )
+"points": PoolVector2Array( 0, 0, 0, 0, 330.192, 473.649, 0, 0, 0, 0, 327.168, 477.551, 0, 0, 0, 0, 220, 480, 0, 0, 0, 0, 220, 560, 0, 0, 0, 0, 120, 560 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -48,7 +53,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 510, 220, 0, 0, 0, 0, 512.623, 309.791, 0, 0, 0, 0, 351.55, 309.791, 0, 0, 0, 0, 352.111, 446.731, 0, 0, 0, 0, 510.378, 446.17, 0, 0, 0, 0, 514.055, 591.36, 0, 0, 0, 0, 496.968, 592.1, 0, 0, 0, 0, 487.444, 587.735, 0, 0, 0, 0, 478.713, 585.75, 0, 0, 0, 0, 470.776, 588.528, 0, 0, 0, 0, 461.648, 594.084, 0, 0, 0, 0, 275.452, 597.126, 0, 0, 0, 0, 271.781, 631.165, 0, 0, 0, 0, 170.333, 634.168, 0, 0, 0, 0, 168.75, 555, 0, 0, 0, 0, 111.25, 554.25 )
+"points": PoolVector2Array( 0, 0, 0, 0, 510, 220, 0, 0, 0, 0, 507.168, 337.551, 0, 0, 0, 0, 357.168, 337.551, 0, 0, 0, 0, 352.111, 446.731, 0, 0, 0, 0, 510.378, 446.17, 0, 0, 0, 0, 514.055, 591.36, 0, 0, 0, 0, 496.968, 592.1, 0, 0, 0, 0, 487.444, 587.735, 0, 0, 0, 0, 478.713, 585.75, 0, 0, 0, 0, 470.776, 588.528, 0, 0, 0, 0, 461.648, 594.084, 0, 0, 0, 0, 275.452, 597.126, 0, 0, 0, 0, 271.781, 631.165, 0, 0, 0, 0, 167.168, 637.551, 0, 0, 0, 0, 167.168, 567.551, 0, 0, 0, 0, 111.25, 554.25 )
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -84,6 +89,18 @@ position = Vector2( 360, 360 )
 [node name="Farm4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, 480 )
 
+[node name="BlueLeftPath1" type="Path2D" parent="."]
+position = Vector2( -60, -80 )
+curve = SubResource( 14 )
+script = ExtResource( 4 )
+next_switcher = NodePath("../BlueMiddlePathSwitcher")
+
+[node name="Dude" parent="BlueLeftPath1" instance=ExtResource( 3 )]
+position = Vector2( 119.419, 547.596 )
+
+[node name="Rhino" parent="BlueLeftPath1" instance=ExtResource( 17 )]
+position = Vector2( 119.419, 547.596 )
+
 [node name="BlueRightPath1" type="Path2D" parent="."]
 position = Vector2( 2.83163, -7.55099 )
 curve = SubResource( 1 )
@@ -98,7 +115,7 @@ position = Vector2( 119.419, 547.596 )
 
 [node name="RedLeftPath1" type="Path2D" parent="."]
 self_modulate = Color( 1, 0.501961, 0.501961, 0.701961 )
-position = Vector2( 2.83163, -7.55099 )
+position = Vector2( 0, -10 )
 curve = SubResource( 12 )
 script = ExtResource( 4 )
 is_enemy = true
@@ -108,7 +125,7 @@ position = Vector2( 450, 130 )
 
 [node name="RedRightPath1" type="Path2D" parent="."]
 self_modulate = Color( 1, 0.501961, 0.603922, 0.701961 )
-position = Vector2( 2.83163, -27.551 )
+position = Vector2( 0, -30 )
 curve = SubResource( 9 )
 script = ExtResource( 4 )
 is_enemy = true
@@ -193,6 +210,7 @@ next_paths = [ NodePath("../RedMiddlePath"), NodePath("../BlueRightPath1") ]
 [node name="EnemyAI" parent="." instance=ExtResource( 9 )]
 
 [node name="EnemyInfo" type="Node2D" parent="."]
+visible = false
 
 [node name="EnemyInfo" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 40, 0 )
@@ -467,6 +485,7 @@ position = Vector2( 570, 10 )
 is_enemy = true
 
 [node name="SpaceOccupiers" type="Node2D" parent="."]
+visible = false
 
 [node name="SpaceOccupier" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 160, 120 )

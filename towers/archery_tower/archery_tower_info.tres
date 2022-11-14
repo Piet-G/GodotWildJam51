@@ -10,3 +10,4 @@ gold_cost = 0
 icon = "res://assets/towers/tower/Tower.png"
 scene = "res://towers/archery_tower/archery_tower.tscn"
 next_upgrades = [  ]
+flavour_text = "This is flavour text, edit me"

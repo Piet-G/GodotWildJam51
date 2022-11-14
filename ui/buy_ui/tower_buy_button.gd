@@ -21,3 +21,7 @@ func _on_TowerBuyButton_mouse_entered():
 
 func _on_TowerBuyButton_mouse_exited():
 	popup.queue_free()
+	
+func _exit_tree():
+	if(is_instance_valid(popup)):
+		popup.queue_free()

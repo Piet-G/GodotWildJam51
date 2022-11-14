@@ -10,3 +10,4 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Scouts_camp.png"
 scene = "res://towers/barracks/RogueCamp/RogueCamp.tscn"
 next_upgrades = [  ]
+flavour_text = "This is flavour text, edit me"
