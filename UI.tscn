@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://UI_layer.gd" type="Script" id=4]
 [ext_resource path="res://ui/game_over/game_over.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/win_screen/win_screen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/upgrade_ui_new/upgrade_ui_new.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide_in"
@@ -23,19 +27,48 @@ tracks/0/keys = {
 "values": [ -70.0, 0.0 ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "upgrade_slide_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("UpgradeUI:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 289, -210 ), Vector2( 289, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAdd2" id=7]
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "upgrade_slide_in"
+
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "slide_in"
 
 [sub_resource type="AnimationNodeTimeScale" id=4]
 
+[sub_resource type="AnimationNodeTimeScale" id=9]
+
 [sub_resource type="AnimationNodeBlendTree" id=3]
-graph_offset = Vector2( -327.36, 80.535 )
+graph_offset = Vector2( -208.32, -57.5287 )
+nodes/Add2/node = SubResource( 7 )
+nodes/Add2/position = Vector2( 300, -50 )
 nodes/Animation/node = SubResource( 2 )
 nodes/Animation/position = Vector2( -80, 130 )
-nodes/TimeScale/node = SubResource( 4 )
-nodes/TimeScale/position = Vector2( 90, 100 )
-nodes/output/position = Vector2( 240, 100 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+"nodes/Animation 2/node" = SubResource( 8 )
+"nodes/Animation 2/position" = Vector2( -140, -10 )
+nodes/BuyTimeScale/node = SubResource( 4 )
+nodes/BuyTimeScale/position = Vector2( 90, 110 )
+nodes/UpgradeTimeScale/node = SubResource( 9 )
+nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
+nodes/output/position = Vector2( 470, -50 )
+node_connections = [ "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "output", 0, "Add2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -76,13 +109,17 @@ margin_bottom = 13.0
 mouse_default_cursor_shape = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/RESET = SubResource( 5 )
 anims/slide_in = SubResource( 1 )
+anims/upgrade_slide_in = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="UI"]
 tree_root = SubResource( 3 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/TimeScale/scale = 0.0
+parameters/Add2/add_amount = 1.0
+parameters/BuyTimeScale/scale = 0.0
+parameters/UpgradeTimeScale/scale = 0.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 margin_left = 703.0
@@ -109,6 +146,15 @@ visible = false
 
 [node name="GameOver" parent="UI" instance=ExtResource( 5 )]
 visible = false
+
+[node name="UpgradeUI" parent="UI" instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -111.0
+margin_top = -210.0
+margin_right = 111.0
+margin_bottom = -34.0
 
 [connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
 [connection signal="pressed" from="UI/VBoxContainer/ToWarButton" to="UI" method="_on_ToWarButton_pressed"]

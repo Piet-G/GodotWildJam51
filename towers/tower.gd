@@ -42,7 +42,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	if(event.is_action_pressed("place_tower") and not is_enemy and active):
 		emit_signal("clicked")
 		Ui.upgrade_clicked(self)
-
+		
 func upgrade_to(tower_info: TowerInfo):
 	print("Spawning", tower_info.name)
 	var new_tower = load(tower_info.scene).instance()

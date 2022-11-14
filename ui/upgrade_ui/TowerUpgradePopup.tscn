@@ -9,7 +9,7 @@
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 284, 205 )
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 
 uniform bool grayscale = false;
@@ -23,16 +23,15 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
-shader = SubResource( 2 )
+shader = SubResource( 5 )
 shader_param/grayscale = false
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
-shader = SubResource( 2 )
+shader = SubResource( 5 )
 shader_param/grayscale = false
 
 [node name="TowerUpgradePopup" type="PopupPanel"]
-visible = true
 anchor_right = 0.2
 anchor_bottom = 0.267
 margin_bottom = -0.200012

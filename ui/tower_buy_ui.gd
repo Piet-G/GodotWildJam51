@@ -36,3 +36,4 @@ func _process(delta):
 
 func _on_ToggleButton_pressed():
 	emit_signal("open_toggled")
+	print("Open")
