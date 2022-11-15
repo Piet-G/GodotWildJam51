@@ -12,3 +12,6 @@ func _on_food_added(amount):
 
 func _on_food_removed(amount):
 	_food_amount_changed()
+
+func _process(delta):
+	$GoldCount.text = str(ResourceManager.get_gold(false))

@@ -4,6 +4,7 @@ export(SpriteFrames) var red_no_animation
 export(SpriteFrames) var blue_no_animation
 export(SpriteFrames) var red_animation
 export(SpriteFrames) var blue_animation
+
 export var is_enemy = false
 # Declare member variables here. Examples:
 # var a = 2
@@ -30,6 +31,8 @@ func show_not_animating():
 
 func set_on_fire():
 	on_fire = true
+	
+	ResourceManager.add_gold(1, not is_enemy)
 	if(is_enemy):
 		frames = red_animation
 	else:

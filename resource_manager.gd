@@ -20,7 +20,15 @@ func get_gold(is_enemy):
 		return enemy_gold
 	else:
 		return gold
-
+		
+func add_gold(amount: int, is_enemy):
+	if(is_enemy):
+		enemy_gold += amount
+	else:
+		gold += amount
+	
+		emit_signal("food_added", amount)
+	
 func add_food(amount: int, is_enemy):
 	if(is_enemy):
 		enemy_food += amount

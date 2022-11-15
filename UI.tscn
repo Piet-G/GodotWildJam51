@@ -68,7 +68,7 @@ nodes/BuyTimeScale/position = Vector2( 90, 110 )
 nodes/UpgradeTimeScale/node = SubResource( 9 )
 nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/output/position = Vector2( 470, -50 )
-node_connections = [ "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "output", 0, "Add2" ]
+node_connections = [ "output", 0, "Add2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -96,6 +96,20 @@ unique_name_in_owner = true
 margin_left = 43.0
 margin_top = 2.0
 margin_right = 43.0
+margin_bottom = 16.0
+
+[node name="Gold" type="Label" parent="UI/TopBar"]
+margin_left = 47.0
+margin_top = 2.0
+margin_right = 85.0
+margin_bottom = 16.0
+text = "Gold: "
+
+[node name="GoldCount" type="Label" parent="UI/TopBar"]
+unique_name_in_owner = true
+margin_left = 89.0
+margin_top = 2.0
+margin_right = 89.0
 margin_bottom = 16.0
 
 [node name="TowerBuyUI" parent="UI" instance=ExtResource( 2 )]

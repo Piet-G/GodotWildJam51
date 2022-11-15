@@ -18,6 +18,9 @@ func is_active():
 
 func set_grayscale(value):
 	$Sprite.material.set_shader_param("grayscale", value)
+	
+func set_invalid(value):
+	$Sprite.material.set_shader_param("invalid", value)
 
 func _ready():
 	if(is_enemy):
