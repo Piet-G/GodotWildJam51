@@ -28,6 +28,8 @@ func _process(delta):
 		tower_ghost.global_position = GridService.snap_to_grid_position(get_viewport().get_mouse_position())
 		
 		var grid_position = GridService.to_grid_position(tower_ghost.global_position)
+		tower_ghost.set_invalid(GridService.is_grid_position_occupied_for_player(grid_position))
+		tower_ghost.z_index = 3000
 		if(Input.is_action_just_pressed("place_tower") and not GridService.is_grid_position_occupied_for_player(grid_position)):
 			tower_ghost.set_invalid(false)
 			GridService.add_to_grid(tower_ghost,grid_position)

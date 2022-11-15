@@ -10,7 +10,7 @@ void fragment() {
 	COLOR.rgba = texture(TEXTURE,UV);
 	
 	if (invalid) {
-	    COLOR.rgb = vec3(dot(COLOR.rgb, vec3(1, 0, 0)));
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
 	}
 	
     if (grayscale) {

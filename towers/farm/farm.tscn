@@ -7,22 +7,29 @@
 [ext_resource path="res://towers/farm/farm_info.tres" type="Resource" id=5]
 [ext_resource path="res://assets/towers/farm/farm_simple.png" type="Texture" id=6]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform bool grayscale = false;
+uniform bool invalid = false;
 
 void fragment() {
 	COLOR.rgba = texture(TEXTURE,UV);
+	
+	if (invalid) {
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
+	}
+	
     if (grayscale) {
         COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
     }
 }"
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 2 )
+shader = SubResource( 1 )
 shader_param/grayscale = false
+shader_param/invalid = false
 
 [node name="Farm" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -31,7 +38,7 @@ enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
 
 [node name="Sprite" parent="." index="0"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 texture = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="." index="1"]
