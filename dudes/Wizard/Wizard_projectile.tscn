@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://towers/archery_tower/arrow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/units/Wizard/Wizard_projectile.png" type="Texture" id=2]
+[ext_resource path="res://dudes/Wizard/Wizard_projectile.gd" type="Script" id=3]
+
+[node name="Wizard_projectile" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

@@ -7,9 +7,11 @@ export(Type) var type = Type.farm
 export(Texture) var regular_texture
 export(Texture) var enemy_texture
 export(Resource) var tower_info
+export(int) var max_health = 10
 
 export var is_enemy = false
 var active = false
+var health
 
 signal clicked()
 
@@ -23,6 +25,7 @@ func set_invalid(value):
 	$Sprite.material.set_shader_param("invalid", value)
 
 func _ready():
+	health = max_health
 	if(is_enemy):
 		$Sprite.texture = enemy_texture
 	else:
@@ -58,6 +61,11 @@ func upgrade_to(tower_info: TowerInfo, is_enemy=false):
 	GridService.add_to_grid(new_tower, GridService.to_grid_position(global_position + Vector2(1,1)))
 	queue_free()
 
+func damage(amount):
+	health -= amount
+	$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
+	if(health <= 0):
+		queue_free()
 
 func _on_HelperTimer_timeout():
 	add_to_recent_grid()
