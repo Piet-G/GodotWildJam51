@@ -7,21 +7,31 @@ var farm_type = preload("res://towers/farm/farm_info.tres")
 var tower_type = preload("res://towers/archery_tower/archery_tower_info.tres")
 var barrack_type = preload("res://towers/barracks/barracks_info.tres")
 var rino_type = preload("res://towers/barracks/RhinoField/RhinoField_info.tres")
+var knight_type = preload("res://towers/barracks/KnightCamp/KnightCamp_info.tres")
+var rogue_type = preload("res://towers/barracks/RogueCamp/RogueCampInfo.tres")
+var thief_type = preload("res://towers/barracks/ThievesGuild/ThievesGuild_info.tres")
+
 var farm_count = 1
 var barrack_count = 0
 var tower_count = 0
 
 var ai_tree = {"type": farm_type, "weight": 1, "next": [
 			{"type": farm_type, "weight": 6, "next": []},
-			{"type": tower_type, "weight": 3, "next": [
+			{"type": tower_type, "weight": 20, "next": [
 				{"type": farm_type, "weight": 2, "next": [
 					{"type": farm_type, "weight": 2, "next": []},
 					{"type": tower_type, "weight": 6, "next": []},
 				]}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
-				{"type": farm_type, "weight": 1, "next": [
-					{"type": rino_type, "weight": 3, "from": barrack_type, "next": []}
+				{"type": rino_type, "weight": 3, "from": barrack_type, "next": []}
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": knight_type, "weight": 6, "from": barrack_type, "next": []}
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+					{"type": thief_type, "weight": 6, "from": rogue_type, "next": []}
 				]}
 			]}
 		]}
@@ -44,9 +54,10 @@ var current_options = []
 var next_option = ai_tree
 
 func can_build(tower_info: TowerInfo):
-	return ResourceManager.get_food(true) >= tower_info.food_cost
+	return ResourceManager.get_food(true) >= tower_info.food_cost and ResourceManager.get_gold(true) >= tower_info.gold_cost
 
 func _on_TickTimer_timeout():
+	$TickTimer.wait_time = 1
 	if(can_launch_war()):
 		launch_war()
 		return
@@ -59,8 +70,12 @@ func _on_TickTimer_timeout():
 			attempt_upgrade(next_option)
 		else:
 			attempt_build(next_option.type, "farm_weight")
+		
+		ResourceManager.remove_food(next_option.type.food_cost, true)
+		ResourceManager.remove_gold(next_option.type.gold_cost, true)
 		current_options.append_array(next_option.next)
 		next_option = null
+		$TickTimer.wait_time = 20
 		
 		if(len(current_options) == 0):
 			return
