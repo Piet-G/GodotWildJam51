@@ -5,7 +5,7 @@ func _on_ShootTimer_timeout():
 		return
 		
 	for area in $Range.get_overlapping_areas():
-		if(area.is_in_group("dude_area") and not area.get_parent().targeted and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active()):
+		if(area.is_in_group("dude_area") and not area.get_parent().targeted and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active() and !area.get_parent().sneaking):
 			shoot_at(area.get_parent())
 			return
 
