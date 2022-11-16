@@ -37,4 +37,5 @@ func close_upgrade():
 	$UI/AnimationTree.set("parameters/UpgradeTimeScale/scale", -1)
 
 func close_buy():
+	$UI.open = -1
 	$UI/AnimationTree.set("parameters/BuyTimeScale/scale", -1)

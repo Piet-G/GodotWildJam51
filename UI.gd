@@ -19,7 +19,6 @@ var open = -1
 func _on_TowerBuyUI_open_toggled():
 	open = -1 * open
 	$AnimationTree.set("parameters/BuyTimeScale/scale", open)
-	print($AnimationTree.get("parameters/BuyTimeScale/scale"))
 
 func _on_ToWarButton_pressed():
 	if(in_war):
