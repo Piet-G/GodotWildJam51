@@ -18,6 +18,8 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if(area.is_in_group("shield")):
 		queue_free()
+		if(is_instance_valid(target)):
+			self.target.targeted = false
 	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		area.get_parent().damage(1)
 		if(is_instance_valid(target)):

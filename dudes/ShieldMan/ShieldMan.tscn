@@ -36,7 +36,7 @@ regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-frame = 0
+frame = 3
 
 [node name="Shield" type="Area2D" parent="." index="3" groups=["shield"]]
 
