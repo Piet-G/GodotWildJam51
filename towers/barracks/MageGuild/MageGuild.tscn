@@ -34,6 +34,7 @@ regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/Wizard/Wizard.tscn"
+max_dudes = 5
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
