@@ -1,6 +1,7 @@
 extends "res://towers/tower.gd"
 
 export(String, FILE, "*.tscn") var unit_scene
+export var max_dudes = 5
 
 var to_war_count = 0
 var closest_path: Path2D
@@ -33,13 +34,14 @@ func launch_war():
 var dudes = []
 var count = 0
 func _on_Timer_timeout():
-	count += 1
-	var dude = load(unit_scene).instance()
-	dude.position = Vector2(randf(), randf()) * 10
-	dude.is_enemy = is_enemy
-	dudes.append(dude)
-	$DudeSpawnLocation.add_child(dude)
-	_count_updated()
+	if(get_dude_count() < max_dudes):
+		count += 1
+		var dude = load(unit_scene).instance()
+		dude.position = Vector2(randf(), randf()) * 10
+		dude.is_enemy = is_enemy
+		dudes.append(dude)
+		$DudeSpawnLocation.add_child(dude)
+		_count_updated()
 	
 func get_dude_count():
 	return len(dudes)
