@@ -30,8 +30,5 @@ movement_speed = 50
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 3
-
 [node name="Sprite" type="Sprite" parent="." index="3"]
 texture = ExtResource( 7 )

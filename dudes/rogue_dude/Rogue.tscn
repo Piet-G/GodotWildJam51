@@ -31,6 +31,9 @@ movement_speed = 50
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
+[node name="AnimatedSprite" parent="." index="0"]
+frame = 0
+
 [node name="InvulnerabilityTimer" type="Timer" parent="." index="2"]
 wait_time = 5.0
 one_shot = true

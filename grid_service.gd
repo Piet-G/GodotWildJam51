@@ -30,6 +30,9 @@ func add_to_grid(tower: Node2D, grid_position: Vector2) -> void:
 	if(tower.has_method("added_to_grid")):
 		tower.added_to_grid()
 
+func remove_from_grid(pos: Vector2):
+	grid_map.erase(pos)
+
 func add_illegal_space(pos):
 	illegal_spaces[pos] = true
 
@@ -51,7 +54,7 @@ func get_weights_total(weight_name):
 func get_buildings_of_type(type, is_enemy):
 	var buildings = []
 	for pos in grid_map.keys():
-		if(grid_map[pos].type == type):
+		if(grid_map[pos].type == type and grid_map[pos].is_enemy == is_enemy):
 			buildings.append(grid_map[pos])
 	
 	return buildings
@@ -59,7 +62,7 @@ func get_buildings_of_type(type, is_enemy):
 func get_buildings_of_info(info, is_enemy):
 	var buildings = []
 	for pos in grid_map.keys():
-		if(grid_map[pos].tower_info == info):
+		if(grid_map[pos].tower_info == info and grid_map[pos].is_enemy == is_enemy):
 			buildings.append(grid_map[pos])
 	
 	return buildings

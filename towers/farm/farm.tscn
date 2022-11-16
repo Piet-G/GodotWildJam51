@@ -42,6 +42,7 @@ material = SubResource( 2 )
 texture = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="." index="1"]
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
