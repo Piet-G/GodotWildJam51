@@ -15,9 +15,16 @@ enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[node name="SneakTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]

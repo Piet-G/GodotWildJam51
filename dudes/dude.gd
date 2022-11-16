@@ -10,6 +10,7 @@ export(SpriteFrames) var enemy_sprites
 var targeted = false
 var old_pos
 var right = true
+var sneaking = false
 
 func _ready():
 	old_pos = global_position
@@ -21,6 +22,16 @@ func _ready():
 	
 func get_health():
 	return health
+
+func sneak():
+	$SneakTimer.start()
+	$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
+	sneaking = true
+
+func stop_sneaking():
+	$SneakTimer.stop()
+	$AnimatedSprite.modulate = Color(1,1,1,1)
+	sneaking = false
 
 func damage(amount):
 	health -= amount
@@ -61,3 +72,7 @@ func _physics_process(delta):
 		right = true
 	
 	old_pos = global_position
+
+
+func _on_SneakTimer_timeout():
+	stop_sneaking()
