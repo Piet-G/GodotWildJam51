@@ -6,6 +6,7 @@ var grid_origin = Vector2(0, 0)
 var grid_map = {}
 var enemy_info = {}
 var illegal_spaces = {}
+var roads = {}
 
 func to_grid_position(pos: Vector2)-> Vector2:
 	return ((pos - grid_origin)/ tile_size).floor()
@@ -63,6 +64,11 @@ func get_buildings_of_info(info, is_enemy):
 	
 	return buildings
 
+func add_road(pos: Vector2):
+	roads[pos] = true
+
+func has_road(pos: Vector2):
+	return roads.has(pos)
 
 func get_position_with_weight(weight_name, value):
 	var total = 0

@@ -9,9 +9,12 @@ func _process(delta):
 	material.set_shader_param("grayscale", disabled)
 	
 func set_tower_info(info: TowerInfo):
-	self.tower_info = info
 	texture_normal = load(info.icon)
+	
+	if(tower_info):
+		rect_position -= tower_info.icon_offset
 	rect_position += info.icon_offset
+	self.tower_info = info
 
 var popup
 func _on_TowerBuyButton_mouse_entered():

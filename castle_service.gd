@@ -24,4 +24,5 @@ func damage(damage_amount, is_enemy):
 			Ui.win()
 		else:
 			Ui.lose()
-			
+	
+	ResourceManager.add_gold(5, not is_enemy)
