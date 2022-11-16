@@ -13,6 +13,7 @@ var right = true
 var sneaking = false
 var direction = Vector2.ZERO
 var health
+var active = false
 
 func _ready():
 	health = max_health
@@ -81,11 +82,33 @@ func _on_SneakTimer_timeout():
 	stop_sneaking()
 
 func inspire():
+	if(not active):
+		return
+	max_health *= 2
 	health *= 2
 	castle_damage *= 2
 	movement_speed += 10
 
 func uninspire():
+	if(not active):
+		return
+	max_health *= 2
 	health = ceil(health/2)
 	castle_damage = ceil(castle_damage/2)
 	movement_speed -= 10
+
+func heal():
+	if(not active):
+		return
+	if(health < max_health):
+		health += 1
+	$Healing.visible = true
+	$Healing.play()
+
+
+func _on_Healing_animation_finished():
+	$Healing.visible = false
+	$Healing.playing = false
+
+func activate():
+	active = true

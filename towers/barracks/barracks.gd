@@ -60,6 +60,7 @@ func _on_WarTimer_timeout():
 		return
 	$DudeSpawnLocation.remove_child(dude)
 	closest_path.add_child(dude)
+	dude.activate()
 	var local_pos = closest_path.to_local(global_position)
 	dude.offset = closest_path.curve.get_closest_offset(local_pos)
 	

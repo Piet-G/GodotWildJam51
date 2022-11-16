@@ -122,3 +122,18 @@ func _on_SneakTimer_timeout():
 	$AnimatedSprite2.modulate = Color(1,1,1,1)
 	$AnimatedSprite3.modulate = Color(1,1,1,1)
 	sneaking = false
+
+func inspire():
+	max_health *= 2
+	health *= 2
+	castle_damage *= 2
+	movement_speed += 10
+
+func uninspire():
+	max_health *= 2
+	health = ceil(health/2)
+	castle_damage = ceil(castle_damage/2)
+	movement_speed -= 10
+
+func heal():
+	pass

@@ -37,20 +37,16 @@ regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-frame = 1
+frame = 2
 
 [node name="Timer" type="Timer" parent="." index="3"]
 wait_time = 10.0
-autostart = true
 
 [node name="ShadowArea" type="Area2D" parent="." index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowArea" index="0"]
 shape = SubResource( 1 )
 
-[node name="SneakTimerProxy" type="Timer" parent="." index="5"]
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="ShadowArea" to="." method="_on_ShadowArea_area_entered"]
 [connection signal="area_exited" from="ShadowArea" to="." method="_on_ShadowArea_area_exited"]
-[connection signal="timeout" from="SneakTimerProxy" to="." method="_on_SneakTimerProxy_timeout"]
