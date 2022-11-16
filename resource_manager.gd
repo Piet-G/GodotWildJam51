@@ -45,6 +45,11 @@ func remove_food(amount: int, is_enemy):
 	
 	emit_signal("food_removed", amount)
 	
+func remove_gold(amount: int, is_enemy):
+	if(is_enemy):
+		enemy_gold -= amount
+		return
+	gold -= amount
 
 # Declare member variables here. Examples:
 # var a = 2
