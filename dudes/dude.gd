@@ -11,6 +11,7 @@ var targeted = false
 var old_pos
 var right = true
 var sneaking = false
+var direction = Vector2.ZERO
 
 func _ready():
 	old_pos = global_position
@@ -63,7 +64,7 @@ func _physics_process(delta):
 		position = Vector2()
 		next_path.add_child(self)
 	
-	var direction = global_position - old_pos
+	direction = global_position - old_pos
 	if direction.x < -0.1 && right:
 		$AnimatedSprite.scale.x = -1
 		right = false
