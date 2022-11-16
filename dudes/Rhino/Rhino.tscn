@@ -15,22 +15,6 @@
 [ext_resource path="res://assets/units/Rhino/Blue/Back/Walk_0001.png" type="Texture" id=13]
 [ext_resource path="res://assets/units/Rhino/red/Back/Walk_0002.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
@@ -63,17 +47,33 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Rhino" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-regular_sprites = SubResource( 1 )
-enemy_sprites = SubResource( 2 )
 regular_sprites_front = SubResource( 3 )
 enemy_sprites_front = SubResource( 4 )
 regular_sprites_back = SubResource( 5 )
 enemy_sprites_back = SubResource( 6 )
+regular_sprites = SubResource( 1 )
+enemy_sprites = SubResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-frame = 3
+frame = 1
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="2"]
 visible = false

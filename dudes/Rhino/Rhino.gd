@@ -22,6 +22,7 @@ export(SpriteFrames) var enemy_sprites
 var targeted = false
 var old_pos
 var right = true
+var sneaking = false
 	
 func get_health():
 	return health
@@ -33,6 +34,17 @@ func damage(amount):
 
 func is_active():
 	return true
+
+func sneak():
+	$SneakTimer.start()
+	$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
+	$AnimatedSprite3.modulate = Color(0.2,0.2,0.2,0.4)
+	$AnimatedSprite2.modulate = Color(0.2,0.2,0.2,0.4)
+	sneaking = true
+
+func stop_sneaking():
+	$SneakTimer.stop()
+	_on_SneakTimer_timeout()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -102,3 +114,10 @@ func _physics_process(delta):
 		current_facing = facing.NORMAL
 		
 	old_pos = global_position
+
+
+func _on_SneakTimer_timeout():
+	$AnimatedSprite.modulate = Color(1,1,1,1)
+	$AnimatedSprite2.modulate = Color(1,1,1,1)
+	$AnimatedSprite3.modulate = Color(1,1,1,1)
+	sneaking = false
