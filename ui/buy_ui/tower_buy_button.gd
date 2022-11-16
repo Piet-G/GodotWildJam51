@@ -12,7 +12,7 @@ func set_tower_info(info: TowerInfo):
 	texture_normal = load(info.icon)
 	
 	if(tower_info):
-		rect_position -= info.icon_offset
+		rect_position -= tower_info.icon_offset
 	rect_position += info.icon_offset
 	self.tower_info = info
 
