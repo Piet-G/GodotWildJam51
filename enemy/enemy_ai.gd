@@ -10,13 +10,21 @@ var rino_type = preload("res://towers/barracks/RhinoField/RhinoField_info.tres")
 var knight_type = preload("res://towers/barracks/KnightCamp/KnightCamp_info.tres")
 var rogue_type = preload("res://towers/barracks/RogueCamp/RogueCampInfo.tres")
 var thief_type = preload("res://towers/barracks/ThievesGuild/ThievesGuild_info.tres")
-
+var flyer_type = preload("res://towers/barracks/Airfield/Airfield_info.tres")
+var mage_type = preload("res://towers/barracks/MageGuild/MageGuild_info.tres")
+var shield_type = preload("res://towers/barracks/ShieldHall/ShieldHall_info.tres")
 var farm_count = 1
 var barrack_count = 0
 var tower_count = 0
 
+
+var wait_time_after_building = 1
+
 var ai_tree = {"type": farm_type, "weight": 1, "next": [
-			{"type": farm_type, "weight": 6, "next": []},
+			{"type": farm_type, "weight": 100, "next": []},
+			{"type": farm_type, "weight": 100, "next": []},
+			{"type": farm_type, "weight": 100, "next": []},
+			{"type": farm_type, "weight": 100, "next": []},
 			{"type": tower_type, "weight": 20, "next": [
 				{"type": farm_type, "weight": 2, "next": [
 					{"type": farm_type, "weight": 2, "next": []},
@@ -27,19 +35,32 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 				{"type": rino_type, "weight": 3, "from": barrack_type, "next": []}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
-				{"type": knight_type, "weight": 6, "from": barrack_type, "next": []}
+				{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
+					{"type": shield_type, "weight": 6, "from": knight_type, "next": []}
+				]}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
 				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
 					{"type": thief_type, "weight": 6, "from": rogue_type, "next": []}
 				]}
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+					{"type": flyer_type, "weight": 6, "from": rogue_type, "next": []}
+				]}
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+					{"type": mage_type, "weight": 6, "from": rogue_type, "next": []}
+				]}
 			]}
+			
 		]}
 
 
 func can_launch_war():
 	for barrack in GridService.get_buildings_of_type(Tower.Type.barracks, true):
-		if(barrack.count > 5):
+		if(barrack.count >= barrack.max_dudes):
 			return true
 	return false
 
@@ -75,7 +96,7 @@ func _on_TickTimer_timeout():
 		ResourceManager.remove_gold(next_option.type.gold_cost, true)
 		current_options.append_array(next_option.next)
 		next_option = null
-		$TickTimer.wait_time = 20
+		$TickTimer.wait_time = wait_time_after_building
 		
 		if(len(current_options) == 0):
 			return

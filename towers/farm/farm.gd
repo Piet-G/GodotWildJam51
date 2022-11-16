@@ -1,6 +1,7 @@
 extends "res://towers/tower.gd"
 
 func _on_timer_timeout():
-	ResourceManager.add_food(1, is_enemy)
+	ResourceManager.add_food(5, is_enemy)
 	
-	#add_child(preload("res://ui/food_added_label.tscn").instance())
+	if(not is_enemy):
+		add_child(preload("res://ui/food_added_label.tscn").instance())

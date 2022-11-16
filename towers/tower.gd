@@ -56,8 +56,8 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 func upgrade_to(tower_info: TowerInfo, is_enemy=false):
 	print("Spawning", tower_info.name)
 	var new_tower = load(tower_info.scene).instance()
-	get_tree().current_scene.add_child(new_tower)
 	new_tower.is_enemy = is_enemy
+	get_tree().current_scene.add_child(new_tower)
 	GridService.add_to_grid(new_tower, GridService.to_grid_position(global_position + Vector2(1,1)))
 	queue_free()
 
@@ -65,6 +65,7 @@ func damage(amount):
 	health -= amount
 	$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
 	if(health <= 0):
+		GridService.remove_from_grid(GridService.to_grid_position(global_position + Vector2(1,1)))
 		queue_free()
 
 func _on_HelperTimer_timeout():

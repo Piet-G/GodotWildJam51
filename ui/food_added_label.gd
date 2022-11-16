@@ -1,4 +1,4 @@
-extends Label
+extends HBoxContainer
 
 func _ready():
 	var animation_length = 30
