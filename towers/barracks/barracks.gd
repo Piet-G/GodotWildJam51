@@ -9,6 +9,8 @@ var closest_distance = 100000000000000
 
 func added_to_grid():
 	.added_to_grid()
+	
+	$Timer.start()
 	for path in get_tree().get_nodes_in_group("path"):
 		if(path.is_enemy == is_enemy):
 			var path_node: Path2D = path
@@ -31,6 +33,10 @@ func launch_war():
 	
 	_count_updated()
 	
+func set_invalid(value):
+	.set_invalid(value)
+	
+	$Label.visible = value
 var dudes = []
 var count = 0
 func _on_Timer_timeout():
