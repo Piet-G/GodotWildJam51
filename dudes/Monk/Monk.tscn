@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://dudes/dude.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dudes/Monk/Monk.gd" type="Script" id=2]
+
+[node name="Monk" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+regular_sprites = null
+enemy_sprites = null

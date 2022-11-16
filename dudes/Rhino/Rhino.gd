@@ -12,7 +12,7 @@ var current_facing = facing.NORMAL
 
 
 
-export var health = 1
+export var max_health = 1
 export var movement_speed = 30
 export var is_enemy = false
 export var castle_damage = 1
@@ -23,6 +23,7 @@ var targeted = false
 var old_pos
 var right = true
 var sneaking = false
+var health = max_health
 	
 func get_health():
 	return health
