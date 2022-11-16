@@ -28,9 +28,13 @@ func _ready():
 	else:
 		$Sprite.texture = regular_texture
 
+var recently_added_to_grid = false
+
+func add_to_recent_grid():
+	recently_added_to_grid = true
 func added_to_grid():
 	active = true
-	print(name)
+	$HelperTimer.start()
 	
 	$Area2D.connect("input_event", self, "_on_Area2D_input_event" )
 
@@ -42,7 +46,7 @@ func set_selected(value):
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	print(active, is_enemy,event.is_action_pressed("place_tower"))
-	if(event.is_action_pressed("place_tower") and not is_enemy and active):
+	if(event.is_action_pressed("place_tower") and not is_enemy and active and recently_added_to_grid):
 		emit_signal("clicked")
 		Ui.upgrade_clicked(self)
 		
@@ -53,3 +57,7 @@ func upgrade_to(tower_info: TowerInfo, is_enemy=false):
 	new_tower.is_enemy = is_enemy
 	GridService.add_to_grid(new_tower, GridService.to_grid_position(global_position + Vector2(1,1)))
 	queue_free()
+
+
+func _on_HelperTimer_timeout():
+	add_to_recent_grid()

@@ -27,3 +27,9 @@ visible = false
 scale = Vector2( 0.842105, 0.842105 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="HelperTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="HelperTimer" to="." method="_on_HelperTimer_timeout"]
