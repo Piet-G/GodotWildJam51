@@ -162,7 +162,7 @@ position = Vector2( 510, 220 )
 is_enemy = true
 
 [node name="Thief" parent="RedRightPath2" instance=ExtResource( 19 )]
-position = Vector2( -100.581, 647.596 )
+position = Vector2( 510, 220 )
 
 [node name="BlueMiddlePath" type="Path2D" parent="."]
 position = Vector2( 220, -80 )
