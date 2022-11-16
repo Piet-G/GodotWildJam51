@@ -1,9 +1,9 @@
 extends PathFollow2D
 
-export var health = 1
 export var movement_speed = 50
 export var is_enemy = false
 export var castle_damage = 1
+export var max_health = 1
 
 export(SpriteFrames) var regular_sprites
 export(SpriteFrames) var enemy_sprites
@@ -13,8 +13,10 @@ var direction = Vector2.ZERO
 var target = Vector2(760,40)
 var rot = (-PI + 0.5)
 var active = false
+var health
 
 func _ready():
+	health = max_health
 	$AnimatedSprite.z_index = 100
 	$Sprite.z_index = 100
 	if(not is_enemy):

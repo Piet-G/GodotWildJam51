@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-export var health = 1
+export var max_health = 1
 export var movement_speed = 30
 export var is_enemy = false
 export var castle_damage = 1
@@ -12,8 +12,10 @@ var old_pos
 var right = true
 var sneaking = false
 var direction = Vector2.ZERO
+var health
 
 func _ready():
+	health = max_health
 	old_pos = global_position
 	
 	if(not is_enemy):
@@ -77,3 +79,13 @@ func _physics_process(delta):
 
 func _on_SneakTimer_timeout():
 	stop_sneaking()
+
+func inspire():
+	health *= 2
+	castle_damage *= 2
+	movement_speed += 10
+
+func uninspire():
+	health = ceil(health/2)
+	castle_damage = ceil(castle_damage/2)
+	movement_speed -= 10
