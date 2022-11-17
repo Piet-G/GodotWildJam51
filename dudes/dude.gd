@@ -50,6 +50,8 @@ func get_z_position():
 	return global_position.y - 20
 
 func _physics_process(delta):
+	if(not active):
+		return
 	offset += movement_speed * delta
 	
 	if(unit_offset >= 1):
@@ -57,8 +59,7 @@ func _physics_process(delta):
 		
 		if(dude_path.is_final()):
 			
-			CastleService.damage(castle_damage, not is_enemy)
-			free()
+			reached_castle()
 			return
 			
 		var next_path = dude_path.get_next_switcher().get_next_path_segment()
@@ -97,6 +98,11 @@ func uninspire():
 	health = ceil(health/2)
 	castle_damage = ceil(castle_damage/2)
 	movement_speed -= 10
+
+func reached_castle():
+	CastleService.damage(castle_damage, not is_enemy)
+	queue_free()
+	return
 
 func heal():
 	if(not active):
