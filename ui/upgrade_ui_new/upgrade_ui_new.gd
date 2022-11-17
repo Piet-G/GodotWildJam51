@@ -19,6 +19,7 @@ func show_upgrades_for(tower_info: TowerInfo):
 		button.set_tower_info(tower_info.next_upgrades[i])
 		button.connect("pressed", Ui, "upgrade_selected", [tower_info.next_upgrades[i]])
 	
+	$Upgraded.visible = tower_info.next_upgrades.empty()
 	$TextureButton.show_behind_parent
 	
 func _process(delta):
@@ -30,6 +31,7 @@ func _process(delta):
 		$TextureRect.visible = false
 		$Upgrades.visible = false
 		$Label.visible = true
+		$Upgraded.visible = false
 		
 func _on_TextureButton_pressed():
 	emit_signal("button_pressed")

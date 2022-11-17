@@ -145,4 +145,18 @@ margin_right = 88.5
 margin_bottom = -1.0
 text = "Select a building to upgrade"
 
+[node name="Upgraded" type="Label" parent="."]
+visible = false
+modulate = Color( 0.654902, 0.4, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.326
+anchor_right = 0.779
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = 8.624
+margin_right = 67.062
+margin_bottom = 9.0
+text = "Building 
+fully upgraded!"
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

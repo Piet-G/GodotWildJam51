@@ -54,18 +54,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("TowerBuyUI:show_behind_parent")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "slide_war"
@@ -137,7 +125,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "WarTimeScale", 0, "Animation 3", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "UpgradeTimeScale", 0, "Animation 2", "BuyTimeScale", 0, "Animation" ]
+node_connections = [ "output", 0, "Add2 2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -227,16 +215,6 @@ margin_right = 101.0
 margin_bottom = 179.0
 texture_normal = ExtResource( 11 )
 
-[node name="TowerBuyUI" parent="UI" instance=ExtResource( 2 )]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -85.0
-margin_top = -70.0
-margin_right = 88.0
-margin_bottom = 6.0
-mouse_default_cursor_shape = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
 anims/RESET = SubResource( 5 )
 anims/slide_in = SubResource( 1 )
@@ -270,7 +248,16 @@ margin_right = 111.0
 margin_bottom = 11.0
 mouse_filter = 2
 
+[node name="TowerBuyUI" parent="UI" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -85.0
+margin_top = -70.0
+margin_right = 88.0
+margin_bottom = 6.0
+
 [connection signal="pressed" from="UI/ToWar/ToWarButton" to="." method="_on_ToWarButton_pressed"]
 [connection signal="pressed" from="UI/ToWar/TextureRect" to="." method="_on_TextureRect_pressed"]
-[connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
 [connection signal="button_pressed" from="UI/UpgradeUI" to="." method="_on_UpgradeUI_button_pressed"]
+[connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
