@@ -133,4 +133,5 @@ func bribe():
 		$AnimatedSprite.frames = enemy_sprites
 		$AnimatedSprite.position.x = $AnimatedSprite.position.x - 10
 	
-	
+func burn():
+	pass

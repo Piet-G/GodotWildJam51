@@ -205,3 +205,21 @@ func bribe():
 	closest_path.add_child(self)
 	var local_pos = closest_path.to_local(global_position)
 	offset = closest_path.curve.get_closest_offset(local_pos)
+
+func burn():
+	$BurnTimer1.start()
+	
+func _on_BurnTimer1_timeout():
+	damage(1)
+	$BurnTimer2.start()
+
+
+func _on_BurnTimer2_timeout():
+	damage(1)
+	$BurnTimer3.start()
+
+
+func _on_BurnTimer3_timeout():
+	damage(1)
+	$AnimatedSprite/Burn.visible = false
+	$AnimatedSprite/Burn.playing = false

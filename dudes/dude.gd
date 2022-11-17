@@ -203,3 +203,25 @@ func bribe():
 func _on_Revive_animation_finished():
 	$Revive.visible = false
 	$Revive.playing = false
+
+func burn():
+	$BurnTimer1.start()
+	$AnimatedSprite/Burn.visible = true
+	$AnimatedSprite/Burn.play()
+
+
+func _on_BurnTimer1_timeout():
+	damage(1)
+	$BurnTimer2.start()
+
+
+func _on_BurnTimer2_timeout():
+	damage(1)
+	$BurnTimer3.start()
+
+
+func _on_BurnTimer3_timeout():
+	damage(1)
+	$AnimatedSprite/Burn.visible = false
+	$AnimatedSprite/Burn.playing = false
+

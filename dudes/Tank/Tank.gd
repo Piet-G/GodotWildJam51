@@ -4,6 +4,7 @@ var oilposition_right
 var oilposition_left
 var oil_position_up
 var oil_position_down
+export var fire = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -46,3 +47,5 @@ func _on_OilTimer_timeout():
 	else:
 		oil.global_position = oil_position_down.global_position
 		oil.global_rotation = oil_position_down.global_rotation
+	if(fire):
+		oil.burn()
