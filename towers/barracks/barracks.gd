@@ -54,7 +54,20 @@ func get_dude_count():
 func _count_updated():
 	return
 
-func _on_WarTimer_timeout():
+func upgrade_to(tower_info: TowerInfo, is_enemy=false):
+	free_dudes()
+	.upgrade_to(tower_info, is_enemy)
+
+func destroy():
+	.destroy()
+	
+	free_dudes()
+
+func free_dudes():
+	while(get_dude_count() > 0):
+		spawn_dude(rand_range(0, 20))
+
+func spawn_dude(rando_offset):
 	var dude = dudes.pop_front()
 	if(not is_instance_valid(dude)):
 		return
@@ -62,8 +75,11 @@ func _on_WarTimer_timeout():
 	closest_path.add_child(dude)
 	dude.activate()
 	var local_pos = closest_path.to_local(global_position)
-	dude.offset = closest_path.curve.get_closest_offset(local_pos)
+	dude.offset = closest_path.curve.get_closest_offset(local_pos) + rando_offset
 	
 	if(len(dudes) <= 0):
 		$WarTimer.stop()
+
+func _on_WarTimer_timeout():
+	spawn_dude(0)
 	
