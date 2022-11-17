@@ -10,8 +10,6 @@ func _process(delta):
 	disabled = satisfied
 	material.set_shader_param("grayscale", satisfied)
 	
-	print(tower_info.name, material.get_shader_param("grayscale"), disabled)
-	
 func set_tower_info(info: TowerInfo):
 	texture_normal = load(info.icon)
 	

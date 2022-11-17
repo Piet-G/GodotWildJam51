@@ -14,7 +14,7 @@ func added_to_grid():
 	for path in get_tree().get_nodes_in_group("path"):
 		if(path.is_enemy == is_enemy):
 			var path_node: Path2D = path
-			var local_pos = path_node.to_local(global_position)
+			var local_pos = path_node.to_local($DudeSpawnLocation.global_position)
 			var distance = path_node.curve.get_closest_point(local_pos).distance_to(local_pos)
 			
 			if(distance < closest_distance):
