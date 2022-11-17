@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Tower"
-food_cost = 1
-gold_cost = 1
-icon = "res://icon.png"
-scene = ""
+name = "MageTower"
+food_cost = 10
+gold_cost = 0
+icon = "res://assets/towers/tower/Tower.png"
+scene = "res://towers/archery_tower/MageTower/MageTower.tscn"
 next_upgrades = [  ]
 flavour_text = "This is flavour text, edit me"
 icon_offset = Vector2( 0, 0 )
