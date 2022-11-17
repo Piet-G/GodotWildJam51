@@ -10,8 +10,6 @@ enum facing {NORMAL,TOP,BOTTOM}
 var current_facing = facing.NORMAL
 
 
-
-
 export var max_health = 1
 export var movement_speed = 30
 export var is_enemy = false
@@ -24,7 +22,12 @@ var old_pos
 var right = true
 var sneaking = false
 var health = max_health
-	
+var active = false
+var slow = false
+
+func activate():
+	active = true
+
 func get_health():
 	return health
 
@@ -137,3 +140,18 @@ func uninspire():
 
 func heal():
 	pass
+
+func oil():
+	if(!slow):
+		movement_speed -= 20
+		slow = true
+
+func slow():
+	if(!slow):
+		movement_speed -= 20
+		slow = true
+
+func stop_slow():
+	if(slow):
+		movement_speed += 20
+		slow = false

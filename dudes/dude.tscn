@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
@@ -6,16 +6,27 @@
 [ext_resource path="res://assets/effects/healing/get_healed_0003.png" type="Texture" id=4]
 [ext_resource path="res://assets/effects/healing/get_healed_0002.png" type="Texture" id=5]
 [ext_resource path="res://assets/effects/healing/get_healed_0001.png" type="Texture" id=6]
+[ext_resource path="res://assets/effects/Slowed/Slowed_0003.png" type="Texture" id=7]
+[ext_resource path="res://assets/effects/Slowed/Slowed_0002.png" type="Texture" id=8]
+[ext_resource path="res://assets/effects/Slowed/Slowed_0001.png" type="Texture" id=9]
 
-[sub_resource type="CircleShape2D" id=2]
-
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="Dude" type="PathFollow2D" groups=["dude", "zindexed"]]
 rotate = false
@@ -26,8 +37,15 @@ enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
 playing = true
+
+[node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]
+visible = false
+frames = SubResource( 7 )
+
+[node name="Slow" type="AnimatedSprite" parent="AnimatedSprite"]
+visible = false
+frames = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]
 
@@ -38,9 +56,11 @@ shape = SubResource( 2 )
 wait_time = 5.0
 one_shot = true
 
-[node name="Healing" type="AnimatedSprite" parent="."]
-visible = false
-frames = SubResource( 3 )
+[node name="SlowTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
+[connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite/Slow" to="." method="_on_Slow_animation_finished"]
 [connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]
-[connection signal="animation_finished" from="Healing" to="." method="_on_Healing_animation_finished"]
+[connection signal="timeout" from="SlowTimer" to="." method="_on_SlowTimer_timeout"]

@@ -4,4 +4,5 @@
 [ext_resource path="res://assets/Projectiles/arrow_projectile.png" type="Texture" id=2]
 
 [node name="Mammoth_projectile" instance=ExtResource( 1 )]
+z_index = 50
 texture = ExtResource( 2 )

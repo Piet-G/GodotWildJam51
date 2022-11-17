@@ -27,7 +27,7 @@ func _on_Timer_timeout():
 
 
 func _on_Range_area_entered(area):
-	if(not is_active()):
+	if(not active):
 		return
 	if($Timer.is_stopped()):
 		for area in $Range.get_overlapping_areas():

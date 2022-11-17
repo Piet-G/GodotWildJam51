@@ -83,3 +83,12 @@ func uninspire():
 
 func heal():
 	pass
+
+func slow():
+	movement_speed -= 20
+
+func oil():
+	movement_speed -= 20
+
+func stop_slow():
+	movement_speed += 20

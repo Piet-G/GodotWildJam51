@@ -14,6 +14,7 @@ var sneaking = false
 var direction = Vector2.ZERO
 var health
 var active = false
+var slow = false
 
 func _ready():
 	health = max_health
@@ -102,13 +103,40 @@ func heal():
 		return
 	if(health < max_health):
 		health += 1
-	$Healing.visible = true
-	$Healing.play()
+	$AnimatedSprite/Healing.visible = true
+	$AnimatedSprite/Healing.play()
 
 
 func _on_Healing_animation_finished():
-	$Healing.visible = false
-	$Healing.playing = false
+	$AnimatedSprite/Healing.visible = false
+	$AnimatedSprite/Healing.playing = false
 
 func activate():
 	active = true
+
+func oil():
+	if(!slow):
+		movement_speed -= 20
+		$AnimatedSprite/Slow.visible = true
+		$AnimatedSprite/Slow.play()
+		slow = true
+
+func slow():
+	if(!slow):
+		movement_speed -= 20
+		$AnimatedSprite/Slow.visible = true
+		$AnimatedSprite/Slow.play()
+		$SlowTimer.start()
+		slow = true
+
+func stop_slow():
+	if(slow):
+		movement_speed += 20
+		$AnimatedSprite/Slow.visible = false
+		$AnimatedSprite/Slow.playing = false
+		slow = false
+	
+
+
+func _on_SlowTimer_timeout():
+	stop_slow()
