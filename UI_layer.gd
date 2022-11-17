@@ -14,7 +14,9 @@ func upgrade_clicked(tower):
 	upgrading_tower = tower
 
 func upgrade_selected(tower_info):
-	upgrading_tower.upgrade_to(tower_info)
+	if(is_instance_valid(upgrading_tower)):
+		upgrading_tower.upgrade_to(tower_info)
+		
 	close_upgrade()
 
 func win():
