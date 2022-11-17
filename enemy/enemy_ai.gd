@@ -13,6 +13,21 @@ var thief_type = preload("res://towers/barracks/ThievesGuild/ThievesGuild_info.t
 var flyer_type = preload("res://towers/barracks/Airfield/Airfield_info.tres")
 var mage_type = preload("res://towers/barracks/MageGuild/MageGuild_info.tres")
 var shield_type = preload("res://towers/barracks/ShieldHall/ShieldHall_info.tres")
+
+var catapult_type = preload("res://towers/archery_tower/CatapultTower/CatapulTower_info.tres")
+var ballista_type = preload("res://towers/archery_tower/BallistaTower/BallistaTower_info.tres")
+var mage_tower_type = preload("res://towers/archery_tower/MageTower/MageTower_info.tres")
+
+var mill_type = preload("res://towers/farm/Mill/Mill_info.tres")
+var treasury_type = preload("res://towers/farm/Treasury/Treasury_info.tres")
+var workshop_type = preload("res://towers/farm/Workshop/Workshop_info.tres")
+
+var mammoth_type = preload("res://towers/barracks/MammothField/MammothField_info.tres")
+var tank_type = preload("res://towers/barracks/TankFactory/TankFactory_info.tres")
+var bomb_type = preload("res://towers/barracks/BigBombBay/BigBombBay_info.tres")
+
+var mech_mammoth_type = preload("res://towers/barracks/MechMammothFactory/MechMammothFactory_info.tres")
+
 var farm_count = 1
 var barrack_count = 0
 var tower_count = 0
@@ -21,18 +36,49 @@ var tower_count = 0
 var wait_time_after_building = 1
 
 var ai_tree = {"type": farm_type, "weight": 1, "next": [
-			{"type": farm_type, "weight": 100, "next": []},
-			{"type": farm_type, "weight": 100, "next": []},
-			{"type": farm_type, "weight": 100, "next": []},
-			{"type": farm_type, "weight": 100, "next": []},
+			{"type": farm_type, "weight": 100, "next": [
+				{"type": workshop_type, "weight": 10, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 100, "next": [
+				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 100, "next": [
+				{"type": treasury_type, "weight": 3, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 100, "next": [
+				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
+			]},
 			{"type": tower_type, "weight": 20, "next": [
 				{"type": farm_type, "weight": 2, "next": [
 					{"type": farm_type, "weight": 2, "next": []},
 					{"type": tower_type, "weight": 6, "next": []},
+				]},
+				{"type": mage_tower_type, "weight": 6, "from": tower_type, "next": []},
+			]},
+			{"type": tower_type, "weight": 5, "next": [
+				{"type": ballista_type, "weight": 6, "from": tower_type, "next": []},
+			]},
+			{"type": tower_type, "weight": 5, "next": [
+				{"type": catapult_type, "weight": 6, "from": tower_type, "next": []},
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
+					{"type": mammoth_type, "weight": 10, "from": rino_type, "next": [
+						{"type": mech_mammoth_type, "weight": 40, "from": mammoth_type, "next": [
+							
+						]}
+					]}
 				]}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
-				{"type": rino_type, "weight": 3, "from": barrack_type, "next": []}
+				{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
+					{"type": tank_type, "weight": 10, "from": rino_type, "next": []}
+				]}
+			]},
+			{"type": barrack_type, "weight": 4, "next": [
+				{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
+					{"type": bomb_type, "weight": 5, "from": rino_type, "next": []}
+				]}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
 				{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
@@ -66,7 +112,7 @@ func can_launch_war():
 
 func launch_war():
 	for barrack in GridService.get_buildings_of_type(Tower.Type.barracks, true):
-		if(barrack.count > 3 and barrack.can_launch_war() and barrack.is_enemy):
+		if(barrack.count > 1 and barrack.can_launch_war() and barrack.is_enemy):
 			barrack.launch_war()
 func get_building_count():
 	return float(farm_count + tower_count + barrack_count)
@@ -85,13 +131,12 @@ func get_weight_name(type):
 	elif(Tower.Type.archery_tower == type):
 		return "tower_weight"
 		
-	return 
+	return "farm_weight"
 
 func _on_TickTimer_timeout():
 	$TickTimer.wait_time = 1
 	if(can_launch_war()):
 		launch_war()
-		return
 		
 	if(not next_option):
 		return
@@ -134,14 +179,12 @@ func attempt_upgrade(option):
 	chosen.upgrade_to(option.type, true)
 
 func attempt_build(tower_type: TowerInfo):
-	if(ResourceManager.get_food(true) < tower_type.food_cost):
-		return
-	
 	var tower = load(tower_type.scene).instance()
 	
 	var total = GridService.get_weights_total(get_weight_name(tower.type))
 	
 	if(total <= 0):
+		print("NO VALID SPACES")
 		return
 	
 	var pos = GridService.get_position_with_weight(get_weight_name(tower.type), rand_range(0, total))
