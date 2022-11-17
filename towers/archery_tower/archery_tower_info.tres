@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://towers/tower_info.gd" type="Script" id=1]
 [ext_resource path="res://towers/archery_tower/BallistaTower/BallistaTower_info.tres" type="Resource" id=2]
+[ext_resource path="res://towers/archery_tower/CatapultTower/CatapulTower_info.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
@@ -10,6 +11,6 @@ food_cost = 100
 gold_cost = 0
 icon = "res://assets/towers/tower/Tower_wood.png"
 scene = "res://towers/archery_tower/archery_tower.tscn"
-next_upgrades = [ ExtResource( 2 ) ]
+next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ) ]
 flavour_text = "This is flavour text, edit me"
 icon_offset = Vector2( 0, -10 )
