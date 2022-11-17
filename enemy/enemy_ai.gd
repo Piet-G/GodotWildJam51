@@ -77,6 +77,16 @@ var next_option = ai_tree
 func can_build(tower_info: TowerInfo):
 	return ResourceManager.get_food(true) >= tower_info.food_cost and ResourceManager.get_gold(true) >= tower_info.gold_cost
 
+func get_weight_name(type):
+	if(Tower.Type.farm == type):
+		return "farm_weight"
+	elif(Tower.Type.barracks == type):
+		return "barrack_weight"
+	elif(Tower.Type.archery_tower == type):
+		return "tower_weight"
+		
+	return 
+
 func _on_TickTimer_timeout():
 	$TickTimer.wait_time = 1
 	if(can_launch_war()):
@@ -90,7 +100,7 @@ func _on_TickTimer_timeout():
 		if(next_option.has("from")):
 			attempt_upgrade(next_option)
 		else:
-			attempt_build(next_option.type, "farm_weight")
+			attempt_build(next_option.type)
 		
 		ResourceManager.remove_food(next_option.type.food_cost, true)
 		ResourceManager.remove_gold(next_option.type.gold_cost, true)
@@ -123,16 +133,19 @@ func attempt_upgrade(option):
 	
 	chosen.upgrade_to(option.type, true)
 
-func attempt_build(tower_type: TowerInfo, weight_name):
+func attempt_build(tower_type: TowerInfo):
 	if(ResourceManager.get_food(true) < tower_type.food_cost):
 		return
-	var total = GridService.get_weights_total(weight_name)
+	
+	var tower = load(tower_type.scene).instance()
+	
+	var total = GridService.get_weights_total(get_weight_name(tower.type))
 	
 	if(total <= 0):
 		return
 	
-	var pos = GridService.get_position_with_weight(weight_name, rand_range(0, total))
-	var tower = load(tower_type.scene).instance()
+	var pos = GridService.get_position_with_weight(get_weight_name(tower.type), rand_range(0, total))
+
 	tower.is_enemy = true
 	add_child(tower)
 	GridService.add_to_grid(tower, pos)
