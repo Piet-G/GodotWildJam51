@@ -9,7 +9,7 @@ var gold = 0
 var enemy_food = 0
 var enemy_gold = 0
 
-var gold_bonus
+var gold_bonus = 0
 
 func get_food(is_enemy):
 	if(is_enemy):

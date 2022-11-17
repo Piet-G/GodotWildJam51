@@ -35,11 +35,8 @@ script = ExtResource( 2 )
 regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 3
+[node name="Shield" type="Area2D" parent="AnimatedSprite" index="4" groups=["shield"]]
 
-[node name="Shield" type="Area2D" parent="." index="3" groups=["shield"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Shield" index="0"]
 position = Vector2( 11.9309, -1.50065 )
 shape = SubResource( 1 )

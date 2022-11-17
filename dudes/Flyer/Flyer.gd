@@ -17,6 +17,9 @@ var health
 var slow = false
 var hasty = false
 
+func activate():
+	active = true
+
 func _ready():
 	health = max_health
 	$AnimatedSprite.z_index = 100
