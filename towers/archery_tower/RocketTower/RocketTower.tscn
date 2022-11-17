@@ -1,0 +1,201 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://towers/archery_tower/BallistaTower/BallistaTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://towers/archery_tower/RocketTower/RocketTower.gd" type="Script" id=2]
+[ext_resource path="res://assets/towers/tower/rocket/right/Rocket_tower_anim3.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/tower/rocket/down/Rocket_tower_anim5.png" type="Texture" id=4]
+[ext_resource path="res://assets/towers/tower/rocket/up/Rocket_tower_anim4.png" type="Texture" id=5]
+[ext_resource path="res://assets/towers/tower/rocket/right/blue.png" type="Texture" id=6]
+[ext_resource path="res://assets/towers/tower/rocket/Rocket_tower.png" type="Texture" id=7]
+[ext_resource path="res://assets/towers/tower/rocket/left/blue.png" type="Texture" id=8]
+[ext_resource path="res://assets/towers/tower/rocket/down/blue.png" type="Texture" id=9]
+[ext_resource path="res://assets/towers/tower/rocket/up/blue.png" type="Texture" id=10]
+[ext_resource path="res://assets/towers/tower/rocket/left/Rocket_tower_anim3.png" type="Texture" id=11]
+[ext_resource path="res://assets/towers/tower/rocket/right_up/blue.png" type="Texture" id=12]
+[ext_resource path="res://assets/towers/tower/rocket/right_up/Rocket_tower_anim.png" type="Texture" id=13]
+[ext_resource path="res://assets/towers/tower/rocket/left_up/blue.png" type="Texture" id=14]
+[ext_resource path="res://assets/towers/tower/rocket/left_up/Rocket_tower_anim.png" type="Texture" id=15]
+[ext_resource path="res://assets/towers/tower/rocket/left_down/Rocket_tower_anim2.png" type="Texture" id=16]
+[ext_resource path="res://assets/towers/tower/rocket/left_down/blue.png" type="Texture" id=17]
+[ext_resource path="res://assets/towers/tower/rocket/right_down/Rocket_tower_anim2.png" type="Texture" id=18]
+[ext_resource path="res://assets/towers/tower/rocket/right_down/blue.png" type="Texture" id=19]
+[ext_resource path="res://towers/archery_tower/RocketTower/RocketTower_info.tres" type="Resource" id=20]
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+
+uniform bool grayscale = false;
+uniform bool invalid = false;
+
+void fragment() {
+	COLOR.rgba = texture(TEXTURE,UV);
+	
+	if (invalid) {
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
+	}
+	
+    if (grayscale) {
+        COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+resource_local_to_scene = true
+shader = SubResource( 17 )
+shader_param/grayscale = false
+shader_param/invalid = false
+
+[node name="RocketTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+type = 1
+regular_texture = ExtResource( 7 )
+enemy_texture = ExtResource( 7 )
+tower_info = ExtResource( 20 )
+air = false
+regular_sprites_right = SubResource( 19 )
+enemy_sprites_right = SubResource( 20 )
+regular_sprites_left = SubResource( 21 )
+enemy_sprites_left = SubResource( 22 )
+regular_sprites_down = SubResource( 23 )
+enemy_sprites_down = SubResource( 24 )
+regular_sprites_up = SubResource( 25 )
+enemy_sprites_up = SubResource( 26 )
+regular_sprites_right_up = SubResource( 27 )
+enemy_sprites_right_up = SubResource( 28 )
+regular_sprites_left_up = SubResource( 29 )
+enemy_sprites_left_up = SubResource( 30 )
+regular_sprites_right_down = SubResource( 31 )
+enemy_sprites_right_down = SubResource( 32 )
+regular_sprites_left_down = SubResource( 33 )
+enemy_sprites_left_down = SubResource( 34 )
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 18 )
