@@ -28,6 +28,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ -70.0, 0.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("UpgradeUI:show_behind_parent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TowerBuyUI:show_behind_parent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "upgrade_slide_in"
@@ -42,7 +66,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 289, -210 ), Vector2( 289, 0 ) ]
+"values": [ Vector2( 289, -165 ), Vector2( 289, 0 ) ]
 }
 
 [sub_resource type="AnimationNodeAdd2" id=7]
@@ -70,7 +94,7 @@ nodes/BuyTimeScale/position = Vector2( 90, 110 )
 nodes/UpgradeTimeScale/node = SubResource( 9 )
 nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/output/position = Vector2( 470, -50 )
-node_connections = [ "output", 0, "Add2", "BuyTimeScale", 0, "Animation", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "UpgradeTimeScale", 0, "Animation 2" ]
+node_connections = [ "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "output", 0, "Add2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -123,10 +147,10 @@ margin_bottom = 16.0
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -133.5
+margin_left = -85.0
 margin_top = -70.0
-margin_right = 133.5
-margin_bottom = 13.0
+margin_right = 88.0
+margin_bottom = 6.0
 mouse_default_cursor_shape = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
@@ -169,14 +193,16 @@ visible = false
 visible = false
 
 [node name="UpgradeUI" parent="UI" instance=ExtResource( 7 )]
+show_behind_parent = true
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
 margin_left = -111.0
-margin_top = -210.0
+margin_top = -165.0
 margin_right = 111.0
-margin_bottom = -34.0
+margin_bottom = 11.0
 
 [connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
 [connection signal="pressed" from="UI/VBoxContainer/ToWarButton" to="UI" method="_on_ToWarButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/CancelWar" to="UI" method="_on_CancelWar_pressed"]
+[connection signal="button_pressed" from="UI/UpgradeUI" to="." method="_on_UpgradeUI_button_pressed"]
