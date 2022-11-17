@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://towers/archery_tower/BallistaTower/BallistaTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/AntiAirTower/AntiAirTower.gd" type="Script" id=2]
@@ -158,6 +158,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+
+uniform bool grayscale = false;
+uniform bool invalid = false;
+
+void fragment() {
+	COLOR.rgba = texture(TEXTURE,UV);
+	
+	if (invalid) {
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
+	}
+	
+    if (grayscale) {
+        COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+resource_local_to_scene = true
+shader = SubResource( 17 )
+shader_param/grayscale = false
+shader_param/invalid = false
+
 [node name="AntiAirTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 regular_texture = ExtResource( 4 )
@@ -183,3 +207,4 @@ enemy_sprites_left_down = SubResource( 16 )
 
 [node name="Sprite" parent="." index="0"]
 visible = true
+material = SubResource( 18 )

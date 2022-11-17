@@ -14,7 +14,7 @@ func _ready():
 func shoot_at(dude: Node2D):
 	aim(dude)
 	
-	var arrow = preload("res://towers/archery_tower/arrow.tscn").instance()
+	var arrow = preload("res://towers/archery_tower/AntiAirTower/AntiAirArrow.tscn").instance()
 	arrow.is_enemy = is_enemy
 	arrow.origin = self
 
