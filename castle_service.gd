@@ -26,3 +26,7 @@ func damage(damage_amount, is_enemy):
 			Ui.lose()
 	
 	ResourceManager.add_gold(5, not is_enemy)
+
+func repair(repair_amount, is_enemy):
+	if(hp[is_enemy] + repair_amount <= max_hp[is_enemy]):
+		hp[is_enemy] += repair_amount

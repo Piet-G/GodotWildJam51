@@ -17,6 +17,9 @@ var health
 var slow = false
 var hasty = false
 
+func activate():
+	active = true
+
 func _ready():
 	health = max_health
 	$AnimatedSprite.z_index = 100
@@ -118,3 +121,20 @@ func stop_haste():
 
 func _on_HasteTimer_timeout():
 	stop_haste()
+
+func bribe():
+	is_enemy = !is_enemy
+	
+	if(not is_enemy):
+		target = Vector2(760,40)
+		rot = (-PI + 0.5)
+		$AnimatedSprite.frames = regular_sprites
+		$AnimatedSprite.position.x = $AnimatedSprite.position.x - 5
+	else:
+		rot = + 0.7
+		target = Vector2(80,520)
+		$AnimatedSprite.frames = enemy_sprites
+		$AnimatedSprite.position.x = $AnimatedSprite.position.x - 10
+	
+func burn():
+	pass
