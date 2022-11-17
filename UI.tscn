@@ -137,9 +137,10 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "WarTimeScale", 0, "Animation 3", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "UpgradeTimeScale", 0, "Animation 2", "BuyTimeScale", 0, "Animation" ]
+node_connections = [ "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "WarTimeScale", 0, "Animation 3", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "output", 0, "Add2 2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 4 )
 
 [node name="UI" type="Control" parent="."]

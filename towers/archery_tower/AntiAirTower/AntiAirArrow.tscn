@@ -4,4 +4,15 @@
 [ext_resource path="res://assets/Projectiles/Anti_air_projectile.png" type="Texture" id=2]
 
 [node name="AntiAirArrow" instance=ExtResource( 1 )]
+texture = null
+
+[node name="Area2D" parent="." index="0"]
+position = Vector2( 0.96623, 0.148651 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( -0.185814, -1.00339 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+rotation = 1.5708
+scale = Vector2( 1.92, 1.92 )
 texture = ExtResource( 2 )
