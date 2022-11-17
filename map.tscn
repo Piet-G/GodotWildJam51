@@ -87,11 +87,11 @@ __meta__ = {
 
 [node name="Farm2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 360 )
-food_gained = 5
+initially_in_world = true
 
 [node name="Farm4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, 480 )
-food_gained = 5
+initially_in_world = true
 
 [node name="BlueLeftPath1" type="Path2D" parent="."]
 position = Vector2( -60, -80 )
@@ -449,23 +449,18 @@ position = Vector2( 760, 120 )
 
 [node name="Farm5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 520, 80 )
+initially_in_world = true
 is_enemy = true
-food_gained = 5
-
-[node name="Farm6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 520, 50 )
-is_enemy = true
-food_gained = 5
 
 [node name="Farm7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 520, 10 )
+position = Vector2( 560, 0 )
+initially_in_world = true
 is_enemy = true
-food_gained = 5
 
 [node name="Farm8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 570, 10 )
+position = Vector2( 600, 0 )
+initially_in_world = true
 is_enemy = true
-food_gained = 5
 
 [node name="SpaceOccupiers" type="Node2D" parent="."]
 

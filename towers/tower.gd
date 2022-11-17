@@ -8,6 +8,7 @@ export(Texture) var regular_texture
 export(Texture) var enemy_texture
 export(Resource) var tower_info
 export(int) var max_health = 10
+export var initially_in_world = false
 
 export var is_enemy = false
 var active = false
@@ -30,6 +31,9 @@ func _ready():
 		$Sprite.texture = enemy_texture
 	else:
 		$Sprite.texture = regular_texture
+	
+	if(initially_in_world):
+		GridService.add_to_grid(self, GridService.to_grid_position(global_position + Vector2(1,1)))
 
 var recently_added_to_grid = false
 

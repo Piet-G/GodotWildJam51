@@ -36,6 +36,7 @@ script = ExtResource( 2 )
 regular_texture = ExtResource( 6 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
+food_gained = 5
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
