@@ -18,7 +18,7 @@ func damage(amount):
 	health -= amount
 	if(health <= 0):
 		var explosion = preload("res://dudes/BigBombDude/ExplosionBig.tscn").instance()
-		add_child(explosion)
+		call_deferred("add_child", explosion)
 		$AnimatedSprite.visible = false
 		active = false
 

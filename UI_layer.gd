@@ -2,7 +2,8 @@ extends CanvasLayer
 
 var placing_building = false
 
-
+func _ready():
+	randomize()
 
 var upgrading_tower
 func upgrade_clicked(tower):
