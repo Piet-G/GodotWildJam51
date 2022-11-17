@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://towers/tower_info.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Tower"
+food_cost = 1
+gold_cost = 1
+icon = "res://icon.png"
+scene = ""
+next_upgrades = [  ]
+flavour_text = "This is flavour text, edit me"
+icon_offset = Vector2( 0, 0 )
