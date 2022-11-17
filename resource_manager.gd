@@ -9,6 +9,8 @@ var gold = 0
 var enemy_food = 0
 var enemy_gold = 0
 
+var gold_bonus
+
 func get_food(is_enemy):
 	if(is_enemy):
 		return enemy_food
@@ -25,7 +27,7 @@ func add_gold(amount: int, is_enemy):
 	if(is_enemy):
 		enemy_gold += amount
 	else:
-		gold += amount
+		gold += amount + gold_bonus
 	
 		emit_signal("food_added", amount)
 	
