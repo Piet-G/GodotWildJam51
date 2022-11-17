@@ -1,0 +1,185 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://towers/archery_tower/BallistaTower/BallistaTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://towers/archery_tower/AntiAirTower/AntiAirTower.gd" type="Script" id=2]
+[ext_resource path="res://assets/towers/tower/Anti_air_tower_enemy.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/tower/Anti_air_tower_anim.png" type="Texture" id=4]
+[ext_resource path="res://assets/towers/tower/anti/Right/shoot_0003.png" type="Texture" id=5]
+[ext_resource path="res://assets/towers/tower/anti/Right/shoot_0002.png" type="Texture" id=6]
+[ext_resource path="res://assets/towers/tower/anti/Right/shoot_0001.png" type="Texture" id=7]
+[ext_resource path="res://assets/towers/tower/anti/Left/shoot_0001.png" type="Texture" id=8]
+[ext_resource path="res://assets/towers/tower/anti/Left/shoot_0002.png" type="Texture" id=9]
+[ext_resource path="res://assets/towers/tower/anti/Left/shoot_0003.png" type="Texture" id=10]
+[ext_resource path="res://assets/towers/tower/anti/down/shoot_0002.png" type="Texture" id=11]
+[ext_resource path="res://assets/towers/tower/anti/down/shoot_0003.png" type="Texture" id=12]
+[ext_resource path="res://assets/towers/tower/anti/down/shoot_0001.png" type="Texture" id=13]
+[ext_resource path="res://assets/towers/tower/anti/up/shoot_0001.png" type="Texture" id=14]
+[ext_resource path="res://assets/towers/tower/anti/up/shoot_0003.png" type="Texture" id=15]
+[ext_resource path="res://assets/towers/tower/anti/up/shoot_0002.png" type="Texture" id=16]
+[ext_resource path="res://assets/towers/tower/anti/right_up/shoot_0002.png" type="Texture" id=17]
+[ext_resource path="res://assets/towers/tower/anti/right_up/shoot_0001.png" type="Texture" id=18]
+[ext_resource path="res://assets/towers/tower/anti/right_up/shoot_0003.png" type="Texture" id=19]
+[ext_resource path="res://assets/towers/tower/anti/Left_down/shoot_0001.png" type="Texture" id=20]
+[ext_resource path="res://assets/towers/tower/anti/Left_down/shoot_0002.png" type="Texture" id=21]
+[ext_resource path="res://assets/towers/tower/anti/Left_down/shoot_0003.png" type="Texture" id=22]
+[ext_resource path="res://assets/towers/tower/anti/Right_down/shoot_0003.png" type="Texture" id=23]
+[ext_resource path="res://assets/towers/tower/anti/left_up/shoot_0001.png" type="Texture" id=24]
+[ext_resource path="res://assets/towers/tower/anti/left_up/shoot_0002.png" type="Texture" id=25]
+[ext_resource path="res://assets/towers/tower/anti/Right_down/shoot_0001.png" type="Texture" id=26]
+[ext_resource path="res://assets/towers/tower/anti/left_up/shoot_0003.png" type="Texture" id=27]
+[ext_resource path="res://assets/towers/tower/anti/Right_down/shoot_0002.png" type="Texture" id=28]
+[ext_resource path="res://towers/archery_tower/AntiAirTower/AntiAir_info.tres" type="Resource" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="AntiAirTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+regular_texture = ExtResource( 4 )
+enemy_texture = ExtResource( 3 )
+tower_info = ExtResource( 29 )
+air = true
+regular_sprites_right = SubResource( 1 )
+enemy_sprites_right = SubResource( 2 )
+regular_sprites_left = SubResource( 3 )
+enemy_sprites_left = SubResource( 4 )
+regular_sprites_down = SubResource( 5 )
+enemy_sprites_down = SubResource( 6 )
+regular_sprites_up = SubResource( 7 )
+enemy_sprites_up = SubResource( 8 )
+regular_sprites_right_up = SubResource( 9 )
+enemy_sprites_right_up = SubResource( 10 )
+regular_sprites_left_up = SubResource( 11 )
+enemy_sprites_left_up = SubResource( 12 )
+regular_sprites_right_down = SubResource( 13 )
+enemy_sprites_right_down = SubResource( 14 )
+regular_sprites_left_down = SubResource( 15 )
+enemy_sprites_left_down = SubResource( 16 )
+
+[node name="Sprite" parent="." index="0"]
+visible = true
