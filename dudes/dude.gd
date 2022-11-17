@@ -166,3 +166,28 @@ func stop_haste():
 
 func _on_HasteTimer_timeout():
 	stop_haste()
+
+func bribe():
+	is_enemy = !is_enemy
+	
+	if(not is_enemy):
+		$AnimatedSprite.frames = regular_sprites
+	else:
+		$AnimatedSprite.frames = enemy_sprites
+	
+	var closest_distance = 100000000000000
+	var closest_path: Path2D
+	
+	for path in get_tree().get_nodes_in_group("path"):
+		if(path.is_enemy == is_enemy):
+			var path_node: Path2D = path
+			var local_pos = path_node.to_local(global_position)
+			var distance = path_node.curve.get_closest_point(local_pos).distance_to(local_pos)
+			
+			if(distance < closest_distance):
+				closest_distance = distance
+				closest_path = path_node
+	
+	closest_path.add_child(self)
+	var local_pos = closest_path.to_local(global_position)
+	offset = closest_path.curve.get_closest_offset(local_pos)
