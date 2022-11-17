@@ -81,6 +81,9 @@ _data = {
 position = Vector2( 400, 300 )
 frames = SubResource( 13 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Farm2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 360 )
@@ -468,26 +471,34 @@ food_gained = 5
 
 [node name="SpaceOccupier" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 160, 120 )
+road = false
 
 [node name="SpaceOccupier28" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 120, 120 )
+road = false
 
 [node name="SpaceOccupier29" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 80, 120 )
+road = false
 
 [node name="SpaceOccupier30" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 80, 80 )
+road = false
 
 [node name="SpaceOccupier31" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 80, 40 )
+road = false
 
 [node name="SpaceOccupier32" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 40, 40 )
+road = false
 
 [node name="SpaceOccupier33" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 0, 40 )
+road = false
 
 [node name="SpaceOccupier34" parent="SpaceOccupiers" instance=ExtResource( 15 )]
+road = false
 
 [node name="SpaceOccupier35" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 40, 80 )
@@ -632,69 +643,91 @@ position = Vector2( 200, 240 )
 
 [node name="SpaceOccupier2" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 160, 160 )
+road = false
 
 [node name="SpaceOccupier3" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 160, 200 )
+road = false
 
 [node name="SpaceOccupier4" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 200, 200 )
+road = false
 
 [node name="SpaceOccupier5" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 240, 200 )
+road = false
 
 [node name="SpaceOccupier6" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 240, 240 )
+road = false
 
 [node name="SpaceOccupier7" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 280, 240 )
+road = false
 
 [node name="SpaceOccupier8" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 320, 240 )
+road = false
 
 [node name="SpaceOccupier9" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 360, 240 )
+road = false
 
 [node name="SpaceOccupier10" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 360, 280 )
+road = false
 
 [node name="SpaceOccupier11" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 400, 280 )
+road = false
 
 [node name="SpaceOccupier12" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 400, 320 )
+road = false
 
 [node name="SpaceOccupier13" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 440, 320 )
+road = false
 
 [node name="SpaceOccupier14" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 480, 320 )
+road = false
 
 [node name="SpaceOccupier15" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 520, 320 )
+road = false
 
 [node name="SpaceOccupier16" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 520, 360 )
+road = false
 
 [node name="SpaceOccupier17" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 560, 360 )
+road = false
 
 [node name="SpaceOccupier18" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 600, 360 )
+road = false
 
 [node name="SpaceOccupier19" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 600, 400 )
+road = false
 
 [node name="SpaceOccupier20" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 600, 440 )
+road = false
 
 [node name="SpaceOccupier21" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 640, 440 )
+road = false
 
 [node name="SpaceOccupier22" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 680, 440 )
+road = false
 
 [node name="SpaceOccupier23" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 680, 480 )
+road = false
 
 [node name="SpaceOccupier82" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 720, 480 )
@@ -842,15 +875,19 @@ position = Vector2( 120, 80 )
 
 [node name="SpaceOccupier24" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 680, 520 )
+road = false
 
 [node name="SpaceOccupier25" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 720, 520 )
+road = false
 
 [node name="SpaceOccupier26" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 760, 520 )
+road = false
 
 [node name="SpaceOccupier27" parent="SpaceOccupiers" instance=ExtResource( 15 )]
 position = Vector2( 760, 560 )
+road = false
 
 [node name="CastleHPBlue" parent="." instance=ExtResource( 16 )]
 margin_left = 20.0
@@ -865,36 +902,88 @@ margin_right = 780.0
 margin_bottom = 12.0
 is_enemy = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Red" type="Node2D" parent="."]
 
-[node name="RaidHome" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 590, 300 )
+[node name="RaidHome" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 536, 297 )
 is_enemy = true
 
-[node name="RaidHome2" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 550, 210 )
+[node name="RaidHome2" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 590, 225 )
 is_enemy = true
 
-[node name="RaidHome3" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 670, 190 )
+[node name="RaidHome3" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 696, 173 )
 is_enemy = true
 
-[node name="RaidHome4" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 740, 130 )
+[node name="RaidHome4" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 544, 22 )
 is_enemy = true
 
-[node name="RaidHome5" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 460, 160 )
+[node name="RaidHome5" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 428, 95 )
 is_enemy = true
 
-[node name="RaidHome6" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 410, 230 )
+[node name="RaidHome10" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 307, 63 )
 is_enemy = true
 
-[node name="RaidHome7" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 310, 320 )
+[node name="RaidHome11" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 188, 103 )
 is_enemy = true
 
-[node name="RaidHome8" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 740, 320 )
+[node name="RaidHome9" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 583, 131 )
 is_enemy = true
+
+[node name="RaidHome6" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 469, 198 )
+is_enemy = true
+
+[node name="RaidHome8" parent="Red" instance=ExtResource( 18 )]
+position = Vector2( 744, 298 )
+is_enemy = true
+
+[node name="Blue" type="Node2D" parent="."]
+position = Vector2( 768, 559 )
+scale = Vector2( -1, -1 )
+
+[node name="RaidHome" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 536, 297 )
+rotation = 3.14159
+
+[node name="RaidHome2" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 590, 225 )
+rotation = 3.14159
+
+[node name="RaidHome3" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 696, 173 )
+rotation = 3.14159
+
+[node name="RaidHome4" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 544, 22 )
+rotation = 3.14159
+
+[node name="RaidHome5" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 428, 95 )
+rotation = 3.14159
+
+[node name="RaidHome10" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 307, 63 )
+rotation = 3.14159
+
+[node name="RaidHome11" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 188, 103 )
+rotation = 3.14159
+
+[node name="RaidHome9" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 583, 131 )
+rotation = 3.14159
+
+[node name="RaidHome6" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 469, 198 )
+rotation = 3.14159
+
+[node name="RaidHome8" parent="Blue" instance=ExtResource( 18 )]
+position = Vector2( 744, 298 )
+rotation = 3.14159
