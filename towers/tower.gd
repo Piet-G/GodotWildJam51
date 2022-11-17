@@ -52,7 +52,6 @@ func set_selected(value):
 	$SelectedIndicator.visible = value
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	print(active, is_enemy,event.is_action_pressed("place_tower"))
 	if(event.is_action_pressed("place_tower") and not is_enemy and active and recently_added_to_grid):
 		emit_signal("clicked")
 		Ui.upgrade_clicked(self)

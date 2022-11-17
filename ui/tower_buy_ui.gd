@@ -17,11 +17,12 @@ func _ready():
 		tower_buy_button.connect("pressed", self, "_on_buy_tower_clicked", [info])
 
 func _on_buy_tower_clicked(info: TowerInfo) -> void:
-	tower_ghost = load(info.scene).instance()
-	tower_ghost.set_invalid(true)
-	clicked_info = info
-	get_tree().current_scene.add_child(tower_ghost)
-	Ui.placing_building = true
+	if(not Ui.placing_building):
+		tower_ghost = load(info.scene).instance()
+		tower_ghost.set_invalid(true)
+		clicked_info = info
+		get_tree().current_scene.add_child(tower_ghost)
+		Ui.placing_building = true
 
 func check_if_next_to_road(position):
 	if(not tower_ghost.type == Tower.Type.barracks):
