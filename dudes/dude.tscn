@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
@@ -12,6 +12,17 @@
 [ext_resource path="res://assets/effects/Speed/Speed_0003.png" type="Texture" id=10]
 [ext_resource path="res://assets/effects/Speed/Speed_0002.png" type="Texture" id=11]
 [ext_resource path="res://assets/effects/Speed/Speed_0001.png" type="Texture" id=12]
+[ext_resource path="res://assets/effects/Revive/cast_0003.png" type="Texture" id=13]
+[ext_resource path="res://assets/effects/Revive/cast_0001.png" type="Texture" id=14]
+[ext_resource path="res://assets/effects/Revive/cast_0002.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -46,6 +57,10 @@ script = ExtResource( 2 )
 regular_sprites = ExtResource( 1 )
 enemy_sprites = ExtResource( 3 )
 
+[node name="Revive" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 9 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 frame = 3
@@ -79,6 +94,7 @@ one_shot = true
 [node name="HasteTimer" type="Timer" parent="."]
 wait_time = 3.0
 
+[connection signal="animation_finished" from="Revive" to="." method="_on_Revive_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Slow" to="." method="_on_Slow_animation_finished"]
 [connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]

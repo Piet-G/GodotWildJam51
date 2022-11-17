@@ -42,7 +42,14 @@ func stop_sneaking():
 func damage(amount):
 	health -= amount
 	if(health <= 0):
-		queue_free()
+		for area in $Area2D.get_overlapping_areas():
+			if(area.is_in_group("angel_area")and area.get_parent().is_enemy == is_enemy):
+				if(area.get_parent().cast()):
+					health = max_health
+					$Revive.visible = true
+					$Revive.play()
+				else:
+					queue_free()
 
 func is_active():
 	return true
@@ -191,3 +198,8 @@ func bribe():
 	closest_path.add_child(self)
 	var local_pos = closest_path.to_local(global_position)
 	offset = closest_path.curve.get_closest_offset(local_pos)
+
+
+func _on_Revive_animation_finished():
+	$Revive.visible = false
+	$Revive.playing = false
