@@ -5,8 +5,12 @@ var tower_info: TowerInfo
 func _process(delta):
 	if(not tower_info):
 		return
-	disabled = not (ResourceManager.food >= tower_info.food_cost and ResourceManager.gold >= tower_info.gold_cost)
-	material.set_shader_param("grayscale", disabled)
+		
+	var satisfied = not (ResourceManager.food >= tower_info.food_cost and ResourceManager.gold >= tower_info.gold_cost)
+	disabled = satisfied
+	material.set_shader_param("grayscale", satisfied)
+	
+	print(tower_info.name, material.get_shader_param("grayscale"), disabled)
 	
 func set_tower_info(info: TowerInfo):
 	texture_normal = load(info.icon)
@@ -14,7 +18,7 @@ func set_tower_info(info: TowerInfo):
 	if(tower_info):
 		rect_position -= tower_info.icon_offset
 	rect_position += info.icon_offset
-	self.tower_info = info
+	tower_info = info
 
 var popup
 func _on_TowerBuyButton_mouse_entered():
