@@ -62,3 +62,11 @@ func _on_WarTimer_timeout():
 	
 	if(len(dudes) <= 0):
 		$WarTimer.stop()
+	
+func burn():
+	$BurningSprite.visible = true
+	$BurningSprite.playing = true
+
+func _on_BurningTimer_timeout():
+	$BurningSprite.visible = false
+	$BurningSprite.playing = false

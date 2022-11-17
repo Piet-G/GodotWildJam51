@@ -24,6 +24,7 @@ var sneaking = false
 var health = max_health
 var active = false
 var slow = false
+var hasty = false
 
 func activate():
 	active = true
@@ -150,8 +151,28 @@ func slow():
 	if(!slow):
 		movement_speed -= 20
 		slow = true
+		$SlowTimer.start()
 
 func stop_slow():
 	if(slow):
 		movement_speed += 20
 		slow = false
+
+func _on_SlowTimer_timeout():
+	stop_slow()
+
+func haste():
+	if(!hasty):
+		movement_speed += 20
+		$hasteTimer.start()
+		hasty = true
+
+func stop_haste():
+	if(hasty):
+		movement_speed -= 20
+		hasty = false
+
+
+
+func _on_HasteTimer_timeout():
+	stop_haste()

@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=1]
+[ext_resource path="res://towers/barracks/AirMageGuild/AirMageGuild_info.tres" type="Resource" id=2]
+[ext_resource path="res://assets/towers/barracks/Mage_guild_air_enemy.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/barracks/Mage_guild_air.png" type="Texture" id=4]
+
+[node name="AirMageGuild" instance=ExtResource( 1 )]
+regular_texture = ExtResource( 4 )
+enemy_texture = ExtResource( 3 )
+tower_info = ExtResource( 2 )
+unit_scene = "res://dudes/AirWizard/AirWizard.tscn"
+max_dudes = 1

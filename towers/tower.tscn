@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/tower.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://ui/gray_scale_material.tres" type="Material" id=3]
 [ext_resource path="res://assets/UI/UI_selection.png" type="Texture" id=4]
+[ext_resource path="res://assets/effects/Fire/fire_0002.png" type="Texture" id=5]
+[ext_resource path="res://assets/effects/Fire/fire_0001.png" type="Texture" id=6]
+[ext_resource path="res://assets/effects/Fire/fire_0003.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Tower" type="Node2D" groups=["tower", "zindexed"]]
 script = ExtResource( 1 )
@@ -32,4 +43,14 @@ centered = false
 wait_time = 0.3
 one_shot = true
 
+[node name="BurningSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 2 )
+frame = 1
+
+[node name="BurningTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="HelperTimer" to="." method="_on_HelperTimer_timeout"]
+[connection signal="timeout" from="BurningTimer" to="." method="_on_BurningTimer_timeout"]

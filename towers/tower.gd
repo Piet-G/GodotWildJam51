@@ -70,3 +70,12 @@ func damage(amount):
 
 func _on_HelperTimer_timeout():
 	add_to_recent_grid()
+
+func burn():
+	$BurningSprite.visible = true
+	$BurningSprite.playing = true
+	$BurningTimer.start()
+
+func _on_BurningTimer_timeout():
+	$BurningSprite.visible = false
+	$BurningSprite.playing = false

@@ -15,6 +15,7 @@ var direction = Vector2.ZERO
 var health
 var active = false
 var slow = false
+var hasty
 
 func _ready():
 	health = max_health
@@ -146,3 +147,22 @@ func stop_slow():
 
 func _on_SlowTimer_timeout():
 	stop_slow()
+
+
+func haste():
+	if(!hasty):
+		movement_speed += 20
+		$AnimatedSprite/Haste.visible = true
+		$AnimatedSprite/Haste.play()
+		$hasteTimer.start()
+		hasty = true
+
+func stop_haste():
+	if(hasty):
+		movement_speed -= 20
+		$AnimatedSprite/Haste.visible = false
+		$AnimatedSprite/Haste.playing = false
+		hasty = false
+
+func _on_HasteTimer_timeout():
+	stop_haste()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://assets/effects/Slowed/Slowed_0003.png" type="Texture" id=7]
 [ext_resource path="res://assets/effects/Slowed/Slowed_0002.png" type="Texture" id=8]
 [ext_resource path="res://assets/effects/Slowed/Slowed_0001.png" type="Texture" id=9]
+[ext_resource path="res://assets/effects/Speed/Speed_0003.png" type="Texture" id=10]
+[ext_resource path="res://assets/effects/Speed/Speed_0002.png" type="Texture" id=11]
+[ext_resource path="res://assets/effects/Speed/Speed_0001.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -26,6 +29,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="Dude" type="PathFollow2D" groups=["dude", "zindexed"]]
@@ -37,7 +48,7 @@ enemy_sprites = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]
@@ -47,6 +58,10 @@ frames = SubResource( 7 )
 [node name="Slow" type="AnimatedSprite" parent="AnimatedSprite"]
 visible = false
 frames = SubResource( 4 )
+
+[node name="Haste" type="AnimatedSprite" parent="AnimatedSprite"]
+visible = false
+frames = SubResource( 8 )
 
 [node name="Area2D" type="Area2D" parent="." groups=["dude_area"]]
 
@@ -61,7 +76,11 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
+[node name="HasteTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Slow" to="." method="_on_Slow_animation_finished"]
 [connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_SlowTimer_timeout"]
+[connection signal="timeout" from="HasteTimer" to="." method="_on_HasteTimer_timeout"]

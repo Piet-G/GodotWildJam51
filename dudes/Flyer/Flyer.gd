@@ -14,6 +14,8 @@ var target = Vector2(760,40)
 var rot = (-PI + 0.5)
 var active = false
 var health
+var slow = false
+var hasty = false
 
 func _ready():
 	health = max_health
@@ -84,11 +86,35 @@ func uninspire():
 func heal():
 	pass
 
-func slow():
-	movement_speed -= 20
-
 func oil():
-	movement_speed -= 20
+	if(!slow):
+		movement_speed -= 20
+		slow = true
+
+func slow():
+	if(!slow):
+		movement_speed -= 20
+		slow = true
+		$SlowTimer.start()
 
 func stop_slow():
-	movement_speed += 20
+	if(slow):
+		movement_speed += 20
+		slow = false
+
+func _on_SlowTimer_timeout():
+	stop_slow()
+
+func haste():
+	if(!hasty):
+		movement_speed += 20
+		$hasteTimer.start()
+		hasty = true
+
+func stop_haste():
+	if(hasty):
+		movement_speed -= 20
+		hasty = false
+
+func _on_HasteTimer_timeout():
+	stop_haste()

@@ -1,0 +1,47 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://dudes/EarthWizard/EarthWizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dudes/AirWizard/AirWizard.gd" type="Script" id=2]
+[ext_resource path="res://assets/units/Air_wizard/blue/run_right_0001.png" type="Texture" id=3]
+[ext_resource path="res://assets/units/Air_wizard/blue/run_right_0002.png" type="Texture" id=4]
+[ext_resource path="res://assets/units/Air_wizard/blue/run_right_0003.png" type="Texture" id=5]
+[ext_resource path="res://assets/units/Air_wizard/blue/run_right_0004.png" type="Texture" id=6]
+[ext_resource path="res://assets/units/Air_wizard/red/run_right_0004.png" type="Texture" id=7]
+[ext_resource path="res://assets/units/Air_wizard/red/run_right_0001.png" type="Texture" id=8]
+[ext_resource path="res://assets/units/Air_wizard/red/run_right_0002.png" type="Texture" id=9]
+[ext_resource path="res://assets/units/Air_wizard/red/run_right_0003.png" type="Texture" id=10]
+[ext_resource path="res://assets/units/Air_wizard/Cast_0003.png" type="Texture" id=11]
+[ext_resource path="res://assets/units/Air_wizard/Cast_0002.png" type="Texture" id=12]
+[ext_resource path="res://assets/units/Air_wizard/Cast_0001.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="AirWizard" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+regular_sprites = SubResource( 1 )
+enemy_sprites = SubResource( 2 )
+
+[node name="Cast_sprite" parent="." index="3"]
+frames = SubResource( 3 )
