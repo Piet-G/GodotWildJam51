@@ -4,34 +4,32 @@ export var speed = 180
 var target: Node2D
 var is_enemy = false
 var origin: Node2D
+var direction
+
+func set_direction():
+	direction = global_position.direction_to(target.global_position)
 
 func set_target(target: Node2D):
 	self.target = target
 	target.targeted = true
 	
 func _physics_process(delta):
-	if(not is_instance_valid(target) && target != origin):
-		destroy()
-	else:
-		rotation = global_position.angle_to_point(target.global_position) - PI
-		global_position += global_position.direction_to(target.global_position) * speed * delta
+	global_position += direction * speed * delta
 
 
 func _on_Area2D_area_entered(area):
 	if(area.is_in_group("mirror")):
 		target = origin
-	elif(area.is_in_group("shield")):
-		destroy()
-		if(is_instance_valid(target)):
-			self.target.targeted = false
+		set_direction()
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		area.get_parent().damage(1)
-		if(is_instance_valid(target)):
-			self.target.targeted = false
-		destroy()
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
 		area.get_parent().damage(1)
 		destroy()
 
 func destroy():
+	queue_free()
+
+
+func _on_Timer_timeout():
 	queue_free()

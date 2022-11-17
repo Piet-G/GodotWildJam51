@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://towers/archery_tower/MageTower/MageTower_info.tres" type="Resource" id=2]
+[ext_resource path="res://assets/towers/tower/Tower.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/tower/Tower_enemy.png" type="Texture" id=4]
+[ext_resource path="res://towers/archery_tower/MageTower/MageTower.gd" type="Script" id=5]
 
 [sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
@@ -27,7 +31,10 @@ shader_param/grayscale = false
 shader_param/invalid = false
 
 [node name="MageTower" instance=ExtResource( 1 )]
-damage = 1
+script = ExtResource( 5 )
+regular_texture = ExtResource( 3 )
+enemy_texture = ExtResource( 4 )
+tower_info = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
