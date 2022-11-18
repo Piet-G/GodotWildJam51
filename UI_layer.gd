@@ -124,3 +124,9 @@ func _on_TextureRect_pressed():
 
 func _on_MenuButton_pressed():
 	$RegularMenu.visible = !$RegularMenu.visible
+
+
+func _on_UpgradeUI_delete_pressed():
+	if(is_instance_valid(upgrading_tower)):
+		upgrading_tower.truly_delete()
+		close_upgrade()

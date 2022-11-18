@@ -290,4 +290,5 @@ visible = false
 [connection signal="pressed" from="UI/ToWar/ToWarButton" to="." method="_on_ToWarButton_pressed"]
 [connection signal="pressed" from="UI/ToWar/TextureRect" to="." method="_on_TextureRect_pressed"]
 [connection signal="button_pressed" from="UI/UpgradeUI" to="." method="_on_UpgradeUI_button_pressed"]
+[connection signal="delete_pressed" from="UI/UpgradeUI" to="." method="_on_UpgradeUI_delete_pressed"]
 [connection signal="open_toggled" from="UI/TowerBuyUI" to="UI" method="_on_TowerBuyUI_open_toggled"]
