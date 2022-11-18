@@ -25,19 +25,22 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 8.37946
-height = 11.3304
+radius = 17.206
+height = 0.0
 
 [node name="Bomber" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
-[node name="AnimatedSprite" parent="." index="0"]
+[node name="AnimatedSprite" parent="." index="2"]
 frame = 0
 
 [node name="Position2D" type="Position2D" parent="AnimatedSprite" index="3"]
 position = Vector2( 0, -8.7704 )
+
+[node name="Position2D2" type="Position2D" parent="AnimatedSprite" index="4"]
+position = Vector2( 0.561859, 18.1991 )
 
 [node name="Sprite" parent="." index="3"]
 texture = ExtResource( 2 )
@@ -45,7 +48,7 @@ texture = ExtResource( 2 )
 [node name="BombArea" type="Area2D" parent="." index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BombArea" index="0"]
-position = Vector2( 1.25993, 17.0089 )
+position = Vector2( -2.86042, 21.3165 )
 rotation = 0.868754
 shape = SubResource( 3 )
 

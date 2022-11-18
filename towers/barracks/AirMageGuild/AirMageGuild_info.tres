@@ -11,4 +11,4 @@ icon = "res://assets/towers/barracks/Mage_guild_air.png"
 scene = "res://towers/barracks/AirMageGuild/AirMageGuild.tscn"
 next_upgrades = [  ]
 flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+icon_offset = Vector2( 4, 0 )

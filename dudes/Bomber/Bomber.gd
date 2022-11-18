@@ -29,5 +29,7 @@ func drop_bomb():
 	var bomb = preload("res://dudes/Bomber/Bomb_projectile.tscn").instance()
 	get_parent().add_child(bomb)
 	bomb.global_position = $AnimatedSprite/Position2D.global_position
+	bomb.active = true
+	bomb.ground = $AnimatedSprite/Position2D2.global_position.y
 	$BombCooldown.start()
 

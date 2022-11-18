@@ -35,6 +35,7 @@ func _ready():
 		$Sprite.texture = regular_texture
 	
 	if(initially_in_world):
+		active = true
 		GridService.add_to_grid(self, GridService.to_grid_position(global_position + Vector2(1,1)))
 
 var recently_added_to_grid = false

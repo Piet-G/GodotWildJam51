@@ -23,4 +23,4 @@ func _on_ExplosionSmall_area_entered(area):
 
 
 func _on_AnimatedSprite_animation_finished():
-	queue_free()
+	get_parent().queue_free()
