@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/UI/grain_icon.png" type="Texture" id=9]
 [ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=10]
 [ext_resource path="res://assets/UI/shop_screen_button.png" type="Texture" id=11]
+[ext_resource path="res://ui/RegularMenu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -137,7 +138,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "WarTimeScale", 0, "Animation 3", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "output", 0, "Add2 2" ]
+node_connections = [ "output", 0, "Add2 2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -156,37 +157,49 @@ margin_right = 170.0
 margin_bottom = 18.0
 script = ExtResource( 1 )
 
+[node name="MenuButton" type="Button" parent="UI/TopBar"]
+margin_right = 20.0
+margin_bottom = 20.0
+text = "X"
+
+[node name="Control2" type="Control" parent="UI/TopBar"]
+margin_left = 24.0
+margin_right = 34.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 10, 0 )
+
 [node name="TextureRect2" type="TextureRect" parent="UI/TopBar"]
-margin_right = 16.0
-margin_bottom = 18.0
+margin_left = 38.0
+margin_right = 54.0
+margin_bottom = 20.0
 texture = ExtResource( 9 )
 
 [node name="FoodCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
-margin_left = 20.0
-margin_top = 2.0
-margin_right = 28.0
-margin_bottom = 16.0
+margin_left = 58.0
+margin_top = 3.0
+margin_right = 66.0
+margin_bottom = 17.0
 text = "0"
 
 [node name="Control" type="Control" parent="UI/TopBar"]
-margin_left = 32.0
-margin_right = 42.0
-margin_bottom = 18.0
+margin_left = 70.0
+margin_right = 80.0
+margin_bottom = 20.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="UI/TopBar"]
-margin_left = 46.0
-margin_right = 61.0
-margin_bottom = 18.0
+margin_left = 84.0
+margin_right = 99.0
+margin_bottom = 20.0
 texture = ExtResource( 8 )
 
 [node name="GoldCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
-margin_left = 65.0
-margin_top = 2.0
-margin_right = 65.0
-margin_bottom = 16.0
+margin_left = 103.0
+margin_top = 3.0
+margin_right = 103.0
+margin_bottom = 17.0
 
 [node name="ToWar" type="NinePatchRect" parent="UI"]
 margin_left = 282.0
@@ -270,6 +283,10 @@ margin_top = -70.0
 margin_right = 88.0
 margin_bottom = 6.0
 
+[node name="RegularMenu" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[connection signal="pressed" from="UI/TopBar/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="UI/ToWar/ToWarButton" to="." method="_on_ToWarButton_pressed"]
 [connection signal="pressed" from="UI/ToWar/TextureRect" to="." method="_on_TextureRect_pressed"]
 [connection signal="button_pressed" from="UI/UpgradeUI" to="." method="_on_UpgradeUI_button_pressed"]

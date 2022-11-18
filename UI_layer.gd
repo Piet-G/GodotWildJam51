@@ -120,3 +120,7 @@ func _on_TextureRect_pressed():
 		close_to_war()
 	else:
 		open_to_war()
+
+
+func _on_MenuButton_pressed():
+	$RegularMenu.visible = !$RegularMenu.visible
