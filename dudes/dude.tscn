@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
@@ -18,10 +18,21 @@
 [ext_resource path="res://assets/effects/Burning/Convert_0002.png" type="Texture" id=16]
 [ext_resource path="res://assets/effects/Burning/Convert_0003.png" type="Texture" id=17]
 [ext_resource path="res://assets/effects/Burning/Convert_0001.png" type="Texture" id=18]
+[ext_resource path="res://assets/effects/Necromancy/cast_0003.png" type="Texture" id=19]
+[ext_resource path="res://assets/effects/Necromancy/cast_0002.png" type="Texture" id=20]
+[ext_resource path="res://assets/effects/Necromancy/cast_0001.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -72,6 +83,10 @@ enemy_sprites = ExtResource( 3 )
 visible = false
 frames = SubResource( 9 )
 
+[node name="Resurrect" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 11 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 frame = 2
@@ -119,6 +134,7 @@ one_shot = true
 one_shot = true
 
 [connection signal="animation_finished" from="Revive" to="." method="_on_Revive_animation_finished"]
+[connection signal="animation_finished" from="Resurrect" to="." method="_on_Resurrect_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Slow" to="." method="_on_Slow_animation_finished"]
 [connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://towers/archery_tower/Thunderdome/Thunderdome.tscn" type="PackedScene" id=1]
+[ext_resource path="res://towers/archery_tower/StormTower/StormTower.gd" type="Script" id=2]
+[ext_resource path="res://assets/towers/tower/Lightning_tower.png" type="Texture" id=3]
+[ext_resource path="res://assets/towers/tower/Lightning_tower_enemy.png" type="Texture" id=4]
+[ext_resource path="res://towers/archery_tower/StormTower/StormTower_info.tres" type="Resource" id=5]
+
+[node name="StormTower" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+regular_texture = ExtResource( 3 )
+enemy_texture = ExtResource( 4 )
+tower_info = ExtResource( 5 )
+
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 0.5

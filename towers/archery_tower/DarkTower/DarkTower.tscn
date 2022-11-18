@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://towers/archery_tower/NecromancerTower/NecromancerTower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/towers/tower/Dark_tower_enemy.png" type="Texture" id=2]
+[ext_resource path="res://assets/towers/tower/Dark_tower.png" type="Texture" id=3]
+[ext_resource path="res://towers/archery_tower/DarkTower/DarkTower_info.tres" type="Resource" id=4]
+
+[node name="DarkTower" instance=ExtResource( 1 )]
+regular_texture = ExtResource( 3 )
+enemy_texture = ExtResource( 2 )
+tower_info = ExtResource( 4 )
+
+[node name="Timer" parent="." index="7"]
+wait_time = 2.0

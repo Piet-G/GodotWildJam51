@@ -53,6 +53,13 @@ func damage(amount):
 					$Revive.visible = true
 					$Revive.play()
 					death = false
+			if(area.is_in_group("Necro") and area.get_parent().is_enemy != is_enemy):
+				if(area.get_parent().cast()):
+					health = max_health
+					$Resurrect.visible = true
+					$Resurrect.play()
+					death = false
+					bribe()
 		if(death):
 			queue_free()
 		
@@ -236,3 +243,7 @@ func discover():
 		stop_sneaking()
 		discovered = true
 
+
+func _on_Resurrect_animation_finished():
+	$Resurrect.visible = false
+	$Resurrect.playing = false
