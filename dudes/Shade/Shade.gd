@@ -8,9 +8,9 @@ extends "res://dudes/dude.gd"
 
 # Called when the node enters the scene tree for the first time.
 func activate():
+	.activate()
 	$Timer.start()
 	sneak()
-	$SneakTimerProxy.wait_time = $SneakTimer.wait_time
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

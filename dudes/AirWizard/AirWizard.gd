@@ -12,8 +12,8 @@ func _on_CastRange_area_entered(area):
 	if($CastCooldown.is_stopped()):
 		var casted = false
 		for area in $CastRange.get_overlapping_areas():
-			if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active):
-				area.get_parent().slow()
+			if(area.is_in_group("dude_area") and area.get_parent().is_enemy == is_enemy and area.get_parent().active):
+				area.get_parent().haste()
 				casted = true
 		if casted:
 			$Cast_sprite.visible = true
@@ -29,8 +29,8 @@ func _on_Cast_sprite_animation_finished():
 func _on_CastCooldown_timeout():
 	var casted = false
 	for area in $CastRange.get_overlapping_areas():
-		if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active):
-			area.get_parent().slow()
+		if(area.is_in_group("dude_area") and area.get_parent().is_enemy == is_enemy and area.get_parent().active):
+			area.get_parent().haste()
 			casted = true
 	if casted:
 		$Cast_sprite.visible = true

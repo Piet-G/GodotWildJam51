@@ -45,6 +45,7 @@ one_shot = true
 
 [node name="BurningSprite" type="AnimatedSprite" parent="."]
 visible = false
+position = Vector2( 16.2363, 3.98643 )
 frames = SubResource( 2 )
 frame = 1
 

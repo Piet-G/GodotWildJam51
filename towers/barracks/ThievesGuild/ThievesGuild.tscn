@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/towers/barracks/Thieves_guild_enemy.png" type="Texture" id=2]
 [ext_resource path="res://assets/towers/barracks/Thieves_guild.png" type="Texture" id=3]
+[ext_resource path="res://towers/barracks/ThievesGuild/ThievesGuild_info.tres" type="Resource" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -31,7 +32,11 @@ shader_param/invalid = false
 [node name="ThievesGuild" instance=ExtResource( 1 )]
 regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 2 )
+tower_info = ExtResource( 4 )
 unit_scene = "res://dudes/Thief/Thief.tscn"
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+
+[node name="BurningSprite" parent="." index="8"]
+position = Vector2( 0, 0 )

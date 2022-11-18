@@ -174,7 +174,7 @@ func haste():
 		movement_speed += 20
 		$AnimatedSprite/Haste.visible = true
 		$AnimatedSprite/Haste.play()
-		$hasteTimer.start()
+		$HasteTimer.start()
 		hasty = true
 
 func stop_haste():

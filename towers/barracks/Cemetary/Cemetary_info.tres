@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Cemetary.png"
 scene = "res://towers/barracks/Cemetary/Cemetary.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "A grim place. Produces a shade, that also makes units around it invisible."
+icon_offset = Vector2( 4, -2 )
