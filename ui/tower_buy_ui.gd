@@ -42,7 +42,7 @@ func _process(delta):
 		var grid_position = GridService.to_grid_position(tower_ghost.global_position)
 		tower_ghost.set_invalid(GridService.is_grid_position_occupied_for_player(grid_position) or not check_if_next_to_road(grid_position))
 		tower_ghost.z_index = 3000
-		if(Input.is_action_just_pressed("place_tower") and not GridService.is_grid_position_occupied_for_player(grid_position) and check_if_next_to_road(grid_position)):
+		if((Input.is_action_just_pressed("place_tower") or Input.is_action_just_released("place_tower")) and not GridService.is_grid_position_occupied_for_player(grid_position) and check_if_next_to_road(grid_position)):
 			tower_ghost.set_invalid(false)
 			GridService.add_to_grid(tower_ghost,grid_position)
 			tower_ghost = null
