@@ -39,7 +39,7 @@ func damage(amount):
 		queue_free()
 
 func is_active():
-	return true
+	return active
 
 func sneak():
 	if discovered:

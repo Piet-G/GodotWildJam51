@@ -65,7 +65,7 @@ func damage(amount):
 		
 
 func is_active():
-	return true
+	return active
 	
 func get_z_position():
 	return global_position.y - 20

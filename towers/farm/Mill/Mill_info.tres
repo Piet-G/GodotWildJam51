@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/farm/Farm.png"
 scene = "res://towers/farm/Mill/Mill.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
+flavour_text = "Produces more wheat than a normal farm."
 icon_offset = Vector2( 0, 0 )

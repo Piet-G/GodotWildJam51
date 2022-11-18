@@ -28,6 +28,7 @@ regular_texture = ExtResource( 2 )
 enemy_texture = ExtResource( 2 )
 tower_info = ExtResource( 3 )
 unit_scene = "res://dudes/Rhino/Rhino.tscn"
+max_dudes = 1
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )

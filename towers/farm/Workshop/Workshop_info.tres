@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/farm/Workshop.png"
 scene = "res://towers/farm/Workshop/Workshop.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "A gatherplace for builders to share their knowledge. Repairs buildings and the castle."
+icon_offset = Vector2( 4, 7 )
