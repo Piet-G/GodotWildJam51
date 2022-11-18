@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
@@ -13,8 +13,12 @@
 [ext_resource path="res://assets/UI/War_button.png" type="Texture" id=11]
 [ext_resource path="res://ui/RegularMenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/UI/pause_icon.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/Button_hover.png" type="Texture" id=14]
 [ext_resource path="res://assets/UI/pause_pressed.png" type="Texture" id=15]
 [ext_resource path="res://assets/UI/pause_clicked.png" type="Texture" id=16]
+[ext_resource path="res://assets/UI/Button.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/Button_clicked.png" type="Texture" id=18]
+[ext_resource path="res://assets/UI/Buttondisabled.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -141,7 +145,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "BuyTimeScale", 0, "Animation" ]
+node_connections = [ "output", 0, "Add2 2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3", "BuyTimeScale", 0, "Animation" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -167,49 +171,49 @@ margin_bottom = 18.0
 
 [node name="MenuButton" type="TextureButton" parent="UI/TopBar"]
 margin_left = 4.0
-margin_right = 19.0
+margin_right = 21.0
 margin_bottom = 18.0
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 15 )
 
 [node name="Control3" type="Control" parent="UI/TopBar"]
-margin_left = 23.0
-margin_right = 25.0
+margin_left = 25.0
+margin_right = 27.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 2, 0 )
 
 [node name="TextureRect2" type="TextureRect" parent="UI/TopBar"]
-margin_left = 29.0
-margin_right = 45.0
+margin_left = 31.0
+margin_right = 47.0
 margin_bottom = 18.0
 texture = ExtResource( 9 )
 
 [node name="FoodCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
-margin_left = 49.0
+margin_left = 51.0
 margin_top = 2.0
-margin_right = 57.0
+margin_right = 59.0
 margin_bottom = 16.0
 text = "0"
 
 [node name="Control" type="Control" parent="UI/TopBar"]
-margin_left = 61.0
-margin_right = 71.0
+margin_left = 63.0
+margin_right = 73.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="UI/TopBar"]
-margin_left = 75.0
-margin_right = 90.0
+margin_left = 77.0
+margin_right = 92.0
 margin_bottom = 18.0
 texture = ExtResource( 8 )
 
 [node name="GoldCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
-margin_left = 94.0
+margin_left = 96.0
 margin_top = 2.0
-margin_right = 94.0
+margin_right = 96.0
 margin_bottom = 16.0
 
 [node name="ToWar" type="NinePatchRect" parent="UI"]
@@ -223,13 +227,25 @@ patch_margin_left = 72
 patch_margin_right = 66
 patch_margin_bottom = 50
 
-[node name="ToWarButton" type="Button" parent="UI/ToWar"]
+[node name="ToWarButton" type="TextureButton" parent="UI/ToWar"]
 pause_mode = 2
-margin_left = 11.0
-margin_top = 95.0
-margin_right = 94.0
-margin_bottom = 115.0
-text = "To War!"
+margin_left = 25.0
+margin_top = 103.0
+margin_right = 116.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 14 )
+texture_disabled = ExtResource( 19 )
+
+[node name="Label2" type="Label" parent="UI/ToWar/ToWarButton"]
+pause_mode = 2
+margin_left = 22.6274
+margin_top = 6.36395
+margin_right = 67.6274
+margin_bottom = 20.364
+mouse_filter = 1
+text = "To war!"
 
 [node name="Label" type="Label" parent="UI/ToWar"]
 modulate = Color( 0.654902, 0.4, 0, 1 )

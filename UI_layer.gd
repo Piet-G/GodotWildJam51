@@ -94,6 +94,7 @@ func _on_UpgradeUI_button_pressed():
 
 
 func _on_ToWarButton_pressed():
+	print("test")
 	for barrack in to_war_barracks:
 		barrack.launch_war()
 	close_to_war()
@@ -110,6 +111,7 @@ func _on_barracks_clicked(barracks):
 
 func _process(delta):
 	$UI/ToWar/ToWarButton.disabled = to_war_barracks.empty()
+	$UI/ToWar/ToWarButton/Label2.add_color_override("font_color", Color(0.1,0.1,0.1,1))
 	
 	if(to_war_barracks.empty()):
 		$UI/ToWar/ToWarButton.hint_tooltip = "No troops to attack with"
