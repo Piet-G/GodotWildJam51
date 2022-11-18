@@ -1,4 +1,4 @@
-extends "res://dudes/Leader/Leader.gd"
+extends "res://dudes/dude.gd"
 
 
 # Declare member variables here. Examples:
