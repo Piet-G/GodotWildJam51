@@ -31,7 +31,7 @@ regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 2
+frame = 0
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 texture = ExtResource( 7 )
