@@ -31,11 +31,10 @@ func get_health():
 	return health
 
 func sneak():
-	if discovered:
-		return
-	$SneakTimer.start()
-	$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
-	sneaking = true
+	if !discovered:
+		$SneakTimer.start()
+		$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
+		sneaking = true
 
 func stop_sneaking():
 	$SneakTimer.stop()
