@@ -9,7 +9,7 @@ func _init():
 	GridService.enemy_info = {}
 	GridService.illegal_spaces = {}
 	GridService.roads = {}
-	CastleService.hp = {true: 1, false: 100}
+	CastleService.hp = {true: 100, false: 100}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

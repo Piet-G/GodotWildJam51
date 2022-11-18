@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/PauseScreen.png" type="Texture" id=1]
 [ext_resource path="res://RateUs.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/RegularMenu.gd" type="Script" id=3]
 
@@ -20,8 +20,10 @@ margin_top = -130.0
 margin_right = 170.0
 margin_bottom = 143.0
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 800.72, 207.408 )
-patch_margin_bottom = 45
+region_rect = Rect2( -1.82913, 0, 821.356, 511 )
+patch_margin_left = 70
+patch_margin_right = 74
+patch_margin_bottom = 57
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
 anchor_left = 0.5
