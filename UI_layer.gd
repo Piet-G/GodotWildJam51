@@ -19,6 +19,8 @@ func upgrade_clicked(tower):
 
 func upgrade_selected(tower_info):
 	if(is_instance_valid(upgrading_tower)):
+		ResourceManager.remove_food(tower_info.food_cost, false)
+		ResourceManager.remove_gold(tower_info.gold_cost, false)
 		upgrading_tower.upgrade_to(tower_info)
 		
 	close_upgrade()
