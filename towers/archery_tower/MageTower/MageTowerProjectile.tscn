@@ -7,7 +7,6 @@
 [node name="MageTowerProjectile" instance=ExtResource( 1 )]
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-speed = 250
 
 [node name="Timer" type="Timer" parent="." index="1"]
 wait_time = 2.0

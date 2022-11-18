@@ -19,7 +19,6 @@ func _ready():
 		oilposition_left = $Right_Bottom
 		oil_position_up = $Left_Bottom
 		oil_position_down = $Right_Top
-	$OilTimer.start()
 
 # Called when the node enters the scene tree for the first time.
 func activate():

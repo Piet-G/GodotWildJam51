@@ -1,6 +1,6 @@
 extends Sprite
 
-export var speed = 250
+export var speed = 180
 var target: Node2D
 var is_enemy = false
 var origin: Node2D
@@ -32,6 +32,4 @@ func destroy():
 
 
 func _on_Timer_timeout():
-	if(target != null):
-		target.targeted = false
 	queue_free()

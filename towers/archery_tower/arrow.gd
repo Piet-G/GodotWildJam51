@@ -4,6 +4,7 @@ export var speed = 180
 var target: Node2D
 var is_enemy = false
 var origin: Node2D
+var active = true
 
 func set_target(target: Node2D):
 	self.target = target
@@ -18,6 +19,8 @@ func _physics_process(delta):
 
 
 func _on_Area2D_area_entered(area):
+	if(!active):
+		return
 	if(area.is_in_group("mirror")):
 		target = origin
 	elif(area.is_in_group("shield")):

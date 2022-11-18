@@ -110,17 +110,21 @@ movement_speed = 20
 regular_sprites = SubResource( 7 )
 enemy_sprites = SubResource( 8 )
 
-[node name="AnimatedSprite" parent="." index="1"]
-frame = 0
+[node name="Position2D" type="Position2D" parent="AnimatedSprite2" index="0"]
+position = Vector2( -0.841843, -11.1818 )
+
+[node name="Position2D" type="Position2D" parent="AnimatedSprite3" index="0"]
+position = Vector2( -0.264862, -31.519 )
+
+[node name="AnimatedSprite" parent="." index="4"]
+frame = 1
+
+[node name="Position2D" parent="AnimatedSprite" index="0"]
+position = Vector2( 15.2372, -25.5537 )
 
 [node name="Shoot" type="AnimatedSprite" parent="AnimatedSprite" index="4"]
 visible = false
 frames = SubResource( 9 )
-
-[node name="Position2D" type="Position2D" parent="AnimatedSprite2" index="0"]
-position = Vector2( -0.841843, -43.4954 )
-
-[node name="Position2D" type="Position2D" parent="AnimatedSprite3" index="0"]
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 position = Vector2( 187.043, 0 )
