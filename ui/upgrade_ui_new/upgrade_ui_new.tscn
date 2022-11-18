@@ -65,7 +65,6 @@ patch_margin_bottom = 43
 script = ExtResource( 5 )
 
 [node name="TextureRect" parent="." instance=ExtResource( 3 )]
-visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 31.0
@@ -73,11 +72,21 @@ margin_top = -25.0
 margin_right = 71.0
 margin_bottom = 15.0
 
+[node name="DeleteButton" type="Button" parent="TextureRect"]
+margin_left = 1.0
+margin_top = 65.0
+margin_right = 56.0
+margin_bottom = 85.0
+hint_tooltip = "Delete buildings"
+text = "Delete"
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="TowerBuyButton" parent="TextureRect" instance=ExtResource( 2 )]
 material = SubResource( 3 )
 
 [node name="Upgrades" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 0.943
 margin_right = -1.0
@@ -159,4 +168,5 @@ margin_bottom = 9.0
 text = "Building 
 fully upgraded!"
 
+[connection signal="pressed" from="TextureRect/DeleteButton" to="." method="_on_DeleteButton_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

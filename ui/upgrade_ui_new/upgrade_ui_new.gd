@@ -3,6 +3,7 @@ extends NinePatchRect
 var tower_info
 
 signal button_pressed()
+signal delete_pressed()
 
 func show_upgrades_for(tower_info: TowerInfo):
 	self.tower_info = tower_info
@@ -35,4 +36,6 @@ func _process(delta):
 		
 func _on_TextureButton_pressed():
 	emit_signal("button_pressed")
-	
+
+func _on_DeleteButton_pressed():
+	emit_signal("delete_pressed")
