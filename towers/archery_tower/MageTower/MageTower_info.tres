@@ -1,6 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://towers/tower_info.gd" type="Script" id=1]
+[ext_resource path="res://towers/archery_tower/Thunderdome/Thunderdome_info.tres" type="Resource" id=2]
+[ext_resource path="res://towers/archery_tower/OilTower/OilTower_info.tres" type="Resource" id=3]
+[ext_resource path="res://towers/archery_tower/NecromancerTower/NecromancerTower_info.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -9,6 +12,6 @@ food_cost = 10
 gold_cost = 0
 icon = "res://assets/towers/tower/Tower.png"
 scene = "res://towers/archery_tower/MageTower/MageTower.tscn"
-next_upgrades = [  ]
+next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 flavour_text = "This is flavour text, edit me"
 icon_offset = Vector2( 0, 0 )
