@@ -9,8 +9,8 @@
 [ext_resource path="res://ui/upgrade_ui_new/upgrade_ui_new.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/UI/Coin.png" type="Texture" id=8]
 [ext_resource path="res://assets/UI/grain_icon.png" type="Texture" id=9]
-[ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=10]
-[ext_resource path="res://assets/UI/shop_screen_button.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/shopscreen_new.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/War_button.png" type="Texture" id=11]
 [ext_resource path="res://ui/RegularMenu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=5]
@@ -138,7 +138,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3" ]
+node_connections = [ "output", 0, "Add2 2", "WarTimeScale", 0, "Animation 3", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -204,11 +204,12 @@ margin_bottom = 17.0
 [node name="ToWar" type="NinePatchRect" parent="UI"]
 margin_left = 282.0
 margin_top = -140.0
-margin_right = 386.0
+margin_right = 420.0
 margin_bottom = 4.0
 texture = ExtResource( 10 )
-patch_margin_left = 50
-patch_margin_right = 50
+region_rect = Rect2( -3.01425, 0, 824.086, 202.082 )
+patch_margin_left = 72
+patch_margin_right = 66
 patch_margin_bottom = 50
 
 [node name="ToWarButton" type="Button" parent="UI/ToWar"]
