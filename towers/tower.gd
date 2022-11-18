@@ -72,6 +72,7 @@ func upgrade_to(tower_info: TowerInfo, is_enemy=false):
 	queue_free()
 
 func damage(amount):
+	$AnimationPlayer.play("Hit")
 	health -= amount
 	$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
 	if(health <= 0):
@@ -111,4 +112,5 @@ func debuff():
 func repair():
 	if(health < max_health):
 		health += 1
+		$AnimationPlayer.play("Repair")
 		$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
