@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=1]
+[ext_resource path="res://RateUs.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/RegularMenu.gd" type="Script" id=3]
+
+[node name="RegularMenu" type="Panel"]
+self_modulate = Color( 0.286275, 0.286275, 0.286275, 0.580392 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = -130.0
+margin_right = 170.0
+margin_bottom = 143.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 800.72, 207.408 )
+patch_margin_bottom = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -68.0
+margin_top = -22.0
+margin_right = 68.0
+margin_bottom = 22.0
+
+[node name="ResumeButton" type="Button" parent="NinePatchRect/VBoxContainer"]
+margin_right = 136.0
+margin_bottom = 20.0
+text = "Resume"
+
+[node name="BackButton" type="Button" parent="NinePatchRect/VBoxContainer"]
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 44.0
+text = "Back to main menu"
+
+[node name="RateUs" parent="NinePatchRect/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+modulate = Color( 0.494118, 0.313726, 0.0352941, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -71.0
+margin_right = 44.0
+margin_bottom = -57.0
+text = "Game Paused"
+align = 1
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

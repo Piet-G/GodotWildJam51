@@ -29,6 +29,10 @@ func show_not_animating():
 #func _process(delta):
 #	pass
 
+func set_grayscale(value):
+	material.set_shader_param("grayscale", value)
+	
+
 func set_on_fire():
 	on_fire = true
 	

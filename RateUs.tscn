@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://RateUs.gd" type="Script" id=1]
+
+[node name="RateUs" type="Button"]
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+text = "Rate us"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_RateUs_pressed"]
