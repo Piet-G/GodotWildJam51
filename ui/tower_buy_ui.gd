@@ -23,7 +23,7 @@ func _on_buy_tower_clicked(info: TowerInfo) -> void:
 		clicked_info = info
 		get_tree().current_scene.add_child(tower_ghost)
 		Ui.placing_building = true
-
+	
 func check_if_next_to_road(position):
 	if(not tower_ghost.type == Tower.Type.barracks):
 		return true
@@ -36,7 +36,7 @@ func check_if_next_to_road(position):
 	return false
 
 func _process(delta):
-	if(tower_ghost):
+	if(is_instance_valid(tower_ghost)):
 		tower_ghost.global_position = GridService.snap_to_grid_position(get_viewport().get_mouse_position())
 		
 		var grid_position = GridService.to_grid_position(tower_ghost.global_position)
@@ -52,3 +52,11 @@ func _process(delta):
 
 func _on_ToggleButton_pressed():
 	emit_signal("open_toggled")
+	
+	if(Ui.placing_building):
+		if(is_instance_valid(tower_ghost)):
+			tower_ghost.queue_free()
+			tower_ghost = null
+		Ui.placing_building = false
+
+
