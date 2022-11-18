@@ -138,7 +138,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "WarTimeScale", 0, "Animation 3", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "BuyTimeScale", 0, "Animation", "UpgradeTimeScale", 0, "Animation 2" ]
+node_connections = [ "output", 0, "Add2 2", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "BuyTimeScale", 0, "Animation" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -279,9 +279,9 @@ mouse_filter = 2
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -85.0
+margin_left = -86.6837
 margin_top = -70.0
-margin_right = 88.0
+margin_right = 86.3163
 margin_bottom = 6.0
 
 [node name="RegularMenu" parent="." instance=ExtResource( 12 )]
