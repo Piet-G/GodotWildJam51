@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/UI/shop_screen.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/shopscreen_new.png" type="Texture" id=1]
 [ext_resource path="res://ui/buy_ui/tower_buy_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/buy_ui/tower_buy_panel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/UI/shop_screen_button.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/Upgrade_button.png" type="Texture" id=4]
 [ext_resource path="res://ui/upgrade_ui_new/upgrade_ui_new.gd" type="Script" id=5]
 
 [sub_resource type="Theme" id=1]
@@ -58,9 +58,9 @@ margin_bottom = -410.2
 mouse_filter = 1
 theme = SubResource( 1 )
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 800, 204 )
-patch_margin_left = 43
-patch_margin_right = 46
+region_rect = Rect2( -2.74008, 0, 821.356, 204 )
+patch_margin_left = 68
+patch_margin_right = 73
 patch_margin_bottom = 43
 script = ExtResource( 5 )
 

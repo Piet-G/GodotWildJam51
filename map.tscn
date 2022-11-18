@@ -1025,16 +1025,16 @@ position = Vector2( 760, 560 )
 road = false
 
 [node name="CastleHPBlue" parent="." instance=ExtResource( 16 )]
-margin_left = 20.0
-margin_top = 480.0
-margin_right = 110.0
-margin_bottom = 482.0
+margin_left = 16.5447
+margin_top = 574.569
+margin_right = 106.545
+margin_bottom = 576.569
 
 [node name="CastleHPRed" parent="." instance=ExtResource( 16 )]
-margin_left = 690.0
-margin_top = 10.0
-margin_right = 780.0
-margin_bottom = 12.0
+margin_left = 693.182
+margin_top = 7.17157
+margin_right = 783.182
+margin_bottom = 9.17157
 is_enemy = true
 
 [node name="Red" type="Node2D" parent="."]
