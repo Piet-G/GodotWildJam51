@@ -46,5 +46,6 @@ func bounce():
 			target = area.get_parent()
 			target.targeted = true
 			found = true
+			break
 	if(!found):
 		destroy()

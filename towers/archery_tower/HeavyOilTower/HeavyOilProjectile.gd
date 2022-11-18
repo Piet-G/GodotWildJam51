@@ -30,6 +30,7 @@ func _on_Area2D_area_entered(area):
 
 		if(is_instance_valid(target)):
 			self.target.targeted = false
+		area.get_parent().damage(1)
 		destroy()
 
 func destroy():

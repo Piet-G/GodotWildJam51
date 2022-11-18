@@ -42,4 +42,3 @@ material = SubResource( 2 )
 [node name="Range" parent="." index="6" groups=["Necro"]]
 
 [node name="Timer" type="Timer" parent="." index="7"]
-wait_time = 5.0

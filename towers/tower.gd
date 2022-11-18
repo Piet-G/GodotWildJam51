@@ -12,9 +12,9 @@ export var initially_in_world = false
 
 export var is_enemy = false
 var active = false
-var health
+var health = 0
 var buffed = false
-var damage
+var damage = 0
 
 signal clicked()
 

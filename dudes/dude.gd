@@ -240,9 +240,9 @@ func _on_BurnTimer3_timeout():
 	$AnimatedSprite/Burn.playing = false
 
 func discover():
+	discovered = true
 	if sneaking:
 		stop_sneaking()
-		discovered = true
 
 
 func _on_Resurrect_animation_finished():

@@ -18,6 +18,7 @@ func _ready():
 func _on_Range_area_entered(area):
 	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		area.get_parent().discover()
+		print("discovered")
 
 
 func _on_Range_area_exited(area):
