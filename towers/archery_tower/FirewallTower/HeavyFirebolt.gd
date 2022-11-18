@@ -22,6 +22,7 @@ func _on_Area2D_area_entered(area):
 		var oil = preload("res://Effects/Oil/Oil.tscn").instance()
 		oil.is_enemy = is_enemy
 		get_parent().add_child(oil)
+		oil.global_position = global_position
 		oil.burn()
 		destroy()
 		if(is_instance_valid(target)):
@@ -30,6 +31,7 @@ func _on_Area2D_area_entered(area):
 		var oil = preload("res://Effects/Oil/Oil.tscn").instance()
 		oil.is_enemy = is_enemy
 		get_parent().add_child(oil)
+		oil.global_position = global_position
 		oil.burn()
 		area.get_parent().damage(1)
 		if(is_instance_valid(target)):

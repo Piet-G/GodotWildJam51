@@ -36,6 +36,7 @@ type = 2
 regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
+arrow_damage = 1
 air = false
 
 [node name="Sprite" parent="." index="0"]
