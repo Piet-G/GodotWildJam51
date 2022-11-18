@@ -35,6 +35,8 @@ script = ExtResource( 5 )
 regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 2 )
+arrow_damage = 1
+air = false
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
