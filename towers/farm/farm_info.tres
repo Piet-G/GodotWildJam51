@@ -13,5 +13,5 @@ gold_cost = 0
 icon = "res://assets/towers/farm/farm_simple.png"
 scene = "res://towers/farm/farm.tscn"
 next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "A nice little farm. Occasionally produces wheat."
+icon_offset = Vector2( 3, 7 )
