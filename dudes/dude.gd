@@ -207,6 +207,9 @@ func bribe():
 			if(distance < closest_distance):
 				closest_distance = distance
 				closest_path = path_node
+			
+	var local_pos = closest_path.to_local(global_position)
+	offset = closest_path.curve.get_closest_offset(local_pos)
 	
 	get_parent().remove_child(self)
 	closest_path.add_child(self)
