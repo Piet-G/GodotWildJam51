@@ -208,10 +208,8 @@ func bribe():
 				closest_distance = distance
 				closest_path = path_node
 	
+	get_parent().remove_child(self)
 	closest_path.add_child(self)
-	var local_pos = closest_path.to_local(global_position)
-	offset = closest_path.curve.get_closest_offset(local_pos)
-
 
 func _on_Revive_animation_finished():
 	$Revive.visible = false

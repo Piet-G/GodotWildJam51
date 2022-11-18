@@ -13,5 +13,5 @@ func _ready():
 
 func destroy():
 	var explosion = preload("res://towers/archery_tower/CatapultTower/RockHit.tscn").instance()
-	get_parent().add_child(explosion)
-	queue_free()
+	add_child(explosion)
+	active = false

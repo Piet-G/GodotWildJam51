@@ -38,6 +38,9 @@ func shoot_at_front():
 
 func shoot_at_top():
 	var laser = preload("res://dudes/MechMammoth/Mechmammoth_projectile.tscn").instance()
+	laser.is_enemy = is_enemy
+	get_parent().add_child(laser)
+	$Timer.start()
 	if(current_facing == facing.BOTTOM):
 		laser.direction = Vector2(0,1)
 		laser.global_position = $AnimatedSprite2/Position2D.global_position
@@ -48,9 +51,6 @@ func shoot_at_top():
 		laser.global_position = $AnimatedSprite3/Position2D.global_position
 		$ShootBack.visible = true
 		$ShootBack.play()
-	laser.is_enemy = is_enemy
-	get_parent().add_child(laser)
-	$Timer.start()
 
 
 

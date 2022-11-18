@@ -70,6 +70,3 @@ enemy_sprites_back = SubResource( 4 )
 regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
 fire = true
-
-[node name="AnimatedSprite" parent="." index="5"]
-frame = 1

@@ -28,6 +28,3 @@ script = ExtResource( 2 )
 castle_damage = 30
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
-
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 0

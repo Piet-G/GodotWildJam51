@@ -26,6 +26,7 @@ func damage(amount):
 func reached_castle():
 	CastleService.damage(castle_damage, not is_enemy)
 	var explosion = preload("res://dudes/BombDude/ExplosionSmall.tscn").instance()
-	get_parent().add_child(explosion)
-	queue_free()
+	add_child(explosion)
+	$AnimatedSprite.visible = false
+	active = false
 	return

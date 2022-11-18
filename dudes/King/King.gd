@@ -13,7 +13,7 @@ func _ready():
 
 func _on_Range_area_entered(area):
 	if($ConvertTimer.is_stopped()):
-		if(active and area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+		if(active and area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active()):
 			area.get_parent().bribe()
 			$AnimatedSprite/ConvertEffect.visible = true
 			$AnimatedSprite/ConvertEffect.play()
@@ -22,7 +22,7 @@ func _on_Range_area_entered(area):
 
 func _on_ConvertTimer_timeout():
 	for area in $Range.get_overlapping_areas():
-		if(area.is_in_group("dude_area")and area.get_parent().is_enemy != is_enemy):
+		if(area.is_in_group("dude_area")and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active()):
 			area.get_parent().bribe()
 			$AnimatedSprite/ConvertEffect.visible = true
 			$AnimatedSprite/ConvertEffect.play()
