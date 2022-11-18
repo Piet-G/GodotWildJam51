@@ -174,9 +174,10 @@ func _on_TickTimer_timeout():
 func attempt_upgrade(option):
 	var list = GridService.get_buildings_of_info(option.from, true)
 	
-	var chosen = list[randi() % len(list)]
+	if(len(list) > 0):
+		var chosen = list[randi() % len(list)]
 	
-	chosen.upgrade_to(option.type, true)
+		chosen.upgrade_to(option.type, true)
 
 func attempt_build(tower_type: TowerInfo):
 	var tower = load(tower_type.scene).instance()
