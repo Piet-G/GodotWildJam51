@@ -62,5 +62,6 @@ margin_bottom = -57.0
 text = "Game Paused"
 align = 1
 
+[connection signal="visibility_changed" from="." to="." method="_on_RegularMenu_visibility_changed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
