@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
@@ -19,6 +19,16 @@
 [ext_resource path="res://assets/UI/Button.png" type="Texture" id=17]
 [ext_resource path="res://assets/UI/Button_clicked.png" type="Texture" id=18]
 [ext_resource path="res://assets/UI/Buttondisabled.png" type="Texture" id=19]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/fonts/foodfont.tres" type="DynamicFont" id=21]
+
+[sub_resource type="DynamicFont" id=15]
+size = 11
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 10
+font_data = ExtResource( 20 )
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -145,7 +155,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "output", 0, "Add2 2", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "UpgradeTimeScale", 0, "Animation 2", "WarTimeScale", 0, "Animation 3", "BuyTimeScale", 0, "Animation" ]
+node_connections = [ "BuyTimeScale", 0, "Animation", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "WarTimeScale", 0, "Animation 3", "UpgradeTimeScale", 0, "Animation 2", "output", 0, "Add2 2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -192,29 +202,35 @@ texture = ExtResource( 9 )
 [node name="FoodCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
 margin_left = 51.0
-margin_top = 2.0
-margin_right = 59.0
-margin_bottom = 16.0
+margin_top = 3.0
+margin_right = 62.0
+margin_bottom = 14.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 4
+custom_fonts/font = ExtResource( 21 )
 text = "0"
 
 [node name="Control" type="Control" parent="UI/TopBar"]
-margin_left = 63.0
-margin_right = 73.0
+margin_left = 66.0
+margin_right = 76.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="UI/TopBar"]
-margin_left = 77.0
-margin_right = 92.0
+margin_left = 80.0
+margin_right = 95.0
 margin_bottom = 18.0
 texture = ExtResource( 8 )
 
 [node name="GoldCount" type="Label" parent="UI/TopBar"]
 unique_name_in_owner = true
-margin_left = 96.0
-margin_top = 2.0
-margin_right = 96.0
-margin_bottom = 16.0
+margin_left = 99.0
+margin_top = 3.0
+margin_right = 99.0
+margin_bottom = 14.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 4
+custom_fonts/font = ExtResource( 21 )
 
 [node name="ToWar" type="NinePatchRect" parent="UI"]
 margin_left = 282.0
@@ -240,11 +256,12 @@ texture_disabled = ExtResource( 19 )
 
 [node name="Label2" type="Label" parent="UI/ToWar/ToWarButton"]
 pause_mode = 2
-margin_left = 22.6274
-margin_top = 6.36395
-margin_right = 67.6274
-margin_bottom = 20.364
+margin_left = 8.83886
+margin_top = 7.77815
+margin_right = 85.8389
+margin_bottom = 21.7782
 mouse_filter = 1
+custom_fonts/font = SubResource( 15 )
 text = "To war!"
 
 [node name="Label" type="Label" parent="UI/ToWar"]
@@ -253,13 +270,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -42.0
-margin_top = -45.0
-margin_right = 49.0
-margin_bottom = 3.0
+margin_left = -62.6672
+margin_top = -22.5043
+margin_right = 67.3328
+margin_bottom = 25.4957
+custom_fonts/font = SubResource( 14 )
 text = "Unselect
 unprepared
-troops and..."
+troops"
+align = 1
 valign = 1
 
 [node name="TextureRect" type="TextureButton" parent="UI/ToWar"]

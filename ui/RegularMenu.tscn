@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/UI/PauseScreen.png" type="Texture" id=1]
 [ext_resource path="res://RateUs.gd" type="Script" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://assets/UI/largebuttonclicked.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/largebutton.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/largebuttonhover.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/pausefont.tres" type="DynamicFont" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 8 )
 
 [node name="RegularMenu" type="Panel"]
 self_modulate = Color( 0.286275, 0.286275, 0.286275, 0.580392 )
@@ -48,10 +54,11 @@ texture_hover = ExtResource( 7 )
 texture_disabled = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/ResumeButton"]
-margin_left = 41.2433
+margin_left = 29.4707
 margin_top = 6.14352
-margin_right = 93.2433
+margin_right = 107.471
 margin_bottom = 20.1435
+custom_fonts/font = ExtResource( 9 )
 text = "Resume"
 
 [node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer"]
@@ -70,10 +77,11 @@ texture_hover = ExtResource( 7 )
 texture_disabled = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/BackButton"]
-margin_left = 32.6215
-margin_top = 6.14352
-margin_right = 103.622
-margin_bottom = 20.1435
+margin_left = 10.3377
+margin_top = 7.40487
+margin_right = 127.338
+margin_bottom = 21.4049
+custom_fonts/font = ExtResource( 9 )
 text = "Main Menu"
 
 [node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer"]
@@ -93,10 +101,11 @@ texture_disabled = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/RateUs"]
-margin_left = 43.919
+margin_left = 23.317
 margin_top = 5.84622
-margin_right = 95.919
+margin_right = 114.317
 margin_bottom = 19.8462
+custom_fonts/font = ExtResource( 9 )
 text = "Rate us"
 
 [node name="Label" type="Label" parent="NinePatchRect"]
@@ -105,10 +114,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -44.0
-margin_top = -71.0
-margin_right = 44.0
-margin_bottom = -57.0
+margin_left = -134.648
+margin_top = -77.7424
+margin_right = 140.352
+margin_bottom = -52.7424
+custom_fonts/font = SubResource( 1 )
 text = "Game Paused"
 align = 1
 
