@@ -7,6 +7,9 @@ func _ready():
 
 var upgrading_tower
 func upgrade_clicked(tower):
+	if(is_instance_valid(upgrading_tower)):
+		upgrading_tower.set_selected(false)
+		
 	if(war_open or placing_building):
 		return
 	

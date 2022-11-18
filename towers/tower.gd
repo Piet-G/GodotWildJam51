@@ -65,7 +65,6 @@ func truly_delete():
 	queue_free()
 
 func upgrade_to(tower_info: TowerInfo, is_enemy=false):
-	print("Spawning", tower_info.name)
 	var new_tower = load(tower_info.scene).instance()
 	new_tower.is_enemy = is_enemy
 	get_tree().current_scene.add_child(new_tower)
