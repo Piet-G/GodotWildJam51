@@ -49,7 +49,7 @@ func set_on_fire():
 
 func _on_Area2D_area_entered(area):
 	var dude = area.get_parent()
-	if(dude.is_in_group("dude") and is_enemy != dude.is_enemy and not on_fire):
+	if(area.is_in_group("dude_area") and dude.is_in_group("dude") and is_enemy != dude.is_enemy and not on_fire):
 		set_on_fire()
 		
 

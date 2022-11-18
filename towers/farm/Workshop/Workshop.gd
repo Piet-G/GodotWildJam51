@@ -25,4 +25,19 @@ func _on_Timer_timeout():
 	for area in $Range.get_overlapping_areas():
 		if(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and area.get_parent().is_active()):
 			area.get_parent().repair()
-			return
+
+func show_range(value):
+	$RangeSprite.visible = value
+
+func _process(delta):
+	if(not active):
+		show_range(true)
+
+func added_to_grid():
+	.added_to_grid()
+	
+	show_range(false)
+
+func set_selected(value):
+	.set_selected(value)
+	show_range(value)

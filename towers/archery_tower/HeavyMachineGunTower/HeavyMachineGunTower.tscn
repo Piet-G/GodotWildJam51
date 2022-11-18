@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://towers/archery_tower/MachineGunTower/MachineGunTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/HeavyMachineGunTower/HeavyMachineGunTower.gd" type="Script" id=2]
@@ -181,6 +181,9 @@ shader = SubResource( 17 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="CircleShape2D" id=36]
+radius = 194.622
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
@@ -193,7 +196,6 @@ animations = [ {
 script = ExtResource( 2 )
 type = 2
 tower_info = ExtResource( 28 )
-arrow_damage = 1
 regular_sprites_right = SubResource( 19 )
 enemy_sprites_right = SubResource( 20 )
 regular_sprites_left = SubResource( 21 )
@@ -215,6 +217,12 @@ enemy_sprites_left_down = SubResource( 34 )
 material = SubResource( 18 )
 texture = ExtResource( 27 )
 
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource( 36 )
+
 [node name="AnimatedSprite" parent="." index="9"]
 position = Vector2( 19.2987, 20.1071 )
 frames = SubResource( 35 )
+
+[node name="RangeSprite" parent="." index="10"]
+scale = Vector2( 3.22683, 3.22683 )

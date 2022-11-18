@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/archery_tower/BuffTower/BuffTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/NecromancerTower/NecromancerTower.gd" type="Script" id=2]
@@ -30,6 +30,12 @@ shader = SubResource( 1 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 139.056
+
 [node name="NecromancerTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 regular_texture = ExtResource( 3 )
@@ -39,6 +45,16 @@ tower_info = ExtResource( 5 )
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource( 3 )
+
 [node name="Range" parent="." index="6" groups=["Necro"]]
 
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource( 4 )
+
 [node name="Timer" type="Timer" parent="." index="7"]
+
+[node name="RangeSprite" parent="." index="9"]
+position = Vector2( 17.937, 19.5244 )
+scale = Vector2( 2.3, 2.3 )

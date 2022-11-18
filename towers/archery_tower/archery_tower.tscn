@@ -33,7 +33,7 @@ shader_param/grayscale = false
 shader_param/invalid = false
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 224.27
+radius = 104.329
 
 [node name="ArcheryTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -64,7 +64,7 @@ position = Vector2( 16, 11 )
 visible = false
 modulate = Color( 0, 0.623529, 1, 0.360784 )
 show_behind_parent = true
-position = Vector2( 16, 23 )
+position = Vector2( 16.4205, 11.6479 )
 scale = Vector2( 1.7, 1.7 )
 texture = ExtResource( 7 )
 

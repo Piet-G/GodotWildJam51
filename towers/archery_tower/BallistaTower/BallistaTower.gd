@@ -111,3 +111,7 @@ func repair():
 		$AnimationPlayer.play("Repair")
 		$AnimationPlayer2.play("BallistaTowerRepairBalista")
 		$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
+
+
+func _on_AnimationPlayer2_animation_finished(anim_name):
+	$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)

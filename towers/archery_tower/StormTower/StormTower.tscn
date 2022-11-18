@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://towers/archery_tower/Thunderdome/Thunderdome.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/StormTower/StormTower.gd" type="Script" id=2]
@@ -30,6 +30,9 @@ shader = SubResource( 17 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="CircleShape2D" id=19]
+radius = 168.893
+
 [node name="StormTower" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 regular_texture = ExtResource( 3 )
@@ -39,5 +42,12 @@ tower_info = ExtResource( 5 )
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
 
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource( 19 )
+
 [node name="ShootTimer" parent="." index="2"]
 wait_time = 0.5
+
+[node name="RangeSprite" parent="." index="9"]
+position = Vector2( 16.4205, 11.6479 )
+scale = Vector2( 2.83887, 2.83887 )

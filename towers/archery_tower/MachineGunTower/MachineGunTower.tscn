@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://towers/archery_tower/AntiAirTower/AntiAirTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/towers/tower/machine/right/Timeline 1_0002.png" type="Texture" id=2]
@@ -179,6 +179,9 @@ shader = SubResource( 17 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="CircleShape2D" id=19]
+radius = 142.04
+
 [node name="MachineGunTower" instance=ExtResource( 1 )]
 type = 1
 tower_info = ExtResource( 26 )
@@ -202,3 +205,9 @@ enemy_sprites_left_down = SubResource( 16 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource( 19 )
+
+[node name="RangeSprite" parent="." index="10"]
+scale = Vector2( 2.36575, 2.36575 )

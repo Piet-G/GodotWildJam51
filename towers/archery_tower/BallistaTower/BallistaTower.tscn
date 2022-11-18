@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/BallistaTower/BallistaTower.gd" type="Script" id=2]
@@ -192,6 +192,9 @@ shader = SubResource( 17 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="CircleShape2D" id=20]
+radius = 104.329
+
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
 "frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
@@ -227,12 +230,22 @@ enemy_sprites_left_down = SubResource( 16 )
 visible = false
 material = SubResource( 18 )
 
+[node name="Range" parent="." index="1"]
+position = Vector2( 15.0561, 22.3265 )
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+position = Vector2( 2.5227, -10.9317 )
+shape = SubResource( 20 )
+
 [node name="ShootTimer" parent="." index="2"]
 wait_time = 0.75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="9"]
 position = Vector2( 16.4925, 26 )
 frames = SubResource( 19 )
+
+[node name="RangeSprite" parent="." index="10"]
+visible = false
 
 [node name="AnimationPlayer" parent="." index="11"]
 anims/HitBalista = ExtResource( 39 )
@@ -243,3 +256,4 @@ anims/BallistaTowerHitBalista = ExtResource( 39 )
 anims/BallistaTowerRepairBalista = ExtResource( 38 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_finished"]

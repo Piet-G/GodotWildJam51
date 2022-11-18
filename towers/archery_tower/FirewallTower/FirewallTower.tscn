@@ -38,3 +38,6 @@ tower_info = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
+
+[node name="RangeSprite" parent="." index="9"]
+scale = Vector2( 3.09555, 3.09555 )

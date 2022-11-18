@@ -24,3 +24,19 @@ func _on_Range_area_entered(area):
 func _on_Range_area_exited(area):
 	if(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy):
 		area.get_parent().debuff()
+
+func show_range(value):
+	$RangeSprite.visible = value
+
+func _process(delta):
+	if(not active):
+		show_range(true)
+
+func added_to_grid():
+	.added_to_grid()
+	
+	show_range(false)
+
+func set_selected(value):
+	.set_selected(value)
+	show_range(value)

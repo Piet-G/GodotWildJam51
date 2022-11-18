@@ -32,3 +32,19 @@ func _on_Cooldown_timeout():
 			create_chicken(area.get_parent())
 			area.get_parent().queue_free()
 			break
+	
+func show_range(value):
+	$RangeSprite.visible = value
+
+func _process(delta):
+	if(not active):
+		show_range(true)
+
+func added_to_grid():
+	.added_to_grid()
+	
+	show_range(false)
+
+func set_selected(value):
+	.set_selected(value)
+	show_range(value)
