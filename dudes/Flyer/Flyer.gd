@@ -16,6 +16,7 @@ var active = false
 var health
 var slow = false
 var hasty = false
+var discovered = false
 
 func activate():
 	active = true
@@ -37,6 +38,8 @@ func get_health():
 	return health
 
 func sneak():
+	if discovered:
+		return
 	$SneakTimer.start()
 	$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
 	sneaking = true
@@ -138,3 +141,8 @@ func bribe():
 	
 func burn():
 	pass
+
+func discover():
+	if sneaking:
+		stop_sneaking()
+		discovered = true

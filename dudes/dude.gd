@@ -16,6 +16,7 @@ var health
 var active = false
 var slow = false
 var hasty
+var discovered = false
 
 func _ready():
 	health = max_health
@@ -30,6 +31,8 @@ func get_health():
 	return health
 
 func sneak():
+	if discovered:
+		return
 	$SneakTimer.start()
 	$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
 	sneaking = true
@@ -227,4 +230,9 @@ func _on_BurnTimer3_timeout():
 	damage(1)
 	$AnimatedSprite/Burn.visible = false
 	$AnimatedSprite/Burn.playing = false
+
+func discover():
+	if sneaking:
+		stop_sneaking()
+		discovered = true
 

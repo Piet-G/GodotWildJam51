@@ -1,7 +1,10 @@
 extends "res://towers/tower.gd"
 
-export var damage = 1
+export var arrow_damage = 1
 export var air = false
+
+func _ready():
+	damage = arrow_damage
 
 func _on_ShootTimer_timeout():
 	if(not is_active()):

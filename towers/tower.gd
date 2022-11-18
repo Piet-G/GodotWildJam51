@@ -13,6 +13,8 @@ export var initially_in_world = false
 export var is_enemy = false
 var active = false
 var health
+var buffed = false
+var damage
 
 signal clicked()
 
@@ -86,6 +88,22 @@ func _on_BurningTimer_timeout():
 
 func destroy():
 	pass
+
+func buff():
+	if(!buffed):
+		max_health *= 2
+		health = max_health
+		$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
+		damage *= 2
+		buffed = true
+
+func debuff():
+	if(buffed):
+		max_health = ceil(max_health/2)
+		health = max_health
+		$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
+		damage  = ceil(damage/2)
+		buffed = false
 
 func repair():
 	if(health < max_health):
