@@ -45,6 +45,10 @@ func open_to_war():
 	close_buy()
 	get_tree().paused = true
 	to_war_barracks = []
+	
+	for node in get_tree().get_nodes_in_group("make_gray"):
+		node.set_grayscale(true)
+	
 	for tower in get_tree().get_nodes_in_group("tower"):
 		if(tower.is_in_group("barracks") and tower.get_dude_count() > 0 and not tower.is_enemy):
 			to_war_barracks.append(tower)
@@ -55,6 +59,8 @@ func open_to_war():
 	
 func close_to_war():
 	if(war_open):
+		for node in get_tree().get_nodes_in_group("make_gray"):
+			node.set_grayscale(false)
 		for barrack in to_war_barracks:
 			barrack.set_selected(false)
 			to_war_barracks = []

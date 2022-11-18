@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://towers/RaidHome.gd" type="Script" id=1]
 [ext_resource path="res://assets/map/Village/red/FIRE_0004.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/map/Village/blue/FIRE_0001.png" type="Texture" id=9]
 [ext_resource path="res://assets/map/Village/blue/FIRE_0004.png" type="Texture" id=10]
 [ext_resource path="res://towers/RaidHome.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://ui/gray_scale_material.tres" type="Material" id=12]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -39,7 +40,8 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=5]
 radius = 40.0
 
-[node name="RaidHome" type="AnimatedSprite" groups=["zindexed"]]
+[node name="RaidHome" type="AnimatedSprite" groups=["make_gray", "zindexed"]]
+material = ExtResource( 12 )
 frames = ExtResource( 11 )
 playing = true
 centered = false
