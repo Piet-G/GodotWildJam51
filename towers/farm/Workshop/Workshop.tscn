@@ -52,7 +52,7 @@ position = Vector2( 14.7622, 11.5874 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="." index="7"]
-wait_time = 2.0
+wait_time = 10.0
 autostart = true
 
 [node name="RangeSprite" type="Sprite" parent="." index="9"]
