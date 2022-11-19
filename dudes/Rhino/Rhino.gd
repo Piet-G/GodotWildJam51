@@ -58,6 +58,7 @@ func stop_sneaking():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	old_pos = global_position
+	health = max_health
 	if(not is_enemy):
 		$AnimatedSprite.frames = regular_sprites
 		$AnimatedSprite3.frames = regular_sprites_front
