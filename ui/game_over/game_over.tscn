@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui/Scroll.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/game_over/game_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/pausefont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/UI/largebuttonhover.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/largebuttonclicked.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/largebutton.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/UI/PauseScreen.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 7 )
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
@@ -18,15 +28,20 @@ margin_left = -149.0
 margin_top = -120.0
 margin_right = 150.0
 margin_bottom = 101.0
-patch_margin_left = 48
-patch_margin_bottom = 40
+texture = ExtResource( 8 )
+region_rect = Rect2( -2, 0, 822, 508 )
+patch_margin_left = 65
+patch_margin_top = 48
+patch_margin_right = 73
+patch_margin_bottom = 56
 
 [node name="Label" type="Label" parent="Scroll"]
 modulate = Color( 0.647059, 0.364706, 0.0156863, 1 )
-margin_left = 118.5
-margin_top = 71.0
-margin_right = 182.5
-margin_bottom = 85.0
+margin_left = 35.2512
+margin_top = 55.023
+margin_right = 275.251
+margin_bottom = 85.023
+custom_fonts/font = SubResource( 1 )
 text = "YOU LOSE"
 align = 1
 
@@ -40,16 +55,43 @@ margin_top = -5.0
 margin_right = 67.5
 margin_bottom = 39.0
 
-[node name="Button" type="Button" parent="Scroll/VBoxContainer"]
+[node name="Button" type="TextureButton" parent="Scroll/VBoxContainer"]
 margin_right = 135.0
-margin_bottom = 20.0
-text = "Retry"
+margin_bottom = 25.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
 
-[node name="MainMenu" type="Button" parent="Scroll/VBoxContainer"]
-margin_top = 24.0
+[node name="Label" type="Label" parent="Scroll/VBoxContainer/Button"]
+margin_left = 8.51065
+margin_top = 5.66324
+margin_right = 125.511
+margin_bottom = 19.6632
+custom_fonts/font = ExtResource( 3 )
+text = "Retry"
+align = 1
+
+[node name="Control3" type="Control" parent="Scroll/VBoxContainer"]
+margin_top = 29.0
 margin_right = 135.0
-margin_bottom = 44.0
-text = "Back to main Menu"
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="MainMenu" type="TextureButton" parent="Scroll/VBoxContainer"]
+margin_top = 38.0
+margin_right = 135.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Scroll/VBoxContainer/MainMenu"]
+margin_left = 8.51065
+margin_top = 5.66324
+margin_right = 125.511
+margin_bottom = 19.6632
+custom_fonts/font = ExtResource( 3 )
+text = "Main Menu"
 
 [node name="Button" type="Button" parent="."]
 margin_right = 12.0
