@@ -11,6 +11,7 @@ func _ready():
 	pass
 
 func shoot_at(tower: Node2D):
+	$Cast.play()
 	$Cast_sprite.visible = true
 	$Cast_sprite.play()
 	var arrow = preload("res://dudes/Wizard/Wizard_projectile.tscn").instance()

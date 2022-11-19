@@ -83,11 +83,13 @@ func _on_HelperTimer_timeout():
 	add_to_recent_grid()
 
 func burn():
+	$Burn.play()
 	$BurningSprite.visible = true
 	$BurningSprite.playing = true
 	$BurningTimer.start()
 
 func _on_BurningTimer_timeout():
+	$Burn.stop()
 	$BurningSprite.visible = false
 	$BurningSprite.playing = false
 
