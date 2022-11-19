@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://towers/tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/WeirdTower/WeirdTower.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/towers/tower/Weird_tower.png" type="Texture" id=4]
 [ext_resource path="res://assets/towers/tower/Weird_tower_enemy.png" type="Texture" id=5]
 [ext_resource path="res://White_Circle.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/chicken.mp3" type="AudioStream" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -41,7 +42,7 @@ regular_texture = ExtResource( 4 )
 enemy_texture = ExtResource( 5 )
 tower_info = ExtResource( 3 )
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -0.0499878, -16.8906 )
 texture = ExtResource( 4 )
@@ -62,5 +63,8 @@ show_behind_parent = true
 position = Vector2( 16.3705, -5.24275 )
 scale = Vector2( 2.70009, 2.70009 )
 texture = ExtResource( 6 )
+
+[node name="CastSound" type="AudioStreamPlayer2D" parent="." index="10"]
+stream = ExtResource( 7 )
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

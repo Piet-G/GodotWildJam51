@@ -218,6 +218,7 @@ func _on_Revive_animation_finished():
 	$Revive.playing = false
 
 func burn():
+	$FireSound.play()
 	$BurnTimer1.start()
 	$AnimatedSprite/Burn.visible = true
 	$AnimatedSprite/Burn.play()
@@ -237,6 +238,7 @@ func _on_BurnTimer3_timeout():
 	damage(1)
 	$AnimatedSprite/Burn.visible = false
 	$AnimatedSprite/Burn.playing = false
+	$FireSound.stop()
 
 func discover():
 	discovered = true

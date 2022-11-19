@@ -11,5 +11,5 @@ dest_files=[ "res://.import/missile_firing.mp3-59500c175cd3a686f2fff678d4447077.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

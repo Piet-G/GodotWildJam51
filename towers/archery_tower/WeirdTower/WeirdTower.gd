@@ -31,6 +31,7 @@ func _on_Cooldown_timeout():
 			$Cooldown.start()
 			create_chicken(area.get_parent())
 			area.get_parent().queue_free()
+			$CastSound.play()
 			break
 	
 func show_range(value):

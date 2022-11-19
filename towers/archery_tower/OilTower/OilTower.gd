@@ -11,6 +11,6 @@ func shoot_at(dude: Node2D):
 	var arrow = preload("res://towers/archery_tower/OilTower/OilProjectile.tscn").instance()
 	arrow.is_enemy = is_enemy
 	arrow.origin = self
-	
+	$Fire.play()
 	$ArrowPosition.add_child(arrow)
 	arrow.set_target(dude)

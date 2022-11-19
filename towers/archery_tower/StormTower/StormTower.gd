@@ -12,3 +12,4 @@ func shoot_at(dude: Node2D):
 	arrow.bounces = 5
 	$ArrowPosition.add_child(arrow)
 	arrow.set_target(dude)
+	$Fire.play()

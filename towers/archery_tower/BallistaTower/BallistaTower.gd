@@ -85,6 +85,7 @@ func shoot_at(dude: Node2D):
 	arrow.is_enemy = is_enemy
 	arrow.origin = self
 	arrow.damage = 2
+	$Fire.play()
 
 	$ArrowPosition.add_child(arrow)
 	arrow.set_target(dude)

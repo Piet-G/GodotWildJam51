@@ -7,6 +7,7 @@ var origin: Node2D
 var direction
 var old_pos
 var passed_enemy = false
+var active =true
 
 func _ready():
 	old_pos = global_position
@@ -19,6 +20,8 @@ func set_target(target: Node2D):
 	target.targeted = true
 	
 func _physics_process(delta):
+	if(!active):
+		return
 	if(not is_instance_valid(target) && target != origin && !passed_enemy):
 		passed_enemy = true
 		set_direction()
@@ -31,9 +34,12 @@ func _physics_process(delta):
 
 
 func _on_Area2D_area_entered(area):
+	if(!active):
+		return
 	if(area.is_in_group("mirror")):
 		target = origin
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+		$Hit.play()
 		area.get_parent().damage(3)
 		set_direction()
 		passed_enemy = true
@@ -42,7 +48,14 @@ func _on_Area2D_area_entered(area):
 		destroy()
 
 func destroy():
-	queue_free()
+	$Hit.play()
+	active = false
+	visible = false
+
+
+func _on_Hit_finished():
+	if(!active):
+		queue_free()
 
 
 func _on_Timer_timeout():

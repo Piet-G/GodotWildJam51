@@ -18,9 +18,15 @@ func _ready():
 #	pass
 
 func _on_ExplosionSmall_area_entered(area):
-	if(!area.is_in_group("air") && (area.is_in_group("dude_area") && area.get_parent().is_active())):
-		area.get_parent().damage(2)
+	if($AnimatedSprite.visible):
+		if(!area.is_in_group("air") && (area.is_in_group("dude_area") && area.get_parent().is_active())):
+			area.get_parent().damage(2)
 
 
 func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.playing = false
+	$AnimatedSprite.visible = false
+
+
+func _on_Hit_finished():
 	get_parent().queue_free()

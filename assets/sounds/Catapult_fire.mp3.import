@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Catapult_fire.mp3-684fd28197bb65edc395ff7b86ab801b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Catapult_fire.mp3"
+dest_files=[ "res://.import/Catapult_fire.mp3-684fd28197bb65edc395ff7b86ab801b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

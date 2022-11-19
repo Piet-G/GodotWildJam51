@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/FireTower/FireTower.gd" type="Script" id=2]
 [ext_resource path="res://assets/towers/tower/Fire_tower.png" type="Texture" id=3]
 [ext_resource path="res://assets/towers/tower/Fire_tower_enemy.png" type="Texture" id=4]
 [ext_resource path="res://towers/archery_tower/FireTower/FireTower_info.tres" type="Resource" id=5]
+[ext_resource path="res://assets/sounds/Whoosh.mp3" type="AudioStream" id=6]
 
 [sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
@@ -53,3 +54,6 @@ shape = SubResource( 19 )
 
 [node name="ArrowPosition" parent="." index="3"]
 position = Vector2( 16, -5.75377 )
+
+[node name="Fire" parent="." index="11"]
+stream = ExtResource( 6 )

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://towers/archery_tower/arrow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Projectiles/Anti_air_projectile.png" type="Texture" id=2]
+[ext_resource path="res://assets/sounds/laser_hit.mp3" type="AudioStream" id=3]
 
 [node name="AntiAirArrow" instance=ExtResource( 1 )]
 texture = null
@@ -16,3 +17,6 @@ position = Vector2( -0.185814, -1.00339 )
 rotation = 1.5708
 scale = Vector2( 1.92, 1.92 )
 texture = ExtResource( 2 )
+
+[node name="Hit" parent="." index="2"]
+stream = ExtResource( 3 )

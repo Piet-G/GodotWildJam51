@@ -11,5 +11,5 @@ dest_files=[ "res://.import/pulse.mp3-9183977d56e6e8cf9a005fb60990ce2e.mp3str" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

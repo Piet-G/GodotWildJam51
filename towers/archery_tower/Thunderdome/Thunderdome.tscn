@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/Thunderdome/Thunderdome.gd" type="Script" id=2]
 [ext_resource path="res://assets/towers/tower/Thunderdome.png" type="Texture" id=3]
 [ext_resource path="res://assets/towers/tower/Thunderdome_enemy.png" type="Texture" id=4]
 [ext_resource path="res://towers/archery_tower/Thunderdome/Thunderdome_info.tres" type="Resource" id=5]
+[ext_resource path="res://assets/sounds/Electricity_fire.mp3" type="AudioStream" id=6]
 
 [sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
@@ -39,16 +40,19 @@ regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
 position = Vector2( 0, -3.44326 )
 texture = ExtResource( 3 )
 
-[node name="Range" parent="." index="2"]
+[node name="Range" parent="." index="1"]
 position = Vector2( 16, 7.55674 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 19 )
 
-[node name="ArrowPosition" parent="." index="4"]
+[node name="ArrowPosition" parent="." index="3"]
 position = Vector2( 16, 7.55674 )
+
+[node name="Fire" parent="." index="11"]
+stream = ExtResource( 6 )

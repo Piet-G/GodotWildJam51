@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chicken.mp3-0b4317f0db917f90bfdfadfa0184856a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/chicken.mp3"
+dest_files=[ "res://.import/chicken.mp3-0b4317f0db917f90bfdfadfa0184856a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

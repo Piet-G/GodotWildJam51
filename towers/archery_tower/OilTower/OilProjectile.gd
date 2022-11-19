@@ -9,12 +9,15 @@ export var speed = 180
 var target: Node2D
 var is_enemy = false
 var origin: Node2D
+var active = true
 
 func set_target(target: Node2D):
 	self.target = target
 	target.targeted = true
 	
 func _physics_process(delta):
+	if(!active):
+		return
 	if(not is_instance_valid(target) && target != origin):
 		destroy()
 	else:
@@ -23,6 +26,8 @@ func _physics_process(delta):
 
 
 func _on_Area2D_area_entered(area):
+	if(!active):
+		return
 	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		area.get_parent().damage(2)
 		area.get_parent().slow()
@@ -31,4 +36,10 @@ func _on_Area2D_area_entered(area):
 		destroy()
 
 func destroy():
+	$Hit.play()
+	active = false
+	visible = false
+
+
+func _on_Hit_finished():
 	queue_free()

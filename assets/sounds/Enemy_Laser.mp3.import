@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Enemy_Laser.mp3-44d0fc31d7a16986a35847733345025d.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

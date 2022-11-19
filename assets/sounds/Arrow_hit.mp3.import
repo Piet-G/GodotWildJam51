@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Arrow_hit.mp3-5becd69e0ff897014f22f356b1a24edd.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Arrow_hit.mp3"
+dest_files=[ "res://.import/Arrow_hit.mp3-5becd69e0ff897014f22f356b1a24edd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

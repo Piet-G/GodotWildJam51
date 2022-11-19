@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RockSmash.mp3-3dee2bf71a80b6530c1aac962f0f83e1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/RockSmash.mp3"
+dest_files=[ "res://.import/RockSmash.mp3-3dee2bf71a80b6530c1aac962f0f83e1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

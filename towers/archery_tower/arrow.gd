@@ -38,4 +38,10 @@ func _on_Area2D_area_entered(area):
 		destroy()
 
 func destroy():
+	$Hit.play()
+	active = false
+	visible = false
+
+
+func _on_Hit_finished():
 	queue_free()

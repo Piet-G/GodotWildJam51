@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Player_Laser.mp3-37c8ee91e530ab14c813af902ffc3b19.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
