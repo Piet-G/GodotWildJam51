@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Enemy_Laser.mp3-44d0fc31d7a16986a35847733345025d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Enemy_Laser.mp3"
+dest_files=[ "res://.import/Enemy_Laser.mp3-44d0fc31d7a16986a35847733345025d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

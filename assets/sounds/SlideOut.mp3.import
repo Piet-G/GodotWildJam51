@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SlideOut.mp3-ef2f884e1150f932c1f90b8f542c9e02.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/SlideOut.mp3"
+dest_files=[ "res://.import/SlideOut.mp3-ef2f884e1150f932c1f90b8f542c9e02.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

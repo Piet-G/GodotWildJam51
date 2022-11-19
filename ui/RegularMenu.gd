@@ -7,9 +7,11 @@ func _process(delta):
 
 
 func _on_ResumeButton_pressed():
+	$Click.play()
 	visible = false
 	
 func _on_BackButton_pressed():
+	$Click.play()
 	visible = false
 	get_tree().change_scene("res://ui/MainMenu.tscn")
 

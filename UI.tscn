@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://ui/top_bar.gd" type="Script" id=1]
 [ext_resource path="res://ui/tower_buy_ui.tscn" type="PackedScene" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://assets/UI/Buttondisabled.png" type="Texture" id=19]
 [ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=20]
 [ext_resource path="res://assets/fonts/foodfont.tres" type="DynamicFont" id=21]
+[ext_resource path="res://assets/sounds/SlideIn.mp3" type="AudioStream" id=22]
+[ext_resource path="res://assets/sounds/SlideOut.mp3" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/Click.mp3" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/WarCry.mp3" type="AudioStream" id=25]
 
 [sub_resource type="DynamicFont" id=15]
 size = 11
@@ -155,7 +159,7 @@ nodes/UpgradeTimeScale/position = Vector2( 90, -20 )
 nodes/WarTimeScale/node = SubResource( 13 )
 nodes/WarTimeScale/position = Vector2( 123.953, 266.739 )
 nodes/output/position = Vector2( 680, -50 )
-node_connections = [ "BuyTimeScale", 0, "Animation", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "WarTimeScale", 0, "Animation 3", "UpgradeTimeScale", 0, "Animation 2", "output", 0, "Add2 2" ]
+node_connections = [ "UpgradeTimeScale", 0, "Animation 2", "BuyTimeScale", 0, "Animation", "WarTimeScale", 0, "Animation 3", "Add2", 0, "UpgradeTimeScale", "Add2", 1, "BuyTimeScale", "Add2 2", 0, "Add2", "Add2 2", 1, "WarTimeScale", "output", 0, "Add2 2" ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -330,8 +334,23 @@ margin_top = -70.0
 margin_right = 86.3163
 margin_bottom = 6.0
 
+[node name="SlideIn" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource( 22 )
+volume_db = -6.0
+
+[node name="SlideOut" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource( 23 )
+volume_db = -6.0
+
 [node name="RegularMenu" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -20.0
+
+[node name="WarCry" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
 
 [connection signal="pressed" from="UI/TopBar/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="UI/ToWar/ToWarButton" to="." method="_on_ToWarButton_pressed"]

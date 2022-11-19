@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/missile_firing.mp3-59500c175cd3a686f2fff678d4447077.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/missile_firing.mp3"
+dest_files=[ "res://.import/missile_firing.mp3-59500c175cd3a686f2fff678d4447077.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

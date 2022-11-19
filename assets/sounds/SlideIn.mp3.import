@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SlideIn.mp3-ca86ed51103005815de993479a49a202.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/SlideIn.mp3"
+dest_files=[ "res://.import/SlideIn.mp3-ca86ed51103005815de993479a49a202.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

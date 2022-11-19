@@ -22,4 +22,6 @@ func _on_TowerBuyUI_open_toggled():
 	if(open == 1):
 		get_parent().close_to_war()
 		get_parent().close_upgrade()
+	else:
+		$SlideOut.play()
 	$AnimationTree.set("parameters/BuyTimeScale/scale", open)
