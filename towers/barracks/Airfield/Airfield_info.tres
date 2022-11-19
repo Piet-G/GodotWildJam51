@@ -7,10 +7,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Airfield"
-food_cost = 10
+food_cost = 0
 gold_cost = 0
 icon = "res://assets/towers/barracks/Airfield.png"
 scene = "res://towers/barracks/Airfield/Airfield.tscn"
 next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces flyers, who ignore the roads and cant be hit by normal towers."
+icon_offset = Vector2( 3, 4 )

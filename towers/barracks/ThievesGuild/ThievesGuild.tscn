@@ -37,6 +37,8 @@ unit_scene = "res://dudes/Thief/Thief.tscn"
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+position = Vector2( -5.07745, -3.51838 )
+texture = ExtResource( 3 )
 
 [node name="BurningSprite" parent="." index="8"]
-position = Vector2( 0, 0 )
+position = Vector2( 16.0362, 0.445446 )

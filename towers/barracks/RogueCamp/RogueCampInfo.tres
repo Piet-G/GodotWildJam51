@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Rogue Camp"
-food_cost = 10
+food_cost = 0
 gold_cost = 0
 icon = "res://assets/towers/barracks/Scouts_camp.png"
 scene = "res://towers/barracks/RogueCamp/RogueCamp.tscn"

@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Super bomb bay"
-food_cost = 10
+food_cost = 0
 gold_cost = 0
 icon = "res://assets/towers/barracks/Bomb_bay_heavy.png"
 scene = "res://towers/barracks/BigBombBay/BigBombBay.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces walking nuclear bombs, can destroy a small city when they die."
+icon_offset = Vector2( 2, 9 )

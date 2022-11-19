@@ -19,7 +19,7 @@ func _ready():
 
 func _on_ExplosionSmall_area_entered(area):
 	if(!area.is_in_group("air") && (area.is_in_group("dude_area") || area.is_in_group("Tower")) and area.get_parent().is_enemy != is_enemy):
-		area.get_parent().damage(8)
+		area.get_parent().damage(6)
 
 
 func _on_AnimatedSprite_animation_finished():

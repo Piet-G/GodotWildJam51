@@ -11,4 +11,4 @@ icon = "res://assets/towers/barracks/Cemetary.png"
 scene = "res://towers/barracks/Cemetary/Cemetary.tscn"
 next_upgrades = [  ]
 flavour_text = "A grim place. Produces a shade, that also makes units around it invisible."
-icon_offset = Vector2( 4, -2 )
+icon_offset = Vector2( 4, -3 )

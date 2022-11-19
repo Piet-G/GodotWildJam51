@@ -37,8 +37,13 @@ regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 2 )
 tower_info = ExtResource( 4 )
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 material = SubResource( 2 )
+position = Vector2( 0.630836, -24.5962 )
+texture = ExtResource( 3 )
+
+[node name="Range" parent="." index="6"]
+position = Vector2( 17.3965, -3.22574 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 3 )
@@ -47,5 +52,4 @@ shape = SubResource( 3 )
 wait_time = 2.0
 
 [node name="RangeSprite" parent="." index="9"]
-visible = false
 scale = Vector2( 4.47555, 4.47555 )

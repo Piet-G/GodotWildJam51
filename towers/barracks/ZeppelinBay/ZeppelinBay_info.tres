@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Zeppelin_bay.png"
 scene = "res://towers/barracks/ZeppelinBay/ZeppelinBay.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Builds the ZEPPELIN, a big and mighty flyer!"
+icon_offset = Vector2( 3, 2 )

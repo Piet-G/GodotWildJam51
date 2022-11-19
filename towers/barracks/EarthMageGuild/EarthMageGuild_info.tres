@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Mage_guild_earth.png"
 scene = "res://towers/barracks/EarthMageGuild/EarthMageGuild.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 4, 0 )
+flavour_text = "Produces earth mages, which can slow down enemies."
+icon_offset = Vector2( 4, -4 )

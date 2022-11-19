@@ -33,7 +33,7 @@ func _on_Area2D_area_entered(area):
 		get_parent().add_child(oil)
 		oil.global_position = global_position
 		oil.burn()
-		area.get_parent().damage(1)
+		area.get_parent().damage(2)
 		if(is_instance_valid(target)):
 			self.target.targeted = false
 		destroy()

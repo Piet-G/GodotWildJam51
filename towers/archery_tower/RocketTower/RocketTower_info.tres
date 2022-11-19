@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Rocket tower"
-food_cost = 10
-gold_cost = 0
+food_cost = 150
+gold_cost = 30
 icon = "res://assets/towers/tower/Rocket_tower.png"
 scene = "res://towers/archery_tower/RocketTower/RocketTower.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Shoots missiles, which explode and damage enemies in an area."
+icon_offset = Vector2( 4, -6 )

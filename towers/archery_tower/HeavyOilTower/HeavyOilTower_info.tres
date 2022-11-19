@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Heavy oil tower"
-food_cost = 10
-gold_cost = 0
+food_cost = 150
+gold_cost = 20
 icon = "res://assets/towers/tower/Heavy_oil_tower.png"
 scene = "res://towers/archery_tower/HeavyOilTower/HeavyOilTower.tscn"
 next_upgrades = [ ExtResource( 2 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Shoots oil at enemies, which creates oil areas that slow units down."
+icon_offset = Vector2( 2, -3 )

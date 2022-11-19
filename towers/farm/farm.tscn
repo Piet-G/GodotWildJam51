@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://towers/tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/farm/farm.gd" type="Script" id=2]
-[ext_resource path="res://assets/towers/farm/Farm.png" type="Texture" id=3]
 [ext_resource path="res://assets/towers/farm/farm_simple_enemy.png" type="Texture" id=4]
 [ext_resource path="res://towers/farm/farm_info.tres" type="Resource" id=5]
 [ext_resource path="res://assets/towers/farm/farm_simple.png" type="Texture" id=6]
@@ -38,11 +37,12 @@ enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
 food_gained = 5
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 material = SubResource( 2 )
-texture = ExtResource( 3 )
+position = Vector2( -2.50634, 1.97707 )
+texture = ExtResource( 6 )
 
-[node name="Timer" type="Timer" parent="." index="1"]
+[node name="Timer" type="Timer" parent="." index="2"]
 wait_time = 5.0
 autostart = true
 

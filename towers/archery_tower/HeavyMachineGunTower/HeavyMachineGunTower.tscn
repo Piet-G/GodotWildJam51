@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://towers/archery_tower/MachineGunTower/MachineGunTower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/archery_tower/HeavyMachineGunTower/HeavyMachineGunTower.gd" type="Script" id=2]
@@ -26,7 +26,6 @@
 [ext_resource path="res://assets/towers/tower/big_machine/left_down/qhoot_0003.png" type="Texture" id=24]
 [ext_resource path="res://assets/towers/tower/big_machine/left_down/qhoot_0001.png" type="Texture" id=25]
 [ext_resource path="res://assets/towers/tower/big_machine/left_down/qhoot_0002.png" type="Texture" id=26]
-[ext_resource path="res://assets/towers/tower/Anti_air_tower_anim.png" type="Texture" id=27]
 [ext_resource path="res://towers/archery_tower/HeavyMachineGunTower/HeavyMachineGunTower_info.tres" type="Resource" id=28]
 
 [sub_resource type="SpriteFrames" id=19]
@@ -215,14 +214,16 @@ enemy_sprites_left_down = SubResource( 34 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
-texture = ExtResource( 27 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 36 )
 
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 0.75
+
 [node name="AnimatedSprite" parent="." index="9"]
-position = Vector2( 19.2987, 20.1071 )
+position = Vector2( 20.2998, 5.59072 )
 frames = SubResource( 35 )
 
 [node name="RangeSprite" parent="." index="10"]
-scale = Vector2( 3.22683, 3.22683 )
+scale = Vector2( 1.7, 1.7 )

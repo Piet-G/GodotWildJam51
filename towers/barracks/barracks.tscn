@@ -39,21 +39,22 @@ tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/dude.tscn"
 max_dudes = 5
 
-[node name="Sprite" parent="." index="0"]
+[node name="Area2D" parent="." index="0"]
+pause_mode = 2
+
+[node name="Sprite" parent="." index="1"]
 material = SubResource( 2 )
+position = Vector2( -2.06017, 0.374577 )
 texture = ExtResource( 4 )
 
-[node name="Timer" type="Timer" parent="." index="1"]
+[node name="Timer" type="Timer" parent="." index="2"]
 wait_time = 5.0
 
-[node name="WarTimer" type="Timer" parent="." index="2"]
+[node name="WarTimer" type="Timer" parent="." index="3"]
 wait_time = 0.3
 
-[node name="DudeSpawnLocation" type="Node2D" parent="." index="3"]
-position = Vector2( 29, 24 )
-
-[node name="Area2D" parent="." index="4"]
-pause_mode = 2
+[node name="DudeSpawnLocation" type="Node2D" parent="." index="4"]
+position = Vector2( 26.9398, 24.3746 )
 
 [node name="Label" type="Label" parent="." index="7"]
 visible = false

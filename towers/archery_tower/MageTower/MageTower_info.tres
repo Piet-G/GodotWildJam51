@@ -8,10 +8,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "MageTower"
-food_cost = 10
-gold_cost = 0
+food_cost = 120
+gold_cost = 15
 icon = "res://assets/towers/tower/Tower.png"
 scene = "res://towers/archery_tower/MageTower/MageTower.tscn"
 next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
-flavour_text = "The tower houses a mage. Projectiles pierce enemies."
-icon_offset = Vector2( 4, 0 )
+flavour_text = "Shoots magic arrows. Projectiles pierce enemies."
+icon_offset = Vector2( 4, -5 )

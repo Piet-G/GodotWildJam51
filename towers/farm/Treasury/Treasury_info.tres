@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Treasury"
-food_cost = 10
-gold_cost = 0
+food_cost = 150
+gold_cost = 30
 icon = "res://assets/towers/farm/Treasury.png"
 scene = "res://towers/farm/Treasury/Treasury.tscn"
 next_upgrades = [  ]

@@ -31,6 +31,3 @@ animations = [ {
 script = ExtResource( 2 )
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
-
-[node name="AnimatedSprite" parent="." index="1"]
-frame = 3

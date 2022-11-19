@@ -39,3 +39,5 @@ unit_scene = "res://dudes/Flyer/Flyer.tscn"
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+position = Vector2( -2.06017, -1.39319 )
+texture = ExtResource( 5 )

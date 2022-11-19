@@ -38,7 +38,8 @@ max_dudes = 1
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
-position = Vector2( 1.05945, -19.0703 )
+position = Vector2( -2.31174, -24.5017 )
+texture = ExtResource( 3 )
 
 [node name="BurningSprite" parent="." index="8"]
-position = Vector2( 0, 0 )
+position = Vector2( 16.856, 1.87288 )

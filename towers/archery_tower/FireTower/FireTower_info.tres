@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Fire tower"
-food_cost = 10
-gold_cost = 0
+food_cost = 120
+gold_cost = 25
 icon = "res://assets/towers/tower/Fire_tower.png"
 scene = "res://towers/archery_tower/FireTower/FireTower.tscn"
 next_upgrades = [ ExtResource( 2 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Shoots firebolts at enemies. Can burn them if they are in oil."
+icon_offset = Vector2( 4, -8 )

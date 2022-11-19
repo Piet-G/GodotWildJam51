@@ -209,5 +209,8 @@ material = SubResource( 18 )
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 19 )
 
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 0.5
+
 [node name="RangeSprite" parent="." index="10"]
 scale = Vector2( 2.36575, 2.36575 )

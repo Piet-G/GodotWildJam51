@@ -35,8 +35,10 @@ tower_info = ExtResource( 3 )
 unit_scene = "res://dudes/Shade/Shade.tscn"
 max_dudes = 1
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 material = SubResource( 2 )
+position = Vector2( -2.8502, -11.7592 )
+texture = ExtResource( 2 )
 
 [node name="BurningSprite" parent="." index="8"]
-position = Vector2( 0, 0 )
+position = Vector2( 16.4816, 6.23629 )

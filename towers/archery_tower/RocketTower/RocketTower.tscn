@@ -207,16 +207,23 @@ enemy_sprites_right_down = SubResource( 32 )
 regular_sprites_left_down = SubResource( 33 )
 enemy_sprites_left_down = SubResource( 34 )
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 visible = true
 material = SubResource( 18 )
+position = Vector2( -3.78944, -21.3687 )
 texture = ExtResource( 7 )
+
+[node name="Range" parent="." index="2"]
+position = Vector2( 10.8424, 0.0232849 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 36 )
 
+[node name="ArrowPosition" parent="." index="4"]
+position = Vector2( 11.7863, -11.3032 )
+
 [node name="AnimatedSprite" parent="." index="9"]
-position = Vector2( 20.9799, 28.9688 )
+position = Vector2( 16.3739, 7.60708 )
 frames = SubResource( 35 )
 
 [node name="RangeSprite" parent="." index="10"]

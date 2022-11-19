@@ -229,23 +229,24 @@ enemy_sprites_left_down = SubResource( 16 )
 [node name="Sprite" parent="." index="0"]
 visible = false
 material = SubResource( 18 )
+position = Vector2( 0.844699, -12.9403 )
 
 [node name="Range" parent="." index="1"]
-position = Vector2( 15.0561, 22.3265 )
+position = Vector2( 15.4766, 8.45168 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 position = Vector2( 2.5227, -10.9317 )
 shape = SubResource( 20 )
 
 [node name="ShootTimer" parent="." index="2"]
-wait_time = 0.75
+wait_time = 1.25
+
+[node name="ArrowPosition" parent="." index="3"]
+position = Vector2( 16.4205, -2.87482 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="9"]
-position = Vector2( 16.4925, 26 )
+position = Vector2( 16.913, 12.1252 )
 frames = SubResource( 19 )
-
-[node name="RangeSprite" parent="." index="10"]
-visible = false
 
 [node name="AnimationPlayer" parent="." index="11"]
 anims/HitBalista = ExtResource( 39 )

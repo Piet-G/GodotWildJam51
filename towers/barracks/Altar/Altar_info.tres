@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Altar"
-food_cost = 10
+food_cost = 0
 gold_cost = 0
 icon = "res://assets/towers/barracks/Altar.png"
 scene = "res://towers/barracks/Altar/Altar.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces angels, which can prevent your units from dying."
+icon_offset = Vector2( 4, 6 )

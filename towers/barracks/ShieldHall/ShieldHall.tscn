@@ -12,5 +12,10 @@ enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/ShieldMan/ShieldMan.tscn"
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 material = ExtResource( 5 )
+position = Vector2( -2.72834, -3.41174 )
+texture = ExtResource( 3 )
+
+[node name="DudeSpawnLocation" parent="." index="4"]
+position = Vector2( 26.2716, 20.5883 )

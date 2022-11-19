@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/towers/barracks/Zeppelin_bay.png" type="Texture" id=1]
 [ext_resource path="res://assets/towers/barracks/Zeppelin_bay_enemy.png" type="Texture" id=2]
 [ext_resource path="res://towers/barracks/Airfield/Airfield.tscn" type="PackedScene" id=3]
 [ext_resource path="res://towers/barracks/ZeppelinBay/ZeppelinBay_info.tres" type="Resource" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool grayscale = false;
+uniform bool invalid = false;
+
+void fragment() {
+	COLOR.rgba = texture(TEXTURE,UV);
+	
+	if (invalid) {
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
+	}
+	
+    if (grayscale) {
+        COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/grayscale = false
+shader_param/invalid = false
 
 [node name="ZeppelinBay" instance=ExtResource( 3 )]
 regular_texture = ExtResource( 1 )
@@ -11,3 +35,7 @@ enemy_texture = ExtResource( 2 )
 tower_info = ExtResource( 4 )
 unit_scene = "res://dudes/Zeppelin/Zeppelin.tscn"
 max_dudes = 1
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
+texture = ExtResource( 1 )

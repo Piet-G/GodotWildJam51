@@ -27,12 +27,12 @@ func _on_Area2D_area_entered(area):
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		if(area.get_parent().slow):
 			area.get_parent().burn()
-		area.get_parent().damage(1)
+		area.get_parent().damage(2)
 		if(is_instance_valid(target)):
 			self.target.targeted = false
 		destroy()
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
-		area.get_parent().damage(1)
+		area.get_parent().damage(2)
 		destroy()
 
 func destroy():

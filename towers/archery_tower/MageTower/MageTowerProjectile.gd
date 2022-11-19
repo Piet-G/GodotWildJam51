@@ -34,11 +34,11 @@ func _on_Area2D_area_entered(area):
 	if(area.is_in_group("mirror")):
 		target = origin
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
-		area.get_parent().damage(1)
+		area.get_parent().damage(3)
 		set_direction()
 		passed_enemy = true
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
-		area.get_parent().damage(1)
+		area.get_parent().damage(3)
 		destroy()
 
 func destroy():

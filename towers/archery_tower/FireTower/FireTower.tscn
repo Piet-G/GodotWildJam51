@@ -42,6 +42,14 @@ tower_info = ExtResource( 5 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 18 )
+position = Vector2( 0, -16.7538 )
+texture = ExtResource( 3 )
+
+[node name="Range" parent="." index="1"]
+position = Vector2( 16, -5.75377 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 19 )
+
+[node name="ArrowPosition" parent="." index="3"]
+position = Vector2( 16, -5.75377 )

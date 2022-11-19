@@ -25,6 +25,5 @@ func damage(amount):
 func reached_castle():
 	CastleService.damage(castle_damage, not is_enemy)
 	var explosion = preload("res://dudes/BigBombDude/ExplosionBig.tscn").instance()
-	get_parent().add_child(explosion)
-	queue_free()
+	call_deferred("add_child", explosion)
 	return

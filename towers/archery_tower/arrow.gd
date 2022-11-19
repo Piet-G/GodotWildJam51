@@ -5,6 +5,7 @@ var target: Node2D
 var is_enemy = false
 var origin: Node2D
 var active = true
+export var damage = 1
 
 func set_target(target: Node2D):
 	self.target = target
@@ -28,12 +29,12 @@ func _on_Area2D_area_entered(area):
 		if(is_instance_valid(target)):
 			self.target.targeted = false
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
-		area.get_parent().damage(1)
+		area.get_parent().damage(damage)
 		if(is_instance_valid(target)):
 			self.target.targeted = false
 		destroy()
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
-		area.get_parent().damage(1)
+		area.get_parent().damage(damage)
 		destroy()
 
 func destroy():

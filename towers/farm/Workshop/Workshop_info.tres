@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Workshop"
-food_cost = 10
-gold_cost = 0
+food_cost = 150
+gold_cost = 30
 icon = "res://assets/towers/farm/Workshop.png"
 scene = "res://towers/farm/Workshop/Workshop.tscn"
 next_upgrades = [  ]
-flavour_text = "A gatherplace for builders to share their knowledge. Repairs buildings and the castle."
-icon_offset = Vector2( 4, 7 )
+flavour_text = "Repairs the castle and buildings within it's range."
+icon_offset = Vector2( 4, 9 )

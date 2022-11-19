@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "BigBuffTower"
-food_cost = 10
-gold_cost = 0
+food_cost = 250
+gold_cost = 35
 icon = "res://assets/towers/tower/Big_buff.png"
 scene = "res://towers/archery_tower/BigBuffTower/BigBuffTower.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Buffs towers in a large range."
+icon_offset = Vector2( 4, -30 )

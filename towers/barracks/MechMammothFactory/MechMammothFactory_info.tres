@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/MechMammut_Factory.png"
 scene = "res://towers/barracks/MechMammothFactory/MechMammothFactory.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces the MECHAMAMMOTH!"
+icon_offset = Vector2( 2, 3 )

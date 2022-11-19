@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/barracks/BomberAirfield/BomberAirfield_info.tres" type="Resource" id=2]
 [ext_resource path="res://assets/towers/barracks/Airfield_bomber_enemy.png" type="Texture" id=3]
 [ext_resource path="res://assets/towers/barracks/Airfield_bomber.png" type="Texture" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool grayscale = false;
+uniform bool invalid = false;
+
+void fragment() {
+	COLOR.rgba = texture(TEXTURE,UV);
+	
+	if (invalid) {
+	    COLOR.rgb = COLOR.rgb * vec3(1, 0.3, 0.3);
+	}
+	
+    if (grayscale) {
+        COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/grayscale = false
+shader_param/invalid = false
 
 [node name="BomberAirfield" instance=ExtResource( 1 )]
 regular_texture = ExtResource( 4 )
@@ -11,3 +35,8 @@ enemy_texture = ExtResource( 3 )
 tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/Bomber/Bomber.tscn"
 max_dudes = 1
+
+[node name="Sprite" parent="." index="1"]
+material = SubResource( 2 )
+position = Vector2( -2.7276, -5.96592 )
+texture = ExtResource( 4 )

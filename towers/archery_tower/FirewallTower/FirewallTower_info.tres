@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Burning tower"
-food_cost = 10
-gold_cost = 0
+food_cost = 180
+gold_cost = 30
 icon = "res://assets/towers/tower/Fire_wall_tower.png"
 scene = "res://towers/archery_tower/FirewallTower/FirewallTower.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Shoots projectiles that create burning areas on the road."
+icon_offset = Vector2( 4, -8 )

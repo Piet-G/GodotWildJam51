@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Keep"
-food_cost = 10
+food_cost = 0
 gold_cost = 0
 icon = "res://assets/towers/barracks/Keep.png"
 scene = "res://towers/barracks/Keep/Keep.tscn"
 next_upgrades = [ ExtResource( 2 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "produces a leader, who gives more speed, health and damage to nearby allies."
+icon_offset = Vector2( 3, 3 )

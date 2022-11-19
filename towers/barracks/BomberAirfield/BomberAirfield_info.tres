@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Airfield_bomber.png"
 scene = "res://towers/barracks/BomberAirfield/BomberAirfield.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces bombers. They fly and drop bombs on enemy buildings in their path."
+icon_offset = Vector2( 2, 2 )

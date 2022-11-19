@@ -38,3 +38,8 @@ max_dudes = 1
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+position = Vector2( -3.69534, -2.30114 )
+texture = ExtResource( 2 )
+
+[node name="DudeSpawnLocation" parent="." index="4"]
+position = Vector2( 25.3047, 21.6989 )

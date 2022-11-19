@@ -10,5 +10,5 @@ gold_cost = 0
 icon = "res://assets/towers/barracks/Throne.png"
 scene = "res://towers/barracks/Throne/Throne.tscn"
 next_upgrades = [  ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Produces a king, who can bribe enemy units to join your side in battle!"
+icon_offset = Vector2( 3, -1 )

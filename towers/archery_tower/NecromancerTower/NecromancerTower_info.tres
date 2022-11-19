@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource( 1 )
 name = "Necromancer tower"
-food_cost = 10
-gold_cost = 0
+food_cost = 160
+gold_cost = 25
 icon = "res://assets/towers/tower/Necro_tower.png"
 scene = "res://towers/archery_tower/NecromancerTower/NecromancerTower.tscn"
 next_upgrades = [ ExtResource( 2 ) ]
-flavour_text = "This is flavour text, edit me"
-icon_offset = Vector2( 0, 0 )
+flavour_text = "Raises fallen enemies from the dead to fight for you!"
+icon_offset = Vector2( 4, 0 )

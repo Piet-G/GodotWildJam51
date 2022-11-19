@@ -4,10 +4,12 @@
 [ext_resource path="res://assets/Projectiles/heavy_projectile.png" type="Texture" id=2]
 
 [node name="HeavyArrow" instance=ExtResource( 1 )]
+damage = 6
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( 0.815319, -1.92109 )
 
 [node name="Sprite" parent="." index="1"]
-scale = Vector2( 3.36, 3.36 )
+position = Vector2( 0.750847, -0.834272 )
+scale = Vector2( 1.92461, 1.92461 )
 texture = ExtResource( 2 )
