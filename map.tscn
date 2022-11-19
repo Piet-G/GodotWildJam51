@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/MapAnim_0005.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/map/CastleBlue.png" type="Texture" id=17]
 [ext_resource path="res://towers/RaidHome.tscn" type="PackedScene" id=18]
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=19]
+[ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -534,32 +535,30 @@ next_paths = [ NodePath("../RedMiddlePath"), NodePath("../BlueRightPath1") ]
 
 [node name="EnemyInfo" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 40, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo2" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 80, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo3" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 120, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo4" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 120, 40 )
+tower_weight = 10
 
 [node name="EnemyInfo5" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 160, 40 )
+tower_weight = 10
 
 [node name="EnemyInfo6" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 160, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo7" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 200, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo8" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 200, 40 )
+tower_weight = 10
 
 [node name="EnemyInfo9" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 240, 40 )
@@ -571,35 +570,31 @@ tower_weight = 10
 
 [node name="EnemyInfo66" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 200, 160 )
-barrack_weight = 0
 
 [node name="EnemyInfo67" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 240, 120 )
 tower_weight = 10
+barrack_weight = 10
 
 [node name="EnemyInfo68" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 240, 160 )
-barrack_weight = 0
 
 [node name="EnemyInfo69" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 280, 120 )
 farm_weight = 10
+barrack_weight = 10
 
 [node name="EnemyInfo70" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 280, 160 )
-barrack_weight = 0
 
 [node name="EnemyInfo71" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 280, 200 )
-barrack_weight = 0
 
 [node name="EnemyInfo72" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 200 )
-barrack_weight = 0
 
 [node name="EnemyInfo73" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 360, 200 )
-barrack_weight = 0
 
 [node name="EnemyInfo74" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 400, 200 )
@@ -613,16 +608,17 @@ position = Vector2( 360, 160 )
 
 [node name="EnemyInfo77" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 160 )
-barrack_weight = 0
 
 [node name="EnemyInfo78" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 120 )
 
 [node name="EnemyInfo79" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 80 )
+tower_weight = 100
 
 [node name="EnemyInfo80" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 360, 80 )
+barrack_weight = 20
 
 [node name="EnemyInfo81" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 360, 120 )
@@ -632,21 +628,26 @@ position = Vector2( 240, 0 )
 
 [node name="EnemyInfo11" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 280, 0 )
+barrack_weight = 20
 
 [node name="EnemyInfo12" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 0 )
+barrack_weight = 20
 
 [node name="EnemyInfo13" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 360, 0 )
+barrack_weight = 20
 
 [node name="EnemyInfo14" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 400, 0 )
+barrack_weight = 20
 
 [node name="EnemyInfo15" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 0 )
 
 [node name="EnemyInfo16" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 40 )
+barrack_weight = 20
 
 [node name="EnemyInfo17" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 80 )
@@ -662,17 +663,12 @@ tower_weight = 30
 
 [node name="EnemyInfo19" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 480, 40 )
-barrack_weight = 0
 
 [node name="EnemyInfo20" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 480, 0 )
-barrack_weight = 0
 
 [node name="EnemyInfo22" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 0 )
-
-[node name="EnemyInfo23" parent="EnemyInfo" instance=ExtResource( 10 )]
-position = Vector2( 600, 80 )
 
 [node name="EnemyInfo24" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 80 )
@@ -697,22 +693,27 @@ position = Vector2( 600, 120 )
 
 [node name="EnemyInfo26" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 120 )
-barrack_weight = 0
 
 [node name="EnemyInfo27" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 680, 120 )
 
 [node name="EnemyInfo28" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 680, 160 )
+barrack_weight = 10
 
 [node name="EnemyInfo29" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 160 )
+barrack_weight = 10
 
 [node name="EnemyInfo30" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 600, 160 )
+tower_weight = 10
+barrack_weight = 10
 
 [node name="EnemyInfo31" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 560, 160 )
+tower_weight = 10
+barrack_weight = 10
 
 [node name="EnemyInfo33" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 480, 160 )
@@ -724,13 +725,17 @@ farm_weight = 10
 
 [node name="EnemyInfo35" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 520, 200 )
+barrack_weight = 10
 
 [node name="EnemyInfo37" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 480, 240 )
 farm_weight = 10
+tower_weight = 10
 
 [node name="EnemyInfo38" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 520, 240 )
+tower_weight = 10
+barrack_weight = 10
 
 [node name="EnemyInfo39" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 600, 240 )
@@ -773,6 +778,7 @@ position = Vector2( 760, 280 )
 
 [node name="EnemyInfo56" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 760, 320 )
+tower_weight = 100
 
 [node name="EnemyInfo57" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 760, 360 )
@@ -792,7 +798,6 @@ tower_weight = 10
 
 [node name="EnemyInfo62" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 400 )
-barrack_weight = 0
 
 [node name="EnemyInfo63" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 360 )
@@ -1283,6 +1288,9 @@ is_enemy = true
 [node name="RaidHome3" parent="Red" instance=ExtResource( 18 )]
 material = SubResource( 18 )
 position = Vector2( 696, 173 )
+__meta__ = {
+"_edit_lock_": true
+}
 is_enemy = true
 
 [node name="RaidHome4" parent="Red" instance=ExtResource( 18 )]
@@ -1394,5 +1402,13 @@ initially_in_world = true
 
 [node name="ArcheryTower2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 520, 160 )
+__meta__ = {
+"_edit_lock_": true
+}
+initially_in_world = true
+is_enemy = true
+
+[node name="Barracks" parent="." instance=ExtResource( 20 )]
+position = Vector2( 600, 80 )
 initially_in_world = true
 is_enemy = true

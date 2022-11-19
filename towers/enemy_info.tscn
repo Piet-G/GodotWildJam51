@@ -4,49 +4,48 @@
 
 [node name="EnemyInfo" type="Node2D"]
 script = ExtResource( 1 )
+barrack_weight = 0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color( 0.317647, 0.294118, 1, 0.243137 )
 polygon = PoolVector2Array( 0, 0, 40, 0, 40, 40, 0, 40 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
 columns = 2
 
 [node name="Label" type="Label" parent="GridContainer"]
-margin_right = 47.0
+margin_right = 9.0
 margin_bottom = 14.0
-text = "Farm"
+text = "F"
 
 [node name="FarmCount" type="Label" parent="GridContainer"]
-margin_left = 51.0
-margin_right = 59.0
+margin_left = 13.0
+margin_right = 21.0
 margin_bottom = 14.0
 text = "1"
 
 [node name="Label3" type="Label" parent="GridContainer"]
 margin_top = 18.0
-margin_right = 47.0
+margin_right = 9.0
 margin_bottom = 32.0
-text = "Tower"
+text = "T"
 
 [node name="TowerCount" type="Label" parent="GridContainer"]
-margin_left = 51.0
+margin_left = 13.0
 margin_top = 18.0
-margin_right = 59.0
+margin_right = 21.0
 margin_bottom = 32.0
 text = "1"
 
 [node name="Label5" type="Label" parent="GridContainer"]
 margin_top = 36.0
-margin_right = 47.0
+margin_right = 9.0
 margin_bottom = 50.0
-text = "Barrack"
+text = "B"
 
 [node name="BarCount" type="Label" parent="GridContainer"]
-margin_left = 51.0
+margin_left = 13.0
 margin_top = 36.0
-margin_right = 59.0
+margin_right = 21.0
 margin_bottom = 50.0
-text = "1"
+text = "0"
