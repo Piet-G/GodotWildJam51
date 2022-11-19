@@ -80,7 +80,8 @@ func close_to_war():
 	$UI/AnimationTree.set("parameters/WarTimeScale/scale", -1)
 	
 func close_upgrade():
-	$UI/SlideOut.play()
+	if(upgrade_open):
+		$UI/SlideOut.play()
 	upgrade_open = false
 	if(is_instance_valid(upgrading_tower)):
 		upgrading_tower.set_selected(false)

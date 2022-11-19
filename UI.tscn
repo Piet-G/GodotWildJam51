@@ -336,7 +336,7 @@ margin_bottom = 6.0
 
 [node name="SlideIn" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource( 22 )
-volume_db = -15.0
+volume_db = -12.0
 
 [node name="SlideOut" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource( 23 )
