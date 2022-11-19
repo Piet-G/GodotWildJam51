@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://dudes/regular_sprite_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://dudes/dude.gd" type="Script" id=2]
@@ -73,6 +73,37 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=2]
 
+[sub_resource type="Animation" id=12]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 4, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Dude" type="PathFollow2D" groups=["dude", "zindexed"]]
 rotate = false
 loop = false
@@ -91,7 +122,7 @@ frames = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]
@@ -138,6 +169,10 @@ one_shot = true
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 22 )
 volume_db = -15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hit = SubResource( 12 )
+anims/RESET = SubResource( 13 )
 
 [connection signal="animation_finished" from="Revive" to="." method="_on_Revive_animation_finished"]
 [connection signal="animation_finished" from="Resurrect" to="." method="_on_Resurrect_animation_finished"]

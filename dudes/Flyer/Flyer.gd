@@ -50,6 +50,7 @@ func stop_sneaking():
 	sneaking = false
 
 func damage(amount):
+	$AnimationPlayer.play("Hit")
 	health -= amount
 	if(health <= 0):
 		queue_free()

@@ -34,6 +34,7 @@ func get_health():
 	return health
 
 func damage(amount):
+	$AnimationPlayer2.play("HitBig")
 	health -= amount
 	if(health <= 0):
 		queue_free()
