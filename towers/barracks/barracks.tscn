@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://towers/barracks/barracks_info.tres" type="Resource" id=2]
 [ext_resource path="res://towers/barracks/barracks.gd" type="Script" id=3]
 [ext_resource path="res://assets/towers/barracks/Barracks.png" type="Texture" id=4]
 [ext_resource path="res://assets/towers/barracks/Barracks_enemy.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -30,6 +31,10 @@ shader = SubResource( 1 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 6 )
+
 [node name="Barracks" groups=["barracks"] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 type = 0
@@ -39,13 +44,13 @@ tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/dude.tscn"
 max_dudes = 5
 
-[node name="Area2D" parent="." index="0"]
-pause_mode = 2
-
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -2.06017, 0.374577 )
 texture = ExtResource( 4 )
+
+[node name="Area2D" parent="." index="1"]
+pause_mode = 2
 
 [node name="Timer" type="Timer" parent="." index="2"]
 wait_time = 5.0
@@ -57,13 +62,14 @@ wait_time = 0.3
 position = Vector2( 26.9398, 24.3746 )
 
 [node name="Label" type="Label" parent="." index="7"]
-visible = false
-margin_left = -36.0
-margin_top = -36.0
-margin_right = 73.0
-margin_bottom = -5.0
+margin_left = -50.1421
+margin_top = -28.9289
+margin_right = 89.8579
+margin_bottom = 2.07107
+custom_fonts/font = SubResource( 3 )
 text = "MUST BE PLACED
 NEXT TO ROAD"
+align = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="WarTimer" to="." method="_on_WarTimer_timeout"]

@@ -46,5 +46,6 @@ texture_normal = ExtResource( 4 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -20.0
 
 [connection signal="pressed" from="ToggleButton" to="." method="_on_ToggleButton_pressed"]
