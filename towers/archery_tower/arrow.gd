@@ -12,6 +12,8 @@ func set_target(target: Node2D):
 	target.targeted = true
 	
 func _physics_process(delta):
+	if(!active):
+		return
 	if(not is_instance_valid(target) && target != origin):
 		destroy()
 	else:
@@ -38,9 +40,9 @@ func _on_Area2D_area_entered(area):
 		destroy()
 
 func destroy():
-	$Hit.play()
 	active = false
 	visible = false
+	$Hit.play()
 
 
 func _on_Hit_finished():

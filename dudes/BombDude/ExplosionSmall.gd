@@ -11,6 +11,7 @@ var is_enemy = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play()
+	$ExplosionSound.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,9 +19,14 @@ func _ready():
 #	pass
 
 func _on_ExplosionSmall_area_entered(area):
-	if(!area.is_in_group("air") && (area.is_in_group("dude_area") || area.is_in_group("Tower")) and area.get_parent().is_enemy != is_enemy):
-		area.get_parent().damage(6)
+	if($AnimatedSprite.visible):
+		if(!area.is_in_group("air") && (area.is_in_group("dude_area") || area.is_in_group("Tower")) and area.get_parent().is_enemy != is_enemy):
+			area.get_parent().damage(6)
 
 
 func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.visible = false
+
+
+func _on_ExplosionSound_finished():
 	get_parent().queue_free()

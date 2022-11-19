@@ -23,6 +23,7 @@ func _on_buy_tower_clicked(info: TowerInfo) -> void:
 		clicked_info = info
 		get_tree().current_scene.add_child(tower_ghost)
 		Ui.placing_building = true
+		$Click.play()
 	
 func check_if_next_to_road(position):
 	if(not tower_ghost.type == Tower.Type.barracks):

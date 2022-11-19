@@ -45,7 +45,8 @@ func add_to_recent_grid():
 func added_to_grid():
 	active = true
 	$HelperTimer.start()
-	
+	if(!initially_in_world):
+		$Build.play()
 	$Area2D.connect("input_event", self, "_on_Area2D_input_event" )
 
 func get_sprites():
