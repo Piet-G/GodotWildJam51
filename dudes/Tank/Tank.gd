@@ -24,6 +24,7 @@ func _ready():
 func activate():
 	.activate()
 	$OilTimer.start()
+	$TankSound.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

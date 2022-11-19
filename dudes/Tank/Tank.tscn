@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://dudes/Rhino/Rhino.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/units/Tank/Front/blue/Go_right_0002.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/effects/healing/get_healed_0003.png" type="Texture" id=15]
 [ext_resource path="res://assets/effects/healing/get_healed_0001.png" type="Texture" id=16]
 [ext_resource path="res://assets/effects/healing/get_healed_0002.png" type="Texture" id=17]
+[ext_resource path="res://assets/sounds/Driving_tank.mp3" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -98,12 +99,19 @@ position = Vector2( 22.7762, -12.4865 )
 [node name="Right_Bottom" type="Position2D" parent="." index="3"]
 position = Vector2( 22.7762, 25.7204 )
 
+[node name="AnimatedSprite" parent="." index="8"]
+frame = 3
+
 [node name="Healing" type="AnimatedSprite" parent="." index="9"]
 visible = false
 frames = SubResource( 7 )
 
 [node name="OilTimer" type="Timer" parent="." index="11"]
 wait_time = 0.5
+
+[node name="TankSound" type="AudioStreamPlayer2D" parent="." index="19"]
+stream = ExtResource( 18 )
+volume_db = -10.0
 
 [connection signal="animation_finished" from="Healing" to="." method="_on_Healing_animation_finished"]
 [connection signal="timeout" from="OilTimer" to="." method="_on_OilTimer_timeout"]

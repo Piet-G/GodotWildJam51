@@ -14,6 +14,7 @@ func _ready():
 func shoot_at(tower: Node2D):
 	$Cast_sprite.visible = true
 	$Cast_sprite.play()
+	$Cast.play()
 	var arrow = preload("res://dudes/FireWizard/FireWizard_projectile.tscn").instance()
 	arrow.is_enemy = is_enemy
 	get_parent().add_child(arrow)

@@ -45,7 +45,8 @@ func add_to_recent_grid():
 func added_to_grid():
 	active = true
 	$HelperTimer.start()
-	
+	if(!initially_in_world):
+		$Build.play()
 	$Area2D.connect("input_event", self, "_on_Area2D_input_event" )
 
 func get_sprites():
@@ -82,11 +83,13 @@ func _on_HelperTimer_timeout():
 	add_to_recent_grid()
 
 func burn():
+	$Burn.play()
 	$BurningSprite.visible = true
 	$BurningSprite.playing = true
 	$BurningTimer.start()
 
 func _on_BurningTimer_timeout():
+	$Burn.stop()
 	$BurningSprite.visible = false
 	$BurningSprite.playing = false
 

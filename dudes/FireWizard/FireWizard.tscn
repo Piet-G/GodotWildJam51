@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://dudes/Wizard/Wizard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dudes/FireWizard/FireWizard.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/units/FireWizard/Cast_0002.png" type="Texture" id=11]
 [ext_resource path="res://assets/units/FireWizard/Cast_0003.png" type="Texture" id=12]
 [ext_resource path="res://assets/units/FireWizard/blue/run_right_0004.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/Whoosh.mp3" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -46,7 +47,10 @@ regular_sprites = SubResource( 4 )
 enemy_sprites = SubResource( 5 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 3
+frame = 1
 
 [node name="Cast_sprite" parent="." index="3"]
 frames = SubResource( 3 )
+
+[node name="Cast" parent="." index="14"]
+stream = ExtResource( 14 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://dudes/dude.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/units/Wizard/blue/run_right_0002.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/units/Wizard/Cast_0001.png" type="Texture" id=11]
 [ext_resource path="res://assets/units/Wizard/Cast_0002.png" type="Texture" id=12]
 [ext_resource path="res://dudes/Wizard/Wizard.gd" type="Script" id=13]
+[ext_resource path="res://assets/sounds/pulse.mp3" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -68,6 +69,10 @@ shape = SubResource( 4 )
 [node name="CastCooldown" type="Timer" parent="." index="5"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Cast" type="AudioStreamPlayer2D" parent="." index="14"]
+stream = ExtResource( 14 )
+volume_db = -10.0
 
 [connection signal="animation_finished" from="Cast_sprite" to="." method="_on_Cast_sprite_animation_finished"]
 [connection signal="area_entered" from="CastRange" to="." method="_on_CastRange_area_entered"]

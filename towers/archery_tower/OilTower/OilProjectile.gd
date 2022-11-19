@@ -42,4 +42,5 @@ func destroy():
 
 
 func _on_Hit_finished():
+	$Hit.stop()
 	queue_free()
