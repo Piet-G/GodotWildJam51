@@ -34,6 +34,7 @@ var tower_count = 0
 
 
 var wait_time_after_building = 1
+var cost_reduction = 0.6
 
 var ai_tree = {"type": farm_type, "weight": 1, "next": [
 			{"type": farm_type, "weight": 100, "next": [
@@ -121,7 +122,7 @@ var current_options = []
 var next_option = ai_tree
 
 func can_build(tower_info: TowerInfo):
-	return ResourceManager.get_food(true) >= tower_info.food_cost and ResourceManager.get_gold(true) >= tower_info.gold_cost
+	return ResourceManager.get_food(true) >= tower_info.food_cost * cost_reduction and ResourceManager.get_gold(true) >= tower_info.gold_cost * cost_reduction
 
 func get_weight_name(type):
 	if(Tower.Type.farm == type):
@@ -147,8 +148,8 @@ func _on_TickTimer_timeout():
 		else:
 			attempt_build(next_option.type)
 		
-		ResourceManager.remove_food(next_option.type.food_cost, true)
-		ResourceManager.remove_gold(next_option.type.gold_cost, true)
+		ResourceManager.remove_food(next_option.type.food_cost * cost_reduction, true)
+		ResourceManager.remove_gold(next_option.type.gold_cost * cost_reduction, true)
 		current_options.append_array(next_option.next)
 		next_option = null
 		$TickTimer.wait_time = wait_time_after_building
