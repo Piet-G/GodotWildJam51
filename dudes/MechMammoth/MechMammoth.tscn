@@ -106,7 +106,9 @@ regular_sprites_front = SubResource( 5 )
 enemy_sprites_front = SubResource( 6 )
 regular_sprites_back = SubResource( 3 )
 enemy_sprites_back = SubResource( 4 )
+max_health = 50
 movement_speed = 20
+castle_damage = 30
 regular_sprites = SubResource( 7 )
 enemy_sprites = SubResource( 8 )
 

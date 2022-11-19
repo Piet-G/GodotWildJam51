@@ -40,6 +40,8 @@ animations = [ {
 
 [node name="King" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 8
+castle_damage = 4
 regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 

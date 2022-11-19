@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Bomber airfield"
-food_cost = 10
-gold_cost = 0
+food_cost = 180
+gold_cost = 20
 icon = "res://assets/towers/barracks/Airfield_bomber.png"
 scene = "res://towers/barracks/BomberAirfield/BomberAirfield.tscn"
 next_upgrades = [  ]

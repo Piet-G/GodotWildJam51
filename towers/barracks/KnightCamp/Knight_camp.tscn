@@ -12,10 +12,13 @@ enemy_texture = ExtResource( 2 )
 tower_info = ExtResource( 4 )
 unit_scene = "res://dudes/Knight/Knight.tscn"
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = ExtResource( 5 )
 position = Vector2( -3.12083, 2.31912 )
 texture = ExtResource( 2 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 7.0
 
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 25.8792, 26.3191 )

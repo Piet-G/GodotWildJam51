@@ -36,10 +36,13 @@ tower_info = ExtResource( 4 )
 unit_scene = "res://dudes/Tank/Tank.tscn"
 max_dudes = 1
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -0.559235, -11.7507 )
 texture = ExtResource( 3 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 30.0
 
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 28.4408, 12.2493 )

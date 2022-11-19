@@ -41,3 +41,6 @@ unit_scene = "res://dudes/Flyer/Flyer.tscn"
 material = SubResource( 2 )
 position = Vector2( -2.06017, -1.39319 )
 texture = ExtResource( 5 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 8.0

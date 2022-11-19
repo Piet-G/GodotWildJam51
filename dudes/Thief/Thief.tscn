@@ -29,7 +29,9 @@ animations = [ {
 
 [node name="Thief" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 3
 movement_speed = 50
+castle_damage = 4
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 

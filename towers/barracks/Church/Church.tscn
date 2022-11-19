@@ -41,5 +41,8 @@ material = SubResource( 2 )
 position = Vector2( -2.84763, -1.98778 )
 texture = ExtResource( 4 )
 
+[node name="Timer" parent="." index="2"]
+wait_time = 12.0
+
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 26.1524, 22.0122 )

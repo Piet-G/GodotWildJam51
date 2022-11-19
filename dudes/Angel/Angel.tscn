@@ -39,6 +39,8 @@ radius = 120.0
 
 [node name="Angel" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 8
+castle_damage = 4
 regular_sprites = SubResource( 3 )
 enemy_sprites = SubResource( 4 )
 

@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Throne"
-food_cost = 10
-gold_cost = 0
+food_cost = 200
+gold_cost = 20
 icon = "res://assets/towers/barracks/Throne.png"
 scene = "res://towers/barracks/Throne/Throne.tscn"
 next_upgrades = [  ]

@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Barracks"
-food_cost = 0
+food_cost = 30
 gold_cost = 0
 icon = "res://assets/towers/barracks/Barracks.png"
 scene = "res://towers/barracks/barracks.tscn"

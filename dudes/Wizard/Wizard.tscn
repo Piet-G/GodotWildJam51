@@ -43,9 +43,14 @@ radius = 120.0
 
 [node name="Wizard" instance=ExtResource( 1 )]
 script = ExtResource( 13 )
-movement_speed = 50
+max_health = 7
+movement_speed = 35
+castle_damage = 4
 regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
+
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 0
 
 [node name="Position2D" type="Position2D" parent="AnimatedSprite" index="0"]
 position = Vector2( 6.65277, -11.7071 )

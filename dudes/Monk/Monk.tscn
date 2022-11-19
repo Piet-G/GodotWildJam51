@@ -39,11 +39,12 @@ radius = 120.0
 
 [node name="Monk" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 7
 regular_sprites = SubResource( 3 )
 enemy_sprites = SubResource( 4 )
 
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 2
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 0
 
 [node name="HealingEffect" type="AnimatedSprite" parent="AnimatedSprite" index="0"]
 visible = false

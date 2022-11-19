@@ -147,18 +147,18 @@ func heal():
 
 func oil():
 	if(!slow):
-		movement_speed -= 20
+		movement_speed -= 15
 		slow = true
 
 func slow():
 	if(!slow):
-		movement_speed -= 20
+		movement_speed -= 15
 		slow = true
 		$SlowTimer.start()
 
 func stop_slow():
 	if(slow):
-		movement_speed += 20
+		movement_speed += 15
 		slow = false
 
 func _on_SlowTimer_timeout():

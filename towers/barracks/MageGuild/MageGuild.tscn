@@ -34,11 +34,15 @@ regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/Wizard/Wizard.tscn"
+max_dudes = 3
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -1.16222, -15.704 )
 texture = ExtResource( 3 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 10.0
 
 [node name="BurningSprite" parent="." index="8"]
 position = Vector2( 16.7043, 4.23177 )

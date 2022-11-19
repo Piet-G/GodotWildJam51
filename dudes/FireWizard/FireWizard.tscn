@@ -40,12 +40,13 @@ animations = [ {
 
 [node name="FireWizard" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 8
 movement_speed = 30
 regular_sprites = SubResource( 4 )
 enemy_sprites = SubResource( 5 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 1
+frame = 3
 
 [node name="Cast_sprite" parent="." index="3"]
 frames = SubResource( 3 )

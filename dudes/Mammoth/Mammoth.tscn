@@ -72,10 +72,12 @@ regular_sprites_front = SubResource( 1 )
 enemy_sprites_front = SubResource( 2 )
 regular_sprites_back = SubResource( 3 )
 enemy_sprites_back = SubResource( 4 )
+max_health = 20
+castle_damage = 10
 regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
 
-[node name="AnimatedSprite" parent="." index="0"]
+[node name="AnimatedSprite" parent="." index="4"]
 frame = 3
 
 [node name="Position2D" type="Position2D" parent="AnimatedSprite" index="0"]

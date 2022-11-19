@@ -32,12 +32,14 @@ radius = 94.2603
 
 [node name="Shade" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
+max_health = 8
 movement_speed = 50
+castle_damage = 4
 regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 2
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 0
 
 [node name="Timer" type="Timer" parent="." index="3"]
 wait_time = 10.0

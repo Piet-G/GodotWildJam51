@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Firetank factory"
-food_cost = 10
-gold_cost = 0
+food_cost = 200
+gold_cost = 25
 icon = "res://assets/towers/barracks/TankFactory_fire.png"
 scene = "res://towers/barracks/FireTankFactory/FireTankFactory.tscn"
 next_upgrades = [  ]

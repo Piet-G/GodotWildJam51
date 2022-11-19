@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Knight Camp"
-food_cost = 0
-gold_cost = 0
+food_cost = 60
+gold_cost = 15
 icon = "res://assets/towers/barracks/Roman_camp.png"
 scene = "res://towers/barracks/KnightCamp/Knight_camp.tscn"
 next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

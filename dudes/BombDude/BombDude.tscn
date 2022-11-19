@@ -25,6 +25,7 @@ animations = [ {
 
 [node name="BombDude" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 10
 castle_damage = 30
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )

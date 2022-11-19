@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Mage guild"
-food_cost = 0
-gold_cost = 0
+food_cost = 110
+gold_cost = 5
 icon = "res://assets/towers/barracks/Mage_guild.png"
 scene = "res://towers/barracks/MageGuild/MageGuild.tscn"
 next_upgrades = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

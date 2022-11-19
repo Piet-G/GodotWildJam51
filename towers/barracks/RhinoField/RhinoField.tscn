@@ -30,10 +30,13 @@ tower_info = ExtResource( 3 )
 unit_scene = "res://dudes/Rhino/Rhino.tscn"
 max_dudes = 1
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -4.49492, 4.12035 )
 texture = ExtResource( 2 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 20.0
 
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 24.505, 28.1204 )

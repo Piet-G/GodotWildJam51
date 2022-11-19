@@ -32,8 +32,13 @@ extents = Vector2( 3.30729, 11.733 )
 
 [node name="ShieldMan" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 4
+castle_damage = 2
 regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
+
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 0
 
 [node name="Shield" type="Area2D" parent="AnimatedSprite" index="4" groups=["shield"]]
 

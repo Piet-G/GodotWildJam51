@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Keep"
-food_cost = 0
-gold_cost = 0
+food_cost = 120
+gold_cost = 20
 icon = "res://assets/towers/barracks/Keep.png"
 scene = "res://towers/barracks/Keep/Keep.tscn"
 next_upgrades = [ ExtResource( 2 ) ]

@@ -32,8 +32,13 @@ radius = 120.0
 
 [node name="Leader" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+max_health = 7
+castle_damage = 2
 regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
+
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 1
 
 [node name="Range" type="Area2D" parent="." index="3"]
 

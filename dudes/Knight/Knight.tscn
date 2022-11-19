@@ -27,10 +27,11 @@ animations = [ {
 } ]
 
 [node name="Knight" instance=ExtResource( 9 )]
-health = 5
+max_health = 4
 movement_speed = 20
+castle_damage = 2
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 0
+[node name="AnimatedSprite" parent="." index="2"]
+frame = 2

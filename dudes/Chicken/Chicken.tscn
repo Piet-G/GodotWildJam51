@@ -31,9 +31,10 @@ animations = [ {
 } ]
 
 [node name="Chicken" instance=ExtResource( 1 )]
+max_health = 1
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 3 )
-frame = 0
+frame = 1

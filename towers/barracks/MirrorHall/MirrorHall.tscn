@@ -35,10 +35,13 @@ enemy_texture = ExtResource( 3 )
 tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/MirrorShieldMan/MirrorShieldMan.tscn"
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -3.47438, -4.57517 )
 texture = ExtResource( 4 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 10.0
 
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 25.5256, 19.4249 )

@@ -80,8 +80,11 @@ regular_sprites_front = SubResource( 1 )
 enemy_sprites_front = SubResource( 2 )
 regular_sprites_back = SubResource( 3 )
 enemy_sprites_back = SubResource( 4 )
+max_health = 12
+castle_damage = 4
 regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
+fire = false
 
 [node name="Left_Top" type="Position2D" parent="." index="0"]
 position = Vector2( -23.2238, -11.9865 )
@@ -94,9 +97,6 @@ position = Vector2( 22.7762, -12.4865 )
 
 [node name="Right_Bottom" type="Position2D" parent="." index="3"]
 position = Vector2( 22.7762, 25.7204 )
-
-[node name="AnimatedSprite" parent="." index="4"]
-frame = 2
 
 [node name="Healing" type="AnimatedSprite" parent="." index="9"]
 visible = false

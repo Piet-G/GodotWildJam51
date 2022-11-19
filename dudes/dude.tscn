@@ -76,6 +76,7 @@ animations = [ {
 rotate = false
 loop = false
 script = ExtResource( 2 )
+max_health = 2
 regular_sprites = ExtResource( 1 )
 enemy_sprites = ExtResource( 3 )
 
@@ -89,7 +90,7 @@ frames = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]

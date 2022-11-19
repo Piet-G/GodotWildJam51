@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Rhino Field"
-food_cost = 0
-gold_cost = 0
+food_cost = 120
+gold_cost = 20
 icon = "res://assets/towers/barracks/RhinoCamp.png"
 scene = "res://towers/barracks/RhinoField/RhinoField.tscn"
 next_upgrades = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

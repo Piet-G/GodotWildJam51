@@ -67,6 +67,10 @@ regular_sprites_front = SubResource( 1 )
 enemy_sprites_front = SubResource( 2 )
 regular_sprites_back = SubResource( 3 )
 enemy_sprites_back = SubResource( 4 )
+max_health = 14
 regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
 fire = true
+
+[node name="AnimatedSprite" parent="." index="8"]
+frame = 0

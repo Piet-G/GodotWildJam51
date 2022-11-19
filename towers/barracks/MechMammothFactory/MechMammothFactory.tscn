@@ -36,10 +36,13 @@ tower_info = ExtResource( 4 )
 unit_scene = "res://dudes/MechMammoth/MechMammoth.tscn"
 max_dudes = 1
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -4.68221, -3.37119 )
 texture = ExtResource( 2 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 60.0
 
 [node name="DudeSpawnLocation" parent="." index="4"]
 position = Vector2( 24.3178, 20.6288 )

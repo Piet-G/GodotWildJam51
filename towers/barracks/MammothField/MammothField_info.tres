@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Mammoth field"
-food_cost = 0
-gold_cost = 0
+food_cost = 200
+gold_cost = 30
 icon = "res://assets/towers/barracks/Elephant_camp.png"
 scene = "res://towers/barracks/MammothField/MammothField.tscn"
 next_upgrades = [ ExtResource( 2 ) ]

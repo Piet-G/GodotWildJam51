@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Zeppelin bay"
-food_cost = 10
-gold_cost = 0
+food_cost = 250
+gold_cost = 25
 icon = "res://assets/towers/barracks/Zeppelin_bay.png"
 scene = "res://towers/barracks/ZeppelinBay/ZeppelinBay.tscn"
 next_upgrades = [  ]

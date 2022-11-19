@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 name = "Airmage guild"
-food_cost = 10
-gold_cost = 0
+food_cost = 170
+gold_cost = 15
 icon = "res://assets/towers/barracks/Mage_guild_air.png"
 scene = "res://towers/barracks/AirMageGuild/AirMageGuild.tscn"
 next_upgrades = [  ]

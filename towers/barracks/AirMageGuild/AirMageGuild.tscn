@@ -36,7 +36,10 @@ tower_info = ExtResource( 2 )
 unit_scene = "res://dudes/AirWizard/AirWizard.tscn"
 max_dudes = 1
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -2.06017, -15.4353 )
 texture = ExtResource( 4 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 8.0
