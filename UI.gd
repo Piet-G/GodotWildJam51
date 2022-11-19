@@ -20,6 +20,7 @@ func _on_TowerBuyUI_open_toggled():
 	open = -1 * open
 	
 	if(open == 1):
+		$SlideIn.play()
 		get_parent().close_to_war()
 		get_parent().close_upgrade()
 	else:

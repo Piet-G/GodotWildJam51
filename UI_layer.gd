@@ -35,6 +35,7 @@ func lose():
 	
 var upgrade_open = false
 func open_upgrade(tower_info: TowerInfo):
+	$UI/SlideIn.play()
 	$UI/AnimationTree.set("parameters/UpgradeTimeScale/scale", 1)
 	$UI/UpgradeUI.show_upgrades_for(tower_info)
 	upgrade_open = true
