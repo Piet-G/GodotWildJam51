@@ -21,6 +21,7 @@ func _on_ExplosionSmall_area_entered(area):
 	if($AnimatedSprite.visible):
 		if(!area.is_in_group("air") && (area.is_in_group("dude_area") && area.get_parent().is_active())):
 			area.get_parent().damage(2)
+			$Hit.play()
 
 
 func _on_AnimatedSprite_animation_finished():

@@ -14,4 +14,5 @@ func _ready():
 func destroy():
 	var explosion = preload("res://towers/archery_tower/CatapultTower/RockHit.tscn").instance()
 	add_child(explosion)
+	explosion.global_rotation = 0
 	active = false
