@@ -24,7 +24,7 @@ size = 40
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 10
+size = 11
 extra_spacing_bottom = 2
 font_data = ExtResource( 6 )
 
@@ -89,18 +89,18 @@ margin_right = 90.8363
 margin_bottom = 115.697
 
 [node name="Sprite2" type="Sprite" parent="Village"]
-position = Vector2( 56.6324, 148.188 )
+position = Vector2( 56.6324, 158.253 )
 texture = ExtResource( 9 )
 
 [node name="Sprite3" type="Sprite" parent="Village"]
-position = Vector2( 94.3874, 147.244 )
+position = Vector2( 94.3874, 157.309 )
 texture = ExtResource( 8 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Village"]
 margin_left = 131.0
 margin_top = 142.0
-margin_right = 322.0
-margin_bottom = 182.0
+margin_right = 347.0
+margin_bottom = 196.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "Raiding enemy villages produces gold"
 
@@ -205,10 +205,10 @@ position = Vector2( 75.5099, 144.413 )
 texture = ExtResource( 12 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Castle"]
-margin_left = 127.99
-margin_top = 128.0
-margin_right = 321.99
-margin_bottom = 168.0
+margin_left = 142.271
+margin_top = 129.189
+margin_right = 351.271
+margin_bottom = 174.189
 custom_fonts/normal_font = SubResource( 2 )
 text = "Protect your castle from enemy units"
 
@@ -223,10 +223,10 @@ position = Vector2( 75.5099, 144.413 )
 texture = ExtResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Castle2"]
-margin_left = 127.99
-margin_top = 128.0
-margin_right = 321.99
-margin_bottom = 168.0
+margin_left = 158.919
+margin_top = 131.568
+margin_right = 372.919
+margin_bottom = 176.568
 custom_fonts/normal_font = SubResource( 2 )
 text = "Destroy the enemy castle with your units to win!"
 
