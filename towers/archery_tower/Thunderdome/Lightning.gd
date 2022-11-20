@@ -53,6 +53,7 @@ func bounce():
 	if bounces <= 0:
 		destroy()
 	else:
+		bounces -= 1
 		$Hit.play()
 		for area in $Range.get_overlapping_areas():
 			if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active and area.get_parent() != target):
