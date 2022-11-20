@@ -11,5 +11,5 @@ dest_files=[ "res://.import/One-Bard-Band.mp3-03fee352c4d229a6d0af6ebf08f264c0.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

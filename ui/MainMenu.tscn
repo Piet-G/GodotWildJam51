@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/Songs/medieval-epic-adventure-action-heroic-powerful-opener-intro-117935.mp3" type="AudioStream" id=1]
 [ext_resource path="res://ui/MainMenu.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/UI/largebuttonclicked.png" type="Texture" id=12]
 [ext_resource path="res://RateUs.gd" type="Script" id=13]
 [ext_resource path="res://assets/sounds/Click.mp3" type="AudioStream" id=14]
+[ext_resource path="res://ui/Tutorial.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -115,14 +116,17 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -15.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = -10.0
 
+[node name="Tutorial" parent="." instance=ExtResource( 15 )]
+visible = false
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_Start_Game_pressed"]
 [connection signal="pressed" from="VBoxContainer/RateUs" to="VBoxContainer/RateUs" method="_on_RateUs_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer2" to="." method="_on_AudioStreamPlayer2_finished"]

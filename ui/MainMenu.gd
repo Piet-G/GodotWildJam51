@@ -13,6 +13,7 @@ func _ready():
 
 func _on_Start_Game_pressed():
 	$AudioStreamPlayer2.play()
+	$Tutorial.visible = true
 
 
 func _on_Timer_timeout():
@@ -21,8 +22,3 @@ func _on_Timer_timeout():
 
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.playing = false
-
-
-func _on_AudioStreamPlayer2_finished():
-	Ui.visible = true
-	get_tree().change_scene("res://map.tscn")

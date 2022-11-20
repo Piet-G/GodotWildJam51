@@ -21,7 +21,7 @@ damage = 3
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="." index="2"]
 stream = ExtResource( 6 )

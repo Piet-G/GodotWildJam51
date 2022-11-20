@@ -35,6 +35,8 @@ func set_grayscale(value):
 
 func set_on_fire():
 	on_fire = true
+	$Burn.play()
+	$Coin.play()
 	
 	if(is_enemy):
 		add_child(preload("res://ui/FoodAddedLabel.tscn").instance())
@@ -55,4 +57,5 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Timer_timeout():
+	$Burn.stop()
 	show_not_animating()
