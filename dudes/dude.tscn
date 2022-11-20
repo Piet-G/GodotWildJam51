@@ -122,7 +122,6 @@ frames = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 2
 playing = true
 
 [node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]
