@@ -13,5 +13,5 @@ gold_cost = 20
 icon = "res://assets/towers/Artillery_tower.png"
 scene = "res://towers/archery_tower/CatapultTower/CatapultTower.tscn"
 next_upgrades = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
-flavour_text = "Big range and hits multiple units."
+flavour_text = "Larger range and hits multiple units."
 icon_offset = Vector2( 4, -8 )
