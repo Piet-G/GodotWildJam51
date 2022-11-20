@@ -15,4 +15,5 @@ func _on_MainMenu_pressed():
 	visible = false
 	get_tree().change_scene("res://ui/MainMenu.tscn")
 	$WinSong.stop()
+	get_tree().paused = false
 
