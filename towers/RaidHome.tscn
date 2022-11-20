@@ -64,10 +64,11 @@ shape = SubResource( 5 )
 
 [node name="Burn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="Coin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
