@@ -1,0 +1,238 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/UI/Tutorial background.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/largebuttonhover.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/largebuttonclicked.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/largebutton.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/pausefont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/towers/farm/farm_simple.png" type="Texture" id=7]
+[ext_resource path="res://assets/map/Village/red/FIRE_0002.png" type="Texture" id=8]
+[ext_resource path="res://assets/map/Village/red/FIRE_0001.png" type="Texture" id=9]
+[ext_resource path="res://assets/towers/barracks/Barracks.png" type="Texture" id=10]
+[ext_resource path="res://assets/towers/tower/Tower_wood.png" type="Texture" id=11]
+[ext_resource path="res://assets/map/CastleBlue.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/War_button.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/Upgrade_button.png" type="Texture" id=14]
+[ext_resource path="res://assets/map/CastleRed.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/shop_screen_button.png" type="Texture" id=16]
+[ext_resource path="res://ui/Tutorial.gd" type="Script" id=17]
+[ext_resource path="res://assets/sounds/Click.mp3" type="AudioStream" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+extra_spacing_bottom = 2
+font_data = ExtResource( 6 )
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 400, 300 )
+texture = ExtResource( 1 )
+
+[node name="Start Game" type="TextureButton" parent="."]
+margin_left = 641.835
+margin_top = 551.223
+margin_right = 775.835
+margin_bottom = 576.223
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Start Game"]
+margin_left = 1.68179
+margin_top = 6.72717
+margin_right = 131.682
+margin_bottom = 20.7272
+custom_fonts/font = ExtResource( 5 )
+text = "Start"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 183.923
+margin_top = 60.5952
+margin_right = 623.923
+margin_bottom = 100.595
+custom_colors/font_color = Color( 0.898039, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "How to play"
+
+[node name="Farm" type="Control" parent="."]
+margin_left = 51.7801
+margin_top = 25.6719
+margin_right = 91.7801
+margin_bottom = 65.6719
+
+[node name="Sprite2" type="Sprite" parent="Farm"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Farm"]
+margin_left = 128.934
+margin_top = 138.383
+margin_right = 322.934
+margin_bottom = 178.383
+custom_fonts/normal_font = SubResource( 2 )
+text = "Farms produce wheat"
+
+[node name="Village" type="Control" parent="."]
+margin_left = 50.8363
+margin_top = 75.6972
+margin_right = 90.8363
+margin_bottom = 115.697
+
+[node name="Sprite2" type="Sprite" parent="Village"]
+position = Vector2( 56.6324, 148.188 )
+texture = ExtResource( 9 )
+
+[node name="Sprite3" type="Sprite" parent="Village"]
+position = Vector2( 94.3874, 147.244 )
+texture = ExtResource( 8 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Village"]
+margin_left = 131.0
+margin_top = 142.0
+margin_right = 322.0
+margin_bottom = 182.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Raiding enemy villages produces gold"
+
+[node name="Barrack" type="Control" parent="."]
+margin_left = 55.5556
+margin_top = 161.59
+margin_right = 95.5556
+margin_bottom = 201.59
+
+[node name="Sprite2" type="Sprite" parent="Barrack"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Barrack"]
+margin_left = 126.102
+margin_top = 134.607
+margin_right = 320.102
+margin_bottom = 174.607
+custom_fonts/normal_font = SubResource( 2 )
+text = "Barracks produce units"
+
+[node name="Tower" type="Control" parent="."]
+margin_left = 54.6118
+margin_top = 221.054
+margin_right = 94.6118
+margin_bottom = 261.054
+
+[node name="Sprite2" type="Sprite" parent="Tower"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 11 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tower"]
+margin_left = 126.102
+margin_top = 134.607
+margin_right = 320.102
+margin_bottom = 174.607
+custom_fonts/normal_font = SubResource( 2 )
+text = "Towers protect your castle"
+
+[node name="Shop" type="Control" parent="."]
+margin_left = 401.958
+margin_top = 44.5494
+margin_right = 441.958
+margin_bottom = 84.5494
+
+[node name="Sprite2" type="Sprite" parent="Shop"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 16 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop"]
+margin_left = 127.99
+margin_top = 128.0
+margin_right = 321.99
+margin_bottom = 168.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Click to build new buildings"
+
+[node name="Upgrade" type="Control" parent="."]
+margin_left = 404.051
+margin_top = 122.367
+margin_right = 444.051
+margin_bottom = 162.367
+
+[node name="Sprite2" type="Sprite" parent="Upgrade"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 14 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Upgrade"]
+margin_left = 127.99
+margin_top = 128.0
+margin_right = 321.99
+margin_bottom = 168.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Click to upgrade your buildings"
+
+[node name="ToWar" type="Control" parent="."]
+margin_left = 404.789
+margin_top = 201.232
+margin_right = 444.789
+margin_bottom = 241.232
+
+[node name="Sprite2" type="Sprite" parent="ToWar"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 13 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ToWar"]
+margin_left = 127.99
+margin_top = 128.0
+margin_right = 321.99
+margin_bottom = 168.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Click to attack with your units"
+
+[node name="Castle" type="Control" parent="."]
+margin_left = 63.7959
+margin_top = 335.168
+margin_right = 103.796
+margin_bottom = 375.168
+
+[node name="Sprite2" type="Sprite" parent="Castle"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 12 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Castle"]
+margin_left = 127.99
+margin_top = 128.0
+margin_right = 321.99
+margin_bottom = 168.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Protect your castle from enemy units"
+
+[node name="Castle2" type="Control" parent="."]
+margin_left = 378.456
+margin_top = 330.93
+margin_right = 418.456
+margin_bottom = 370.93
+
+[node name="Sprite2" type="Sprite" parent="Castle2"]
+position = Vector2( 75.5099, 144.413 )
+texture = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Castle2"]
+margin_left = 127.99
+margin_top = 128.0
+margin_right = 321.99
+margin_bottom = 168.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Destroy the enemy castle with your units to win!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[connection signal="pressed" from="Start Game" to="." method="_on_Start_Game_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
