@@ -1,7 +1,7 @@
 extends Node2D
 
-var old_hp_blue = 100
-var old_hp_red = 100
+var old_hp_blue = 50
+var old_hp_red = 50
 
 func _init():
 	ResourceManager.food = 0
