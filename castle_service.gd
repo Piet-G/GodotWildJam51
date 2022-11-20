@@ -1,8 +1,8 @@
 extends Node
 
 var max_hp = {
-	true: 100,
-	false: 100
+	true: 50,
+	false: 50
 }
 
 var hp = {

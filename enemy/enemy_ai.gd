@@ -26,6 +26,8 @@ var mammoth_type = preload("res://towers/barracks/MammothField/MammothField_info
 var tank_type = preload("res://towers/barracks/TankFactory/TankFactory_info.tres")
 var bomb_type = preload("res://towers/barracks/BigBombBay/BigBombBay_info.tres")
 
+var anti_air_type = preload("res://towers/archery_tower/AntiAirTower/AntiAir_info.tres")
+
 var mech_mammoth_type = preload("res://towers/barracks/MechMammothFactory/MechMammothFactory_info.tres")
 
 var farm_count = 1
@@ -34,7 +36,7 @@ var tower_count = 0
 
 
 var wait_time_after_building = 1
-var cost_reduction = 0.6
+var cost_reduction = 0.8
 
 var ai_tree = {"type": farm_type, "weight": 1, "next": [
 			{"type": farm_type, "weight": 100, "next": [
@@ -44,7 +46,7 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
 			]},
 			{"type": farm_type, "weight": 100, "next": [
-				{"type": treasury_type, "weight": 3, "from": farm_type, "next": []},
+				{"type": treasury_type, "weight": 20, "from": farm_type, "next": []},
 			]},
 			{"type": farm_type, "weight": 100, "next": [
 				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
@@ -65,9 +67,11 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 			{"type": barrack_type, "weight": 4, "next": [
 				{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
 					{"type": mammoth_type, "weight": 10, "from": rino_type, "next": [
-						{"type": mech_mammoth_type, "weight": 40, "from": mammoth_type, "next": [
-							
-						]}
+						{"type": tower_type, "weight": 5, "next": [
+							{"type": catapult_type, "weight": 6, "from": tower_type, "next": [
+								{"type": mech_mammoth_type, "weight": 40, "from": mammoth_type, "next": []}
+							]},
+						]},
 					]}
 				]}
 			]},
@@ -113,7 +117,7 @@ func can_launch_war():
 
 func launch_war():
 	for barrack in GridService.get_buildings_of_type(Tower.Type.barracks, true):
-		if(barrack.count > 1 and barrack.can_launch_war() and barrack.is_enemy):
+		if(barrack.count >= barrack.max_dudes / 2.0 and barrack.can_launch_war() and barrack.is_enemy):
 			barrack.launch_war()
 func get_building_count():
 	return float(farm_count + tower_count + barrack_count)
@@ -135,10 +139,6 @@ func get_weight_name(type):
 	return "farm_weight"
 
 func _on_TickTimer_timeout():
-	$TickTimer.wait_time = 1
-	if(can_launch_war()):
-		launch_war()
-		
 	if(not next_option):
 		return
 	
@@ -195,3 +195,9 @@ func attempt_build(tower_type: TowerInfo):
 	add_child(tower)
 	GridService.add_to_grid(tower, pos)
 
+
+
+func _on_LaunchWarTimer_timeout():
+	if(can_launch_war()):
+		launch_war()
+		

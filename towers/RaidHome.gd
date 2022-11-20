@@ -39,7 +39,7 @@ func set_on_fire():
 	if(is_enemy):
 		add_child(preload("res://ui/FoodAddedLabel.tscn").instance())
 	
-	ResourceManager.add_gold(1, not is_enemy)
+	ResourceManager.add_gold(3, not is_enemy)
 	if(is_enemy):
 		frames = red_animation
 	else:

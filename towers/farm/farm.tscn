@@ -37,7 +37,7 @@ enemy_texture = ExtResource( 4 )
 tower_info = ExtResource( 5 )
 food_gained = 5
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -2.50634, 1.97707 )
 texture = ExtResource( 6 )

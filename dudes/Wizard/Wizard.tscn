@@ -51,7 +51,7 @@ regular_sprites = SubResource( 5 )
 enemy_sprites = SubResource( 6 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 0
+frame = 1
 
 [node name="Position2D" type="Position2D" parent="AnimatedSprite" index="0"]
 position = Vector2( 6.65277, -11.7071 )

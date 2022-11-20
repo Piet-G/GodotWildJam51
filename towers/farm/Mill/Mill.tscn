@@ -33,9 +33,11 @@ shader_param/invalid = false
 regular_texture = ExtResource( 2 )
 enemy_texture = ExtResource( 3 )
 tower_info = ExtResource( 4 )
-food_gained = 15
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( -5.6059, -3.21424 )
 texture = ExtResource( 2 )
+
+[node name="Timer" parent="." index="2"]
+wait_time = 1.25

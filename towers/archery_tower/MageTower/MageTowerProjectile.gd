@@ -40,11 +40,11 @@ func _on_Area2D_area_entered(area):
 		target = origin
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		$Hit.play()
-		area.get_parent().damage(3)
+		area.get_parent().damage(2)
 		set_direction()
 		passed_enemy = true
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
-		area.get_parent().damage(3)
+		area.get_parent().damage(2)
 		destroy()
 
 func destroy():

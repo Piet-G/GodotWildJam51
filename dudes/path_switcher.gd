@@ -4,8 +4,11 @@ extends Node2D
 export var current_active = [0]
 export(Array, NodePath) var next_paths = []
 
+var index = 0
+
 func get_next_path_segment() -> DudePath:
-	return get_node(next_paths[current_active[0]]) as DudePath
+	index = (index + 1) % len(current_active)
+	return get_node(next_paths[current_active[index]]) as DudePath
 
 func is_path_active(index):
 	return index in current_active
