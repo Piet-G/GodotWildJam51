@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/One-Bard-Band.mp3-03fee352c4d229a6d0af6ebf08f264c0.mp3str"
+
+[deps]
+
+source_file="res://assets/Songs/One-Bard-Band.mp3"
+dest_files=[ "res://.import/One-Bard-Band.mp3-03fee352c4d229a6d0af6ebf08f264c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/medieval-epic-adventure-action-heroic-powerful-opener-intro-117935.mp3-c57f64c8b302c2e1f533d1bbfd4379d0.mp3str"
+
+[deps]
+
+source_file="res://assets/Songs/medieval-epic-adventure-action-heroic-powerful-opener-intro-117935.mp3"
+dest_files=[ "res://.import/medieval-epic-adventure-action-heroic-powerful-opener-intro-117935.mp3-c57f64c8b302c2e1f533d1bbfd4379d0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
