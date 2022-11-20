@@ -11,5 +11,5 @@ gold_cost = 25
 icon = "res://assets/towers/barracks/Bomb_bay.png"
 scene = "res://towers/barracks/BombBay/BombBay.tscn"
 next_upgrades = [ ExtResource( 2 ) ]
-flavour_text = "Porduces walking bombs. Explode when they die and cause mayhem!"
+flavour_text = "Produces walking bombs. Explode when they die and cause mayhem!"
 icon_offset = Vector2( 2, 3 )

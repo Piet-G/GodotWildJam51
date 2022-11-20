@@ -24,11 +24,48 @@ var workshop_type = preload("res://towers/farm/Workshop/Workshop_info.tres")
 
 var mammoth_type = preload("res://towers/barracks/MammothField/MammothField_info.tres")
 var tank_type = preload("res://towers/barracks/TankFactory/TankFactory_info.tres")
-var bomb_type = preload("res://towers/barracks/BigBombBay/BigBombBay_info.tres")
+var bomb_type = preload("res://towers/barracks/BombBay/BombBay_info.tres")
 
 var anti_air_type = preload("res://towers/archery_tower/AntiAirTower/AntiAir_info.tres")
 
 var mech_mammoth_type = preload("res://towers/barracks/MechMammothFactory/MechMammothFactory_info.tres")
+
+var fire_mage_type = preload("res://towers/barracks/FireMageGuild/FireMageGuild_info.tres")
+var air_mage_type = preload("res://towers/barracks/AirMageGuild/AirMageGuild_info.tres")
+var earth_mage_type = preload("res://towers/barracks/EarthMageGuild/EarthMageGuild_info.tres")
+
+var fire_tower_type = preload("res://towers/archery_tower/FireTower/FireTower_info.tres")
+var fire_wall_tower_type = preload("res://towers/archery_tower/FirewallTower/FirewallTower_info.tres")
+
+var machine_gun_type = preload("res://towers/archery_tower/MachineGunTower/MachineGunTower.tres")
+var heavy_machine_gun_type = preload("res://towers/archery_tower/HeavyMachineGunTower/HeavyMachineGunTower_info.tres")
+
+var air_bomber_type = preload("res://towers/barracks/BomberAirfield/BomberAirfield_info.tres")
+var zeppelin_type = preload("res://towers/barracks/ZeppelinBay/ZeppelinBay_info.tres")
+
+var rocket_type = preload("res://towers/archery_tower/RocketTower/RocketTower_info.tres")
+var buff_type = preload("res://towers/archery_tower/BuffTower/BuffTower_info.tres")
+var big_buff_type = preload("res://towers/archery_tower/BigBuffTower/BigBuffTower_info.tres")
+var listening_post_type = preload("res://towers/archery_tower/ListeningPost/ListeningPost_info.tres")
+
+var shield_hall_type = preload("res://towers/barracks/ShieldHall/ShieldHall_info.tres")
+var mirror_hall_type = preload("res://towers/barracks/MirrorHall/MirrorHall_info.tres")
+
+var keep_type = preload("res://towers/barracks/Keep/Keep_info.tres")
+var throne_type = preload("res://towers/barracks/Throne/Throne_info.tres")
+
+var church_type = preload("res://towers/barracks/Church/Church_info.tres")
+var altar_type = preload("res://towers/barracks/Altar/Altar_info.tres")
+
+var fire_tank_type = preload("res://towers/barracks/FireTankFactory/FireTankFactory_info.tres")
+var big_bomb_type = preload("res://towers/barracks/BigBombBay/BigBombBay_info.tres")
+
+var thunder_type = preload("res://towers/archery_tower/Thunderdome/Thunderdome_info.tres")
+var storm_type = preload("res://towers/archery_tower/StormTower/StormTower_info.tres")
+var necromancy_type = preload("res://towers/archery_tower/NecromancerTower/NecromancerTower_info.tres")
+var dark_type = preload("res://towers/archery_tower/DarkTower/DarkTower_info.tres")
+var oil_type = preload("res://towers/archery_tower/OilTower/OilTower_info.tres")
+var heavy_oil_type = preload("res://towers/archery_tower/HeavyOilTower/HeavyOilTower_info.tres")
 
 var farm_count = 1
 var barrack_count = 0
@@ -43,20 +80,58 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 				{"type": workshop_type, "weight": 10, "from": farm_type, "next": []},
 			]},
 			{"type": farm_type, "weight": 100, "next": [
-				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
 			]},
 			{"type": farm_type, "weight": 100, "next": [
-				{"type": treasury_type, "weight": 20, "from": farm_type, "next": []},
+				{"type": treasury_type, "weight": 5, "from": farm_type, "next": []},
 			]},
 			{"type": farm_type, "weight": 100, "next": [
-				{"type": mill_type, "weight": 10, "from": farm_type, "next": []},
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
 			]},
-			{"type": tower_type, "weight": 20, "next": [
-				{"type": farm_type, "weight": 2, "next": [
-					{"type": farm_type, "weight": 2, "next": []},
-					{"type": tower_type, "weight": 6, "next": []},
-				]},
-				{"type": mage_tower_type, "weight": 6, "from": tower_type, "next": []},
+			{"type": farm_type, "weight": 5, "next": [
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 5, "next": [
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 5, "next": [
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 5, "next": [
+				{"type": mill_type, "weight": 5, "from": farm_type, "next": []},
+			]},
+			{"type": farm_type, "weight": 5, "next": [
+				{"type": treasury_type, "weight": 5, "from": farm_type, "next": []},
+			]},
+			{"type": tower_type, "weight": 5, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": mage_tower_type, "weight": 6, "from": tower_type, "next": [
+						{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
+							{"type": thunder_type, "weight": 6, "from": mage_tower_type, "next": [
+								{"type": bomb_type, "weight": 5, "from": rino_type, "next": [
+									{"type": storm_type, "weight": 20, "from": thunder_type, "next": [
+										{"type": big_bomb_type, "weight": 5, "from": bomb_type, "next": []}
+									]}
+								]}
+							]}
+						]}	
+					]},
+				]}
+			]},
+			{"type": tower_type, "weight": 5, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": mage_tower_type, "weight": 6, "from": tower_type, "next": [
+						{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
+							{"type": necromancy_type, "weight": 6, "from": mage_tower_type, "next": [
+								{"type": tank_type, "weight": 5, "from": rino_type, "next": [
+									{"type": dark_type, "weight": 20, "from": necromancy_type, "next": [
+										{"type": fire_tank_type, "weight": 5, "from": tank_type, "next": []}
+									]}
+								]}
+							]}
+						]}	
+					]},
+				]}
 			]},
 			{"type": tower_type, "weight": 5, "next": [
 				{"type": ballista_type, "weight": 6, "from": tower_type, "next": []},
@@ -81,11 +156,6 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 				]}
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
-				{"type": rino_type, "weight": 3, "from": barrack_type, "next": [
-					{"type": bomb_type, "weight": 5, "from": rino_type, "next": []}
-				]}
-			]},
-			{"type": barrack_type, "weight": 4, "next": [
 				{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
 					{"type": shield_type, "weight": 6, "from": knight_type, "next": []}
 				]}
@@ -97,15 +167,129 @@ var ai_tree = {"type": farm_type, "weight": 1, "next": [
 			]},
 			{"type": barrack_type, "weight": 4, "next": [
 				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
-					{"type": flyer_type, "weight": 6, "from": rogue_type, "next": []}
+					{"type": flyer_type, "weight": 10, "from": rogue_type, "next": [
+						{"type": barrack_type, "weight": 20, "next": [
+							{"type": rogue_type, "weight": 20, "from": barrack_type, "next": [
+								{"type": flyer_type, "weight": 20, "from": rogue_type, "next": [
+									{"type": barrack_type, "weight": 20, "next": [
+										{"type": rogue_type, "weight": 20, "from": barrack_type, "next": [
+											{"type": flyer_type, "weight": 20, "from": rogue_type, "next": []}
+										]}
+									]},
+									{"type": barrack_type, "weight": 20, "next": [
+										{"type": rogue_type, "weight": 20, "from": barrack_type, "next": [
+											{"type": flyer_type, "weight": 20, "from": rogue_type, "next": []}
+										]}
+									]},
+									{"type": zeppelin_type, "from": flyer_type, "weight": 10, "next": []}
+								]}
+							]}
+						]},
+						{"type": air_bomber_type, "from": flyer_type, "weight": 10, "next": []}
+					]}
 				]}
 			]},
-			{"type": barrack_type, "weight": 4, "next": [
-				{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
-					{"type": mage_type, "weight": 6, "from": rogue_type, "next": []}
-				]}
-			]}
-			
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": ballista_type, "weight": 6, "from": tower_type, "next": [
+							{"type": mage_type, "weight": 6, "from": rogue_type, "next": [
+								{"type": machine_gun_type, "weight": 6, "from": ballista_type, "next": [
+									{"type": fire_mage_type, "weight": 20, "from": rogue_type, "next": [
+										{"type": heavy_machine_gun_type, "weight": 6, "from": machine_gun_type, "next": []}
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": ballista_type, "weight": 6, "from": tower_type, "next": [
+							{"type": mage_type, "weight": 6, "from": rogue_type, "next": [
+								{"type": machine_gun_type, "weight": 6, "from": ballista_type, "next": [
+									{"type": air_mage_type, "weight": 20, "from": rogue_type, "next": [
+										{"type": heavy_machine_gun_type, "weight": 6, "from": machine_gun_type, "next": []}
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": rogue_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": ballista_type, "weight": 6, "from": tower_type, "next": [
+							{"type": mage_type, "weight": 6, "from": rogue_type, "next": [
+								{"type": fire_tower_type, "weight": 6, "from": ballista_type, "next": [
+									{"type": earth_mage_type, "weight": 20, "from": rogue_type, "next": [
+										{"type": fire_wall_tower_type, "weight": 6, "from": machine_gun_type, "next": []}
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": catapult_type, "weight": 6, "from": tower_type, "next": [
+							{"type": shield_hall_type, "weight": 6, "from": knight_type, "next": [
+								{"type": rocket_type, "weight": 20, "from": catapult_type, "next": [
+									{"type": mirror_hall_type, "weight": 6, "from": shield_hall_type, "next": [
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": catapult_type, "weight": 6, "from": tower_type, "next": [
+							{"type": shield_hall_type, "weight": 6, "from": knight_type, "next": [
+								{"type": rocket_type, "weight": 20, "from": catapult_type, "next": [
+									{"type": mirror_hall_type, "weight": 6, "from": shield_hall_type, "next": [
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": catapult_type, "weight": 6, "from": tower_type, "next": [
+							{"type": keep_type, "weight": 6, "from": knight_type, "next": [
+								{"type": listening_post_type, "weight": 20, "from": catapult_type, "next": [
+									{"type": throne_type, "weight": 20, "from": keep_type, "next": []}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
+			{"type": tower_type, "weight": 6, "next": [
+				{"type": barrack_type, "weight": 4, "next": [
+					{"type": knight_type, "weight": 6, "from": barrack_type, "next": [
+						{"type": catapult_type, "weight": 6, "from": tower_type, "next": [
+							{"type": church_type, "weight": 6, "from": knight_type, "next": [
+								{"type": buff_type, "weight": 6, "from": catapult_type, "next": [
+									{"type": altar_type, "weight": 6, "from": church_type, "next": [
+										{"type": big_buff_type, "weight": 6, "from": buff_type, "next": []}
+									]}
+								]}
+							]}
+						]}
+					]},
+				]},
+			]},
 		]}
 
 
