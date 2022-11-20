@@ -36,10 +36,10 @@ func set_grayscale(value):
 func set_on_fire():
 	on_fire = true
 	$Burn.play()
-	$Coin.play()
 	
 	if(is_enemy):
 		add_child(preload("res://ui/FoodAddedLabel.tscn").instance())
+		$Coin.play()
 	
 	ResourceManager.add_gold(3, not is_enemy)
 	if(is_enemy):

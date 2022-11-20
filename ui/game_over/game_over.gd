@@ -13,8 +13,10 @@ func _ready():
 func _on_MainMenu_pressed():
 	visible = false
 	get_tree().change_scene("res://ui/MainMenu.tscn")
+	$LoseSong.stop()
 
 
 func _on_Button_pressed():
 	visible = false
-	get_tree().change_scene("res://ui/map.tscn")
+	get_tree().change_scene("res://map.tscn")
+	$LoseSong.stop()

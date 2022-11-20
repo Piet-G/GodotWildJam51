@@ -57,3 +57,4 @@ position = Vector2( 16, -5.75377 )
 
 [node name="Fire" parent="." index="11"]
 stream = ExtResource( 6 )
+volume_db = -10.0

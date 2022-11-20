@@ -26,12 +26,12 @@ func upgrade_selected(tower_info):
 	close_upgrade()
 
 func win():
-	$WinSong.play()
+	$UI/WinScreen/WinSong.play()
 	$UI/WinScreen.visible = true
 	get_tree().paused = true
 
 func lose():
-	$LoseSong.play()
+	$UI/GameOver/LoseSong.play()
 	$UI/GameOver.visible = true
 	get_tree().paused = true
 	

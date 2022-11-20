@@ -183,8 +183,8 @@ shader = SubResource( 17 )
 shader_param/grayscale = false
 shader_param/invalid = false
 
-[sub_resource type="CircleShape2D" id=19]
-radius = 104.329
+[sub_resource type="CircleShape2D" id=21]
+radius = 200.079
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
@@ -227,13 +227,16 @@ position = Vector2( 15.9204, 22.0112 )
 
 [node name="CollisionShape2D" parent="Range" index="0"]
 position = Vector2( 1.33635, -10.2453 )
-shape = SubResource( 19 )
+shape = SubResource( 21 )
 
 [node name="ShootTimer" parent="." index="2"]
 wait_time = 0.75
 
 [node name="AnimatedSprite" parent="." index="9"]
 frames = SubResource( 20 )
+
+[node name="RangeSprite" parent="." index="10"]
+scale = Vector2( 3.35775, 3.35775 )
 
 [node name="Fire" parent="." index="13"]
 stream = ExtResource( 30 )

@@ -116,4 +116,4 @@ func repair():
 
 
 func _on_AnimationPlayer2_animation_finished(anim_name):
-	$Sprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)
+	$AnimatedSprite.modulate = Color(1- (max_health - health)*0.05, 1 - (max_health - health)*0.1, 1- (max_health - health)*0.1, 1)

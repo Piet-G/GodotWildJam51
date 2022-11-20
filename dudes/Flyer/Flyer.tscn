@@ -27,12 +27,12 @@ animations = [ {
 [node name="Flyer" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 movement_speed = 50
-max_health = 4
+max_health = 1
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 0
+frame = 3
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 texture = ExtResource( 7 )

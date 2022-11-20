@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "MechMammoth factory"
+name = "Mech factory"
 food_cost = 1000
 gold_cost = 1
 icon = "res://assets/towers/barracks/MechMammut_Factory.png"

@@ -26,12 +26,12 @@ animations = [ {
 [node name="Zeppelin" instance=ExtResource( 1 )]
 movement_speed = 35
 castle_damage = 10
-max_health = 30
+max_health = 15
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 0
+frame = 1
 
 [node name="Sprite" parent="." index="3"]
 texture = ExtResource( 6 )
