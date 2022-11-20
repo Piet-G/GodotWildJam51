@@ -13,6 +13,9 @@ func _init():
 	GridService.illegal_spaces = {}
 	GridService.roads = {}
 	CastleService.hp = {true: 50, false: 50}
+
+func _ready():
+	$Song1.play()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -31,3 +34,11 @@ func _process(delta):
 		$AnimationPlayer2.play("RedRepair")
 	
 	old_hp_red = CastleService.hp[true]
+
+
+func _on_Song1_finished():
+	$Song2.play()
+
+
+func _on_Song2_finished():
+	$Song1.play()
