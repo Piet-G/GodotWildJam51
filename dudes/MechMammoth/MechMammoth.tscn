@@ -118,6 +118,9 @@ position = Vector2( -0.841843, -11.1818 )
 [node name="Position2D" type="Position2D" parent="AnimatedSprite3" index="0"]
 position = Vector2( -0.264862, -31.519 )
 
+[node name="AnimatedSprite" parent="." index="4"]
+frame = 2
+
 [node name="Position2D" parent="AnimatedSprite" index="0"]
 position = Vector2( 15.2372, -25.5537 )
 

@@ -177,7 +177,6 @@ anims/RESET = SubResource( 13 )
 [connection signal="animation_finished" from="Revive" to="." method="_on_Revive_animation_finished"]
 [connection signal="animation_finished" from="Resurrect" to="." method="_on_Resurrect_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
-[connection signal="animation_finished" from="AnimatedSprite/Slow" to="." method="_on_Slow_animation_finished"]
 [connection signal="timeout" from="SneakTimer" to="." method="_on_SneakTimer_timeout"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_SlowTimer_timeout"]
 [connection signal="timeout" from="HasteTimer" to="." method="_on_HasteTimer_timeout"]

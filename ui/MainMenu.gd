@@ -28,13 +28,16 @@ func _on_AnimatedSprite_animation_finished():
 func _on_Easy_pressed():
 	$AudioStreamPlayer2.play()
 	$Tutorial.visible = true
+	CastleService.difficulty = 0.85
 
 
 func _on_Medium_pressed():
 	$AudioStreamPlayer2.play()
 	$Tutorial.visible = true
+	CastleService.difficulty = 0.7
 
 
 func _on_Hard_pressed():
 	$AudioStreamPlayer2.play()
 	$Tutorial.visible = true
+	CastleService.difficulty = 0.5

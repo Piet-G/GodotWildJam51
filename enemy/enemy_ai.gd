@@ -73,9 +73,12 @@ var tower_count = 0
 
 
 var wait_time_after_building = 1
-var cost_reduction = 0.8
+var cost_reduction = CastleService.difficulty
 
-var ai_tree = {"type": farm_type, "weight": 1, "next": [
+var ai_tree = {"type": barrack_type, "weight": 1, "next": [
+			{"type": farm_type, "weight": 100, "next": [
+				{"type": workshop_type, "weight": 10, "from": farm_type, "next": []},
+			]},
 			{"type": farm_type, "weight": 100, "next": [
 				{"type": workshop_type, "weight": 10, "from": farm_type, "next": []},
 			]},

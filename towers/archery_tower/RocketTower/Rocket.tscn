@@ -19,7 +19,7 @@ height = 6.69843
 
 [node name="Rocket" type="AnimatedSprite"]
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 script = ExtResource( 4 )
 

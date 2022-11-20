@@ -30,7 +30,7 @@ func _on_Area2D_area_entered(area):
 		destroy()
 		if(is_instance_valid(target)):
 			self.target.targeted = false
-	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		area.get_parent().damage(1)
 		if(is_instance_valid(target)):
 			self.target.targeted = false
@@ -60,6 +60,5 @@ func bounce():
 				target = area.get_parent()
 				target.targeted = true
 				found = true
-				break
-		if(!found):
-			destroy()
+				return
+		destroy()

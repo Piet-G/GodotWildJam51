@@ -33,4 +33,5 @@ frame = 1
 stream = ExtResource( 6 )
 volume_db = -7.0
 
+[connection signal="area_entered" from="." to="." method="_on_RockHit_area_entered"]
 [connection signal="finished" from="Hit" to="." method="_on_Hit_finished"]

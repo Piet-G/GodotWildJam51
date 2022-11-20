@@ -28,7 +28,6 @@ func create_chicken(dude):
 func _on_Cooldown_timeout():
 	for area in $Range.get_overlapping_areas():
 		if(!area.is_in_group("air") and area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active()):
-			$Cooldown.start()
 			create_chicken(area.get_parent())
 			area.get_parent().queue_free()
 			$CastSound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://towers/farm/farm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/MapAnim_0005.png" type="Texture" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://assets/map/CastleBlue.png" type="Texture" id=17]
 [ext_resource path="res://towers/RaidHome.tscn" type="PackedScene" id=18]
 [ext_resource path="res://towers/archery_tower/archery_tower.tscn" type="PackedScene" id=19]
-[ext_resource path="res://towers/barracks/barracks.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/Songs/One-Bard-Band.mp3" type="AudioStream" id=21]
 [ext_resource path="res://assets/Songs/Now-We-Ride.mp3" type="AudioStream" id=22]
 [ext_resource path="res://assets/map/CastleRed.png" type="Texture" id=23]
@@ -548,10 +547,12 @@ position = Vector2( 120, 0 )
 [node name="EnemyInfo4" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 120, 40 )
 tower_weight = 10
+barrack_weight = 1
 
 [node name="EnemyInfo5" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 160, 40 )
 tower_weight = 10
+barrack_weight = 1
 
 [node name="EnemyInfo6" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 160, 0 )
@@ -562,10 +563,12 @@ position = Vector2( 200, 0 )
 [node name="EnemyInfo8" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 200, 40 )
 tower_weight = 10
+barrack_weight = 1
 
 [node name="EnemyInfo9" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 240, 40 )
 tower_weight = 10
+barrack_weight = 1
 
 [node name="EnemyInfo65" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 200, 120 )
@@ -631,26 +634,26 @@ position = Vector2( 240, 0 )
 
 [node name="EnemyInfo11" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 280, 0 )
-barrack_weight = 20
+barrack_weight = 1
 
 [node name="EnemyInfo12" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 320, 0 )
-barrack_weight = 20
+barrack_weight = 1
 
 [node name="EnemyInfo13" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 360, 0 )
-barrack_weight = 20
+barrack_weight = 1
 
 [node name="EnemyInfo14" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 400, 0 )
-barrack_weight = 20
+barrack_weight = 1
 
 [node name="EnemyInfo15" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 0 )
 
 [node name="EnemyInfo16" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 40 )
-barrack_weight = 20
+barrack_weight = 1
 
 [node name="EnemyInfo17" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 440, 80 )
@@ -675,6 +678,10 @@ position = Vector2( 640, 0 )
 
 [node name="EnemyInfo24" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 640, 80 )
+
+[node name="EnemyInfo32" parent="EnemyInfo" instance=ExtResource( 10 )]
+position = Vector2( 600, 80 )
+barrack_weight = 20
 
 [node name="EnemyInfo36" parent="EnemyInfo" instance=ExtResource( 10 )]
 position = Vector2( 680, 80 )
@@ -1408,11 +1415,6 @@ position = Vector2( 520, 160 )
 __meta__ = {
 "_edit_lock_": true
 }
-initially_in_world = true
-is_enemy = true
-
-[node name="Barracks" parent="." instance=ExtResource( 20 )]
-position = Vector2( 600, 80 )
 initially_in_world = true
 is_enemy = true
 

@@ -220,6 +220,9 @@ position = Vector2( 10.8424, 0.0232849 )
 [node name="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource( 36 )
 
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 4.0
+
 [node name="ArrowPosition" parent="." index="3"]
 position = Vector2( 11.7863, -11.3032 )
 
@@ -232,3 +235,4 @@ scale = Vector2( 4.40206, 4.40206 )
 
 [node name="Fire" parent="." index="13"]
 stream = ExtResource( 21 )
+volume_db = -15.0
