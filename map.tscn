@@ -529,7 +529,7 @@ next_paths = [ NodePath("../BlueLeftPath2") ]
 [node name="RedMiddlePathSwitcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 470.668, 147.327 )
 current_active = [ 0, 1 ]
-next_paths = [ NodePath("../RedMiddlePath"), NodePath("../BlueRightPath1") ]
+next_paths = [ NodePath("../RedMiddlePath"), NodePath("../RedLeftPath1") ]
 
 [node name="EnemyAI" parent="." instance=ExtResource( 9 )]
 
