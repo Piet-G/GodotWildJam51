@@ -37,7 +37,7 @@ regular_texture = ExtResource( 3 )
 enemy_texture = ExtResource( 2 )
 tower_info = ExtResource( 4 )
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 position = Vector2( 0.630836, -24.5962 )
 texture = ExtResource( 3 )

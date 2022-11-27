@@ -38,3 +38,6 @@ tower_info = ExtResource( 3 )
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 texture = ExtResource( 4 )
+
+[node name="Timer" parent="." index="2"]
+autostart = false

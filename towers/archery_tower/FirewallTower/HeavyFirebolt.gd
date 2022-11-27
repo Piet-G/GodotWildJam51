@@ -29,9 +29,9 @@ func _on_Area2D_area_entered(area):
 		get_parent().add_child(oil)
 		oil.global_position = global_position
 		oil.burn()
-		destroy()
 		if(is_instance_valid(target)):
 			self.target.targeted = false
+		destroy()
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
 		var oil = preload("res://Effects/Oil/Oil.tscn").instance()
 		oil.is_enemy = is_enemy

@@ -17,7 +17,6 @@ func set_direction():
 
 func set_target(target: Node2D):
 	self.target = target
-	target.targeted = true
 	
 func _physics_process(delta):
 	if(!active):

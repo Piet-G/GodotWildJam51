@@ -24,6 +24,8 @@ func _on_Area2D_area_entered(area):
 	if(!active):
 		return
 	if(area.is_in_group("mirror")):
+		if(is_instance_valid(target)):
+			self.target.targeted = false
 		target = origin
 	elif(area.is_in_group("shield")):
 		destroy()

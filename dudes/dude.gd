@@ -143,14 +143,14 @@ func activate():
 
 func oil():
 	if(!slow):
-		movement_speed -= 20
+		movement_speed /= 2
 		$AnimatedSprite/Slow.visible = true
 		$AnimatedSprite/Slow.play()
 		slow = true
 
 func slow():
 	if(!slow):
-		movement_speed -= 20
+		movement_speed /= 2
 		$AnimatedSprite/Slow.visible = true
 		$AnimatedSprite/Slow.play()
 		$SlowTimer.start()
@@ -158,7 +158,7 @@ func slow():
 
 func stop_slow():
 	if(slow):
-		movement_speed += 20
+		movement_speed *= 2
 		$AnimatedSprite/Slow.visible = false
 		$AnimatedSprite/Slow.playing = false
 		slow = false

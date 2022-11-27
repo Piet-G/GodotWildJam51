@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 name = "Mech factory"
 food_cost = 1000
-gold_cost = 1
+gold_cost = 10
 icon = "res://assets/towers/barracks/MechMammut_Factory.png"
 scene = "res://towers/barracks/MechMammothFactory/MechMammothFactory.tscn"
 next_upgrades = [  ]

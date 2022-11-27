@@ -15,6 +15,7 @@ var active = false
 var health = 0
 var buffed = false
 var damage = 0
+var targeted = false
 
 signal clicked()
 
