@@ -37,3 +37,11 @@ func added_to_grid():
 func set_selected(value):
 	.set_selected(value)
 	show_range(value)
+
+
+func _on_Range_area_exited(area):
+	pass # Replace with function body.
+
+
+func _on_Range_area_entered(area):
+	pass # Replace with function body.

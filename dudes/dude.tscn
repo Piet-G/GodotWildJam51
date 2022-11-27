@@ -122,6 +122,7 @@ frames = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
+frame = 1
 playing = true
 
 [node name="Healing" type="AnimatedSprite" parent="AnimatedSprite"]
@@ -173,6 +174,10 @@ volume_db = -15.0
 anims/Hit = SubResource( 12 )
 anims/RESET = SubResource( 13 )
 
+[node name="TargetedHotFix" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="animation_finished" from="Revive" to="." method="_on_Revive_animation_finished"]
 [connection signal="animation_finished" from="Resurrect" to="." method="_on_Resurrect_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite/Healing" to="." method="_on_Healing_animation_finished"]
@@ -182,3 +187,4 @@ anims/RESET = SubResource( 13 )
 [connection signal="timeout" from="BurnTimer1" to="." method="_on_BurnTimer1_timeout"]
 [connection signal="timeout" from="BurnTimer2" to="." method="_on_BurnTimer2_timeout"]
 [connection signal="timeout" from="BurnTimer3" to="." method="_on_BurnTimer3_timeout"]
+[connection signal="timeout" from="TargetedHotFix" to="." method="_on_TargetedHotFix_timeout"]

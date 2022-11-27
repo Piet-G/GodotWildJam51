@@ -31,11 +31,9 @@ height = 0.0
 [node name="Bomber" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 castle_damage = 2
+max_health = 4
 regular_sprites = SubResource( 1 )
 enemy_sprites = SubResource( 2 )
-
-[node name="AnimatedSprite" parent="." index="2"]
-frame = 1
 
 [node name="Position2D" type="Position2D" parent="AnimatedSprite" index="3"]
 position = Vector2( 0, -8.7704 )

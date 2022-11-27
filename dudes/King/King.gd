@@ -10,14 +10,9 @@ extends "res://dudes/dude.gd"
 func _ready():
 	pass # Replace with function body.
 
-
-func _on_Range_area_entered(area):
-	if($ConvertTimer.is_stopped()):
-		if(active and area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().is_active()):
-			area.get_parent().bribe()
-			$AnimatedSprite/ConvertEffect.visible = true
-			$AnimatedSprite/ConvertEffect.play()
-			$ConvertTimer.start()
+func activate():
+	active = true
+	$ConvertTimer.start()
 
 
 func _on_ConvertTimer_timeout():
@@ -26,9 +21,17 @@ func _on_ConvertTimer_timeout():
 			area.get_parent().bribe()
 			$AnimatedSprite/ConvertEffect.visible = true
 			$AnimatedSprite/ConvertEffect.play()
-			$ConvertTimer.start()
+			break
 
 
 func _on_ConvertEffect_animation_finished():
 	$AnimatedSprite/ConvertEffect.visible = false
 	$AnimatedSprite/ConvertEffect.playing = false
+
+
+func _on_Range_area_exited(area):
+	pass # Replace with function body.
+
+
+func _on_Range_area_entered(area):
+	pass # Replace with function body.

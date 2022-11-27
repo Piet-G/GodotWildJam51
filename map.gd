@@ -8,6 +8,7 @@ func _init():
 	ResourceManager.enemy_food = 0
 	ResourceManager.gold = 0
 	ResourceManager.enemy_gold = 0
+	ResourceManager.gold_bonus = 0
 	GridService.grid_map = {}
 	GridService.enemy_info = {}
 	GridService.illegal_spaces = {}

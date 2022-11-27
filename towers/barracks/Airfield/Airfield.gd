@@ -26,6 +26,15 @@ func _on_WarButton_pressed():
 
 func can_launch_war():
 	return len(dudes) <= 0 or count > 0
+
+func upgrade_to(tower_info: TowerInfo, is_enemy=false):
+	free_dudes()
+	.upgrade_to(tower_info, is_enemy)
+
+
+func free_dudes():
+	while(get_dude_count() > 0):
+		spawn_dude(rand_range(0, 20))
 	
 func launch_war():
 	count = 0
@@ -55,13 +64,7 @@ func _count_updated():
 	return
 
 func _on_WarTimer_timeout():
-	var dude = dudes.pop_front()
-	if(not is_instance_valid(dude)):
-		return
-	dude.active = true
-	
-	if(len(dudes) <= 0):
-		$WarTimer.stop()
+	spawn_dude(0)
 	
 func burn():
 	$BurningSprite.visible = true
@@ -70,3 +73,16 @@ func burn():
 func _on_BurningTimer_timeout():
 	$BurningSprite.visible = false
 	$BurningSprite.playing = false
+
+func spawn_dude(rando_offset):
+	var dude = dudes.pop_front()
+	if(not is_instance_valid(dude)):
+		return
+	$DudeSpawnLocation.remove_child(dude)
+	closest_path.add_child(dude)
+	dude.activate()
+	var local_pos = closest_path.to_local(global_position)
+	dude.offset = closest_path.curve.get_closest_offset(local_pos) + rando_offset
+	
+	if(len(dudes) <= 0):
+		$WarTimer.stop()

@@ -31,5 +31,6 @@ func drop_bomb():
 	bomb.global_position = $AnimatedSprite/Position2D.global_position
 	bomb.active = true
 	bomb.ground = $AnimatedSprite/Position2D2.global_position.y
+	bomb.is_enemy = is_enemy
 	$BombCooldown.start()
 

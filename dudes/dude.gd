@@ -73,6 +73,10 @@ func get_z_position():
 func _physics_process(delta):
 	if(not active):
 		return
+	
+	if(targeted and $TargetedHotFix.is_stopped()):
+		$TargetedHotFix.start()
+	
 	offset += movement_speed * delta
 	
 	if(unit_offset >= 1):
@@ -250,3 +254,8 @@ func discover():
 func _on_Resurrect_animation_finished():
 	$Resurrect.visible = false
 	$Resurrect.playing = false
+
+
+func _on_TargetedHotFix_timeout():
+	$TargetedHotFix.stop()
+	targeted = false

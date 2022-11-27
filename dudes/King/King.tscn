@@ -46,7 +46,7 @@ regular_sprites = SubResource( 2 )
 enemy_sprites = SubResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="2"]
-frame = 0
+frame = 3
 
 [node name="ConvertEffect" type="AnimatedSprite" parent="AnimatedSprite" index="3"]
 visible = false
@@ -54,7 +54,6 @@ frames = SubResource( 1 )
 
 [node name="ConvertTimer" type="Timer" parent="." index="6"]
 wait_time = 5.0
-one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite/ConvertEffect" to="." method="_on_ConvertEffect_animation_finished"]
 [connection signal="timeout" from="ConvertTimer" to="." method="_on_ConvertTimer_timeout"]

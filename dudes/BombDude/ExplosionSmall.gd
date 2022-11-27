@@ -30,4 +30,6 @@ func _on_ExplosionSmall_area_entered(area):
 	if $AnimatedSprite.visible:
 		$ExplosionSound.play()
 		if(!area.is_in_group("air") && (area.is_in_group("dude_area") && area.get_parent().is_enemy != is_enemy && area.get_parent().is_active())):
-			area.get_parent().damage(4)
+			area.get_parent().damage(damage)
+		if(area.is_in_group("Tower") && area.get_parent().is_enemy != is_enemy && area.get_parent().is_active()):
+			area.get_parent().damage(damage)
