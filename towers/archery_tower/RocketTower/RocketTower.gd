@@ -17,3 +17,5 @@ func shoot_at(dude: Node2D):
 	arrow.set_target(dude)
 	
 	$AnimatedSprite.play()
+	if(dude.health <= 3):
+		dude.targeted = true

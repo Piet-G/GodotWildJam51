@@ -89,6 +89,8 @@ func shoot_at(dude: Node2D):
 
 	$ArrowPosition.add_child(arrow)
 	arrow.set_target(dude)
+	if(dude.health <= arrow_damage):
+		dude.targeted = true
 	
 	$AnimatedSprite.play()
 

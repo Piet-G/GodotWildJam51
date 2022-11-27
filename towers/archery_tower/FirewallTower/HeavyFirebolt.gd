@@ -8,7 +8,6 @@ var active = true
 
 func set_target(target: Node2D):
 	self.target = target
-	target.targeted = true
 	
 func _physics_process(delta):
 	if(!active):
@@ -32,15 +31,13 @@ func _on_Area2D_area_entered(area):
 		if(is_instance_valid(target)):
 			self.target.targeted = false
 		destroy()
-	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		var oil = preload("res://Effects/Oil/Oil.tscn").instance()
 		oil.is_enemy = is_enemy
 		get_parent().add_child(oil)
 		oil.global_position = global_position
 		oil.burn()
 		area.get_parent().damage(2)
-		if(is_instance_valid(target)):
-			self.target.targeted = false
 		destroy()
 
 func destroy():

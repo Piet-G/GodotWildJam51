@@ -191,6 +191,7 @@ script = ExtResource( 2 )
 regular_texture = ExtResource( 4 )
 enemy_texture = ExtResource( 3 )
 tower_info = ExtResource( 21 )
+arrow_damage = 2
 regular_sprites_right = SubResource( 18 )
 enemy_sprites_right = SubResource( 19 )
 regular_sprites_left = SubResource( 20 )

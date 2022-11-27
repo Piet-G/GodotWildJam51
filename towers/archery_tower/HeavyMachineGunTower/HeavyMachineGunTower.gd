@@ -22,3 +22,5 @@ func shoot_at(dude: Node2D):
 	arrow.set_target(dude)
 	
 	$AnimatedSprite.play()
+	if(dude.health <= arrow_damage):
+		dude.targeted = true

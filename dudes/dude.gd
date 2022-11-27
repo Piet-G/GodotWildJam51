@@ -12,7 +12,7 @@ var old_pos
 var right = true
 var sneaking = false
 var direction = Vector2.ZERO
-var health
+var health = 1
 var active = false
 var slow = false
 var hasty

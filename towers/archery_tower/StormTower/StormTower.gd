@@ -13,3 +13,5 @@ func shoot_at(dude: Node2D):
 	$ArrowPosition.add_child(arrow)
 	arrow.set_target(dude)
 	$Fire.play()
+	if(dude.health <= arrow_damage):
+		dude.targeted = true

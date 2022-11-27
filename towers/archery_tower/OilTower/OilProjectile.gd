@@ -28,11 +28,9 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if(!active):
 		return
-	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		area.get_parent().damage(2)
 		area.get_parent().slow()
-		if(is_instance_valid(target)):
-			self.target.targeted = false
 		destroy()
 
 func destroy():

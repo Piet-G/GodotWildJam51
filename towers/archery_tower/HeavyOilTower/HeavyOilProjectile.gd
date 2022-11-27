@@ -28,13 +28,10 @@ func _physics_process(delta):
 func _on_Area2D_area_entered(area):
 	if(!active):
 		return
-	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+	if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		var oil = preload("res://Effects/Oil/Oil.tscn").instance()
 		get_parent().add_child(oil)
 		oil.global_position = global_position
-
-		if(is_instance_valid(target)):
-			self.target.targeted = false
 		area.get_parent().damage(1)
 		destroy()
 

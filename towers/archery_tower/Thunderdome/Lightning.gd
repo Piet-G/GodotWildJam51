@@ -9,7 +9,6 @@ var active = true
 
 func set_target(target: Node2D):
 	self.target = target
-	target.targeted = true
 	
 func _physics_process(delta):
 	if(!active):
@@ -34,8 +33,6 @@ func _on_Area2D_area_entered(area):
 			self.target.targeted = false
 	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		area.get_parent().damage(1)
-		if(is_instance_valid(target)):
-			self.target.targeted = false
 		bounce()
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
 		area.get_parent().damage(1)
@@ -60,5 +57,7 @@ func bounce():
 		for area in $Range.get_overlapping_areas():
 			if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active and area.get_parent() != target):
 				set_target(area.get_parent())
+				if(area.get_parent().health <= 1):
+					area.get_parent().targeted = true
 				return
 		destroy()

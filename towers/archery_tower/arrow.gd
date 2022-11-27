@@ -9,7 +9,6 @@ export var damage = 1
 
 func set_target(target: Node2D):
 	self.target = target
-	target.targeted = true
 	
 func _physics_process(delta):
 	if(!active):
@@ -32,10 +31,9 @@ func _on_Area2D_area_entered(area):
 		destroy()
 		if(is_instance_valid(target)):
 			self.target.targeted = false
-	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy):
+	elif(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent() == target):
 		area.get_parent().damage(damage)
-		if(is_instance_valid(target)):
-			self.target.targeted = false
+		
 		destroy()
 	elif(area.is_in_group("Tower") and area.get_parent().is_enemy == is_enemy and target == origin):
 		area.get_parent().damage(damage)
