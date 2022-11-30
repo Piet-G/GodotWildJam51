@@ -64,6 +64,10 @@ func get_z_position():
 func _physics_process(delta):
 	if(not is_active()):
 		return
+	
+	if(targeted and $TargetedHotFix.is_stopped()):
+		$TargetedHotFix.start()
+	
 	var direction = (target - global_position).normalized()
 	global_position = global_position + (direction*movement_speed*delta)
 	rotation = global_position.angle_to_point(target) + rot
@@ -147,3 +151,8 @@ func discover():
 	if sneaking:
 		stop_sneaking()
 		discovered = true
+
+
+func _on_TargetedHotFix_timeout():
+	$TargetedHotFix.stop()
+	targeted = false

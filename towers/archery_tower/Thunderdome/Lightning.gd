@@ -55,9 +55,13 @@ func bounce():
 		bounces -= 1
 		$Hit.play()
 		for area in $Range.get_overlapping_areas():
-			if(area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active and area.get_parent() != target):
+			if(!area.is_in_group("air") and area.is_in_group("dude_area") and area.get_parent().is_enemy != is_enemy and area.get_parent().active and area.get_parent() != target):
 				set_target(area.get_parent())
 				if(area.get_parent().health <= 1):
 					area.get_parent().targeted = true
 				return
 		destroy()
+
+
+func _on_Timer_timeout():
+	queue_free()

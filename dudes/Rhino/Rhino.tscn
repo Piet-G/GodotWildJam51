@@ -162,7 +162,7 @@ visible = false
 playing = true
 
 [node name="AnimatedSprite" parent="." index="4"]
-frame = 1
+frame = 2
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="13"]
 root_node = NodePath("../AnimationPlayer")

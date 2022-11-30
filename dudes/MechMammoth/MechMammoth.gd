@@ -20,7 +20,7 @@ func _physics_process(delta):
 	
 
 func shoot_at_front():
-	var laser = preload("res://dudes/MechMammoth/MechMammoth_projectile.tscn").instance()
+	var laser = preload("res://dudes/MechMammoth/Mechmammoth_Projectile2.tscn").instance()
 	if(right):
 		laser.direction = Vector2(1,0)
 	else:
@@ -33,7 +33,7 @@ func shoot_at_front():
 	$AnimatedSprite/Shoot.play()
 
 func shoot_at_top():
-	var laser = preload("res://dudes/MechMammoth/Mechmammoth_projectile.tscn").instance()
+	var laser = preload("res://dudes/MechMammoth/Mechmammoth_Projectile2.tscn").instance()
 	laser.is_enemy = is_enemy
 	get_parent().add_child(laser)
 	$Timer.start()

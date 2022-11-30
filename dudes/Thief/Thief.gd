@@ -33,4 +33,12 @@ func stop_sneaking():
 
 func _on_Timer_timeout():
 	$SneakTimer.wait_time = 5
+	$Timer.start()
 	sneak()
+
+func sneak():
+	if !discovered:
+		$SneakTimer.start()
+		$Timer.start()
+		$AnimatedSprite.modulate = Color(0.2,0.2,0.2,0.4)
+		sneaking = true

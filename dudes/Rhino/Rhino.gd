@@ -75,6 +75,12 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
+	if(not active):
+		return
+	
+	if(targeted and $TargetedHotFix.is_stopped()):
+		$TargetedHotFix.start()
+	
 	offset += movement_speed * delta
 	
 	if(unit_offset >= 1):
@@ -235,3 +241,8 @@ func discover():
 	if sneaking:
 		stop_sneaking()
 		discovered = true
+
+
+func _on_TargetedHotFix_timeout():
+	$TargetedHotFix.stop()
+	targeted = false
